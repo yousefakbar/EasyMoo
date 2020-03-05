@@ -1,0 +1,31 @@
+# Lab2Part3
+# 2020-02-25 19:48:54Z
+
+dont_use_location p4usbcell -1 -1 0
+dont_use_location USB -1 -1 0
+dont_use_location usbcell -1 -1 0
+set_location "ClockGenBlock" CLK_GEN -1 -1 0
+set_location "ClockBlock" Clock -1 -1 0
+set_location "CPUSS" CPUSS -1 -1 0
+set_io "CY_CPUSS_SWJ_SWCLK_TCLK(0)" iocell 6 7
+set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
+set_io "\UART:tx(0)\" iocell 5 1
+set_io "\UART:rx(0)\" iocell 5 0
+set_io "\UART_1:tx(0)\" iocell 9 1
+set_io "SW2(0)" iocell 0 4
+set_io "RED_LED(0)" iocell 6 3
+set_io "GREEN_LED(0)" iocell 7 1
+set_io "value(0)" iocell 9 5
+set_io "I2C_SCL(0)" iocell 6 4
+set_io "I2C_SDA(0)" iocell 6 5
+set_location "\UART:SCB_IRQ\" interrupt -1 -1 46
+set_location "\UART:SCB\" SCB -1 -1 5
+set_location "\UART_1:SCB_IRQ\" interrupt -1 -1 43
+set_location "\UART_1:SCB\" SCB -1 -1 2
+set_location "\MCWDT_0:MCWDT\" MCWDT -1 -1 0
+set_location "\ADC_1:IRQ\" interrupt -1 -1 138
+set_location "\ADC_1:SAR\" SARADC -1 -1 0
+set_location "\I2C:SCB\" SCB -1 -1 6
+set_location "\I2C:SCB_IRQ\" interrupt -1 -1 47
+set_location "\BLE:cy_mxs40_ble\" BLE -1 -1 0
+set_location "\BLE:bless_isr\" interrupt -1 -1 24
