@@ -31,7 +31,7 @@
 #include "stdio.h"
 
 /* Slave addresses */
-#define LIGHT_ADDRESS 0xE8    // 1110100[01]
+#define LIGHT_ADDRESS 0x74    // 1110100[01]
 
 /* Control Register Bank */
 #define OSR     0x00        // Operational State Register (default 0x42)
@@ -144,13 +144,13 @@ void lightMeasure(uint8_t *xChannel, uint8_t *yChannel, uint8_t *zChannel,
     lightI2CWrite(OSR, 0x83);
     /* Wait for conversion to finish, defined by TCONV */
     CyDelay(64);
+
     /* Read completed conversions */
     *temperature    = lightI2CRead(TEMP);
     *xChannel       = lightI2CRead(MRES1);
     *yChannel       = lightI2CRead(MRES2);
     *zChannel       = lightI2CRead(MRES3);
 
-    
     /* Transition back to PowerDown, for power reduction */
     lightI2CWrite(OSR, 0x42);
 }
