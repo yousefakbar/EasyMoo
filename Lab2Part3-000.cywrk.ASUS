@@ -609,7 +609,8 @@
 <OpenDocs>
 <name v=".\EasyMoo.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\EasyMoo.cydsn\main_cm0p.c" />
-<name v=".\EasyMoo.cydsn\BLE.h" />
+<name v=".\EasyMoo.cydsn\Light.h" />
+<name v=".\EasyMoo.cydsn\Accelerometer.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -617,7 +618,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1335, 655" SelectedTabbedMdiWindow="e46410b9-60fb-40bb-915b-1c37f073bfdc"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="90b2499e-cd52-49c3-8eec-f422bc3588bb" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\TopDesign\TopDesign.cysch" Guid="e46410b9-60fb-40bb-915b-1c37f073bfdc" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\main_cm0p.c" Guid="d54f0c0f-7843-43d8-a165-bace87220ddf" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\BLE.h" Guid="a15cd99d-0277-4934-bfc9-d7e7c4ec119f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1396, 721" SelectedTabbedMdiWindow="d54f0c0f-7843-43d8-a165-bace87220ddf"><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\TopDesign\TopDesign.cysch" Guid="e46410b9-60fb-40bb-915b-1c37f073bfdc" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\main_cm0p.c" Guid="d54f0c0f-7843-43d8-a165-bace87220ddf" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Light.h" Guid="9bcd96b1-c049-48ce-a1dc-3af19067f12e" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Accelerometer.h" Guid="bb71c3f6-79b4-48c3-a19e-ba8be5e2e188" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
