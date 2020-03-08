@@ -25,7 +25,7 @@
 #include "Light.h"
 
 /* Global Variables */
-uint8_t xChannel, yChannel, zChannel, temperature;
+uint16_t xChannel, yChannel, zChannel, temperature;
 
 int main(void)
 {
@@ -52,7 +52,7 @@ int main(void)
         //printf("Result: %d\r\n", bondres);
         //printf("%d Connected Devices\r\n", bonded_list.noOfDevices);
         lightMeasure(&xChannel, &yChannel, &zChannel, &temperature);
-        lightPrint(xChannel, yChannel, zChannel, temperature);
+        lightPrint(xChannel, yChannel, zChannel);
         CyDelay(1000);
     }
 }

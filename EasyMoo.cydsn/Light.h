@@ -1,7 +1,7 @@
 /******************************************************************************
 * File Name: Light.h
 *
-* Version: Alpha
+* Version: Beta
 *
 * Description: This file contains the firmware for setting up communication
 * between the PSoC and the AS73211 True Color Sensor using the I2C protocol.
@@ -46,6 +46,10 @@
 #define MRES2   0x03        // Y-Channel GREEN
 #define MRES3   0x04        // Z-Channel BLUE
 
+/* Macro for converting 16 bit temp. to celcius (Refer to Section 7.16) */
+uint16_t temperature;       // declaration of existing temp in main_cm0p.c
+#define CHIPTEMP temperature * 0.05 - 66.9
+
 /* Function Name: lightI2CRead
  *
  * Summary:
@@ -58,15 +62,15 @@
  * Return:
  *	readBuf:	Buffer containing data read from register
  */
-uint8_t lightI2CRead(uint8_t reg)
+uint16_t lightI2CRead(uint8_t reg)
 {
     volatile cy_en_scb_i2c_status_t ret0 = 0;
     volatile cy_en_scb_i2c_status_t ret1 = 0;
     volatile cy_en_scb_i2c_status_t ret2 = 0;
     volatile cy_en_scb_i2c_status_t ret3 = 0;
     volatile cy_en_scb_i2c_status_t ret4 = 0;
-    uint8_t readBuf[1] = {0};
-    volatile cy_en_scb_i2c_command_t ackNack = 1u;
+    volatile cy_en_scb_i2c_status_t ret5 = 0;
+    uint8_t readBuf[2] = {0, 0};
     
     // Start condition and broadcast slave address + WRITE bit (0)
     ret0 = I2C_MasterSendStart(LIGHT_ADDRESS, CY_SCB_I2C_WRITE_XFER, 100);
@@ -78,14 +82,22 @@ uint8_t lightI2CRead(uint8_t reg)
     ret2 = I2C_MasterSendReStart(LIGHT_ADDRESS, CY_SCB_I2C_READ_XFER, 100);
     CyDelay(1);
     // Read from I2C device, put received byte in readBuf and send ack signal.
-    ret3 = I2C_MasterReadByte(ackNack, readBuf, 100);
+    ret3 = I2C_MasterReadByte(CY_SCB_I2C_ACK, &(readBuf[0]), 100);
+    CyDelay(1);
+    ret5 = I2C_MasterReadByte(CY_SCB_I2C_NAK, &(readBuf[1]), 100);
     CyDelay(1);
     // End I2C transaction
     ret4 = I2C_MasterSendStop(100);
     
-    printf("SendStart: %X, WriteByte: %X, SendReStart: %X, ReadByte: %X, SendStop: %X\r\n", ret0, ret1, ret2, ret3, ret4);
+    printf("SendStart: %X,"
+		    "WriteByte: %X,"
+		    "SendReStart: %X,"
+		    "ReadByte: %X,"
+            "ReadByte2: %X"
+		    "SendStop: %X\r\n", ret0, ret1, ret2, ret3, ret5, ret4);
     
-    return readBuf[0];
+    //Start_Number = (Start_Number_High << 8) | (Start_Number_Low & 0xff);
+    return (readBuf[1] << 8) | (readBuf[0] & 0xff);
 }
 
 /* Function Name: lightI2CWrite
@@ -137,8 +149,8 @@ void lightI2CWrite(uint8_t reg, uint8_t value)
  * Return:
  *	None.
  */
-void lightMeasure(uint8_t *xChannel, uint8_t *yChannel, uint8_t *zChannel,
-		uint8_t *temperature)
+void lightMeasure(uint16_t *xChannel, uint16_t *yChannel, uint16_t *zChannel,
+		uint16_t *temperature)
 {
     /* Transition to Measurement mode 0x83 */
     lightI2CWrite(OSR, 0x83);
@@ -155,11 +167,27 @@ void lightMeasure(uint8_t *xChannel, uint8_t *yChannel, uint8_t *zChannel,
     lightI2CWrite(OSR, 0x42);
 }
 
-void lightPrint(uint8_t x, uint8_t y, uint8_t z, uint8_t t)
+/* Function Name: lightPrint
+ *
+ * Summary:
+ * This function prints the most recent data from the light sensor: the 3
+ * channels of photodiodes conversions (RGB light) and the chip temperature.
+ * Note that temperature is obtained using a macro function that converts the
+ * TEMP register from the board to an actual celcius temperature.
+ *
+ * Parameters:
+ *	@x: the xChannel (R) 16 bit result
+ *	@y: the yChannel (G) 16 bit result
+ *	@z: the zChannel (B) 16 bit result
+ *
+ * Return:
+ *	None.
+ */
+void lightPrint(uint16_t x, uint16_t y, uint16_t z)
 {
     printf("\r\n\r\nLight Sensor Data:\r\n"
         "Red Light: %d\r\n"
         "Green Light: %d\r\n"
         "Blue Light: %d\r\n"
-        "Temperature: %d\r\n", x, y, z, t);
+        "Temperature: %.2f\r\n", x, y, z, CHIPTEMP);
 }

@@ -40,6 +40,7 @@
           <File BuildType="BUILD" Toolchain="">FSM.h</File>
           <File BuildType="BUILD" Toolchain="">Light.h</File>
           <File BuildType="BUILD" Toolchain="">Queue.h</File>
+          <File BuildType="BUILD" Toolchain="">Accelerometer.h</File>
           <File BuildType="BUILD" Toolchain="">main_cm0p.c</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">gcc\startup_psoc6_01_cm0plus.S</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">iar\startup_psoc6_01_cm0plus.s</File>
