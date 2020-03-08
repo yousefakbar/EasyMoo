@@ -18,40 +18,65 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2Part3-000">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Source Files\main_cm4.c">
 <ExpandedNodeIds>
 <v>Lab2Part3-000</v>
+<v>Lab2Part3-000\EasyMoo</v>
+<v>Lab2Part3-000\EasyMoo\TopDesign</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\FSM.h</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\Light.h</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\Queue.h</v>
 <v>Lab2Part3-000\Lab2Part3</v>
 <v>Lab2Part3-000\Lab2Part3\TopDesign</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Source Files</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files</v>
-<v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files\FSM.h</v>
-<v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files\Light.h</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Source Files</v>
-<v>Lab2Part3-000\Lab2Part3\Shared Files</v>
-<v>Lab2Part3-000\Lab2Part3\Generated_Source</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Lab2Part3-000</v>
+<v>Lab2Part3-000\EasyMoo</v>
+<v>Lab2Part3-000\EasyMoo\TopDesign</v>
+<v>Lab2Part3-000\EasyMoo\EasyMoo.cydwr</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\ARM GCC Generic</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\ARM IAR Generic</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\ARM MDK Generic</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\BLE.h</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\FSM.h</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\Light.h</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\Queue.h</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files</v>
+<v>Lab2Part3-000\EasyMoo\CM4 (Core 1)</v>
+<v>Lab2Part3-000\EasyMoo\Shared Files</v>
+<v>Lab2Part3-000\EasyMoo\Generated_Source</v>
 <v>Lab2Part3-000\Lab2Part3</v>
 <v>Lab2Part3-000\Lab2Part3\TopDesign</v>
 <v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr\Pins</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr\Analog</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr\DMA</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr\Clocks</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr\Interrupts</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr\System</v>
-<v>Lab2Part3-000\Lab2Part3\Lab2Part3.cydwr\Directives</v>
 <v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\ARM GCC Generic</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\ARM IAR Generic</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\ARM MDK Generic</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Header Files</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Source Files</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Source Files\ARM GCC Generic</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Source Files\ARM IAR Generic</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Source Files\ARM MDK Generic</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Source Files\main_cm0p.c</v>
+<v>Lab2Part3-000\Lab2Part3\CM0p (Core 0)\Source Files\system_psoc6_cm0plus.c</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\ARM GCC Generic</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\ARM IAR Generic</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\ARM MDK Generic</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files</v>
+<v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files\BLE.h</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files\FSM.h</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files\Light.h</v>
+<v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Header Files\Queue.h</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Source Files</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Source Files\ARM GCC Generic</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Source Files\ARM IAR Generic</v>
@@ -59,24 +84,24 @@
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Source Files\main_cm4.c</v>
 <v>Lab2Part3-000\Lab2Part3\CM4 (Core 1)\Source Files\system_psoc6_cm4.c</v>
 <v>Lab2Part3-000\Lab2Part3\Shared Files</v>
-<v>Lab2Part3-000\Lab2Part3\Shared Files\cy_ble_config.h</v>
-<v>Lab2Part3-000\Lab2Part3\Shared Files\cyapicallbacks.h</v>
-<v>Lab2Part3-000\Lab2Part3\Shared Files\stdio_user.c</v>
-<v>Lab2Part3-000\Lab2Part3\Shared Files\stdio_user.h</v>
-<v>Lab2Part3-000\Lab2Part3\Shared Files\system_psoc6.h</v>
 <v>Lab2Part3-000\Lab2Part3\Generated_Source</v>
-<v>Lab2Part3-000\Lab2Part3\Generated_Source\PSoC6</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Lab2Part3-000</v>
+<v>Lab2Part3-000\EasyMoo</v>
+<v>Lab2Part3-000\EasyMoo\TopDesign</v>
+<v>Lab2Part3-000\EasyMoo\TopDesign\TopDesign.cysch</v>
 <v>Lab2Part3-000\Lab2Part3</v>
 <v>Lab2Part3-000\Lab2Part3\TopDesign</v>
 <v>Lab2Part3-000\Lab2Part3\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Lab2Part3-000</v>
+<v>Lab2Part3-000\EasyMoo</v>
+<v>Lab2Part3-000\EasyMoo\TopDesign</v>
+<v>Lab2Part3-000\EasyMoo\TopDesign\TopDesign.cysch</v>
 <v>Lab2Part3-000\Lab2Part3</v>
 <v>Lab2Part3-000\Lab2Part3\TopDesign</v>
 <v>Lab2Part3-000\Lab2Part3\TopDesign\TopDesign.cysch</v>
@@ -85,6 +110,179 @@
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Lab2Part3-000</v>
+<v>Lab2Part3-000\EasyMoo</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE_config.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE_custom_config.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_aios.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ancs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ans.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bas.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bcs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bls.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bms.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cgms.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cscs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_custom.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_dis.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ess.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_event_handler.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gap.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gatt.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gls.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_int.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_pvt.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hids.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hrs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ias.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ips.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_lls.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_lns.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ndcs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_pass.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_plxs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_rscs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_rtus.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_scps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_tps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_uds.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_wpts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_wss.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\retarget.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm0plus.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\stdio_user.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm0plus.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\EasyMoo.elf</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\EasyMoo.hex</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\EasyMoo.map</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\BLE_config.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\BLE_custom_config.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_aios.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ancs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ans.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bas.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bcs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bls.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bms.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cgms.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cscs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_custom.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_dis.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ess.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_event_handler.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_gap.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_gatt.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_gls.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_int.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_pvt.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hids.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hrs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ias.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ips.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_lls.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_lns.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ndcs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_pass.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_plxs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_rscs.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_rtus.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_scps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_tps.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_uds.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_wpts.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_wss.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\main_cm4.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\retarget.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm4.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\stdio_user.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm4.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\EasyMoo.elf</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\EasyMoo.hex</v>
+<v>Lab2Part3-000\EasyMoo\CortexM4\ARM_GCC_541\Debug\EasyMoo.map</v>
+<v>Lab2Part3-000\EasyMoo\EasyMoo.gpdsc</v>
+<v>Lab2Part3-000\EasyMoo\EasyMoo.rpt</v>
+<v>Lab2Part3-000\EasyMoo\EasyMoo_timing.html</v>
 <v>Lab2Part3-000\Lab2Part3</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541</v>
@@ -94,7 +292,50 @@
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_INIT.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_INT.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_PM.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE_config.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE_custom_config.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_aios.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ancs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ans.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bas.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bcs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bls.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bms.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cgms.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cscs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_custom.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_dis.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ess.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_event_handler.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gap.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gatt.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gls.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_int.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_pvt.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hids.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hrs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ias.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ips.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_lls.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_lns.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ndcs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_pass.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_plxs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_rscs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_rtus.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_scps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_tps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_uds.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_wpts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_wss.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
@@ -144,7 +385,50 @@
 <v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\ADC_1_INIT.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\ADC_1_INT.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\ADC_1_PM.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\BLE_config.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\BLE_custom_config.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_aios.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ancs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ans.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bas.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bcs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bls.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bms.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_bts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cgms.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cscs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_cts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_custom.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_dis.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ess.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_event_handler.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_gap.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_gatt.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_gls.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_int.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_pvt.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hids.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hrs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_hts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ias.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ips.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_lls.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_lns.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_ndcs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_pass.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_plxs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_rscs.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_rtus.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_scps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_tps.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_uds.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_wpts.lst</v>
+<v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_wss.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
 <v>Lab2Part3-000\Lab2Part3\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
@@ -191,53 +475,7 @@
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Lab2Part3-000</v>
-<v>Lab2Part3-000\Lab2Part3</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_INIT.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_INT.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_PM.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_mcwdt.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sar.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\MCWDT_0_PDL.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\retarget.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm0plus.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\stdio_user.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm0plus.lst</v>
-<v>Lab2Part3-000\Lab2Part3\CortexM0p\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>Lab2Part3-000\EasyMoo</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -248,11 +486,22 @@
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Lab2Part3-000</v>
+<v>Lab2Part3-000\EasyMoo</v>
+<v>Lab2Part3-000\EasyMoo\PSoC 6 Architecture TRM</v>
+<v>Lab2Part3-000\EasyMoo\PSoC 63 Family Datasheet</v>
+<v>Lab2Part3-000\EasyMoo\Peripheral Driver Library</v>
+<v>Lab2Part3-000\EasyMoo\System Reference Guides</v>
+<v>Lab2Part3-000\EasyMoo\BLE_PDL_v2_0.pdf</v>
+<v>Lab2Part3-000\EasyMoo\GPIO_PDL_v1_0</v>
+<v>Lab2Part3-000\EasyMoo\GPIO_PDL_v1_0\GPIO_PDL_v1_0.pdf</v>
+<v>Lab2Part3-000\EasyMoo\SCB_I2C_PDL_v2_0.pdf</v>
+<v>Lab2Part3-000\EasyMoo\SCB_UART_PDL_v2_0.pdf</v>
 <v>Lab2Part3-000\Lab2Part3</v>
 <v>Lab2Part3-000\Lab2Part3\PSoC 6 Architecture TRM</v>
 <v>Lab2Part3-000\Lab2Part3\PSoC 63 Family Datasheet</v>
 <v>Lab2Part3-000\Lab2Part3\Peripheral Driver Library</v>
 <v>Lab2Part3-000\Lab2Part3\System Reference Guides</v>
+<v>Lab2Part3-000\Lab2Part3\BLE_PDL_v2_0.pdf</v>
 <v>Lab2Part3-000\Lab2Part3\Gnd_v1_0.pdf</v>
 <v>Lab2Part3-000\Lab2Part3\GPIO_PDL_v1_0</v>
 <v>Lab2Part3-000\Lab2Part3\GPIO_PDL_v1_0\GPIO_PDL_v1_0.pdf</v>
@@ -271,11 +520,22 @@
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Lab2Part3-000</v>
+<v>Lab2Part3-000\EasyMoo</v>
+<v>Lab2Part3-000\EasyMoo\PSoC 6 Architecture TRM</v>
+<v>Lab2Part3-000\EasyMoo\PSoC 63 Family Datasheet</v>
+<v>Lab2Part3-000\EasyMoo\Peripheral Driver Library</v>
+<v>Lab2Part3-000\EasyMoo\System Reference Guides</v>
+<v>Lab2Part3-000\EasyMoo\BLE_PDL_v2_0.pdf</v>
+<v>Lab2Part3-000\EasyMoo\GPIO_PDL_v1_0</v>
+<v>Lab2Part3-000\EasyMoo\GPIO_PDL_v1_0\GPIO_PDL_v1_0.pdf</v>
+<v>Lab2Part3-000\EasyMoo\SCB_I2C_PDL_v2_0.pdf</v>
+<v>Lab2Part3-000\EasyMoo\SCB_UART_PDL_v2_0.pdf</v>
 <v>Lab2Part3-000\Lab2Part3</v>
 <v>Lab2Part3-000\Lab2Part3\PSoC 6 Architecture TRM</v>
 <v>Lab2Part3-000\Lab2Part3\PSoC 63 Family Datasheet</v>
 <v>Lab2Part3-000\Lab2Part3\Peripheral Driver Library</v>
 <v>Lab2Part3-000\Lab2Part3\System Reference Guides</v>
+<v>Lab2Part3-000\Lab2Part3\BLE_PDL_v2_0.pdf</v>
 <v>Lab2Part3-000\Lab2Part3\Gnd_v1_0.pdf</v>
 <v>Lab2Part3-000\Lab2Part3\GPIO_PDL_v1_0</v>
 <v>Lab2Part3-000\Lab2Part3\GPIO_PDL_v1_0\GPIO_PDL_v1_0.pdf</v>
@@ -300,11 +560,9 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\TopDesign\TopDesign.cysch" />
-<name v=".\main_cm4.c" />
-<name v=".\FSM.h" />
-<name v=".\Light.h" />
-<name v=".\Generated_Source\PSoC6\I2C.c" />
+<name v=".\EasyMoo.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\EasyMoo.cydsn\main_cm0p.c" />
+<name v=".\EasyMoo.cydsn\BLE.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -312,7 +570,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1409, 721" SelectedTabbedMdiWindow="db1ff68e-aa60-4624-9635-32c7a9d2d2fa"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="90b2499e-cd52-49c3-8eec-f422bc3588bb" /><DocumentWindow Key="D:\Desktop\Lab2Part3.cydsn\TopDesign\TopDesign.cysch" Guid="ed436163-d26d-484f-824d-916582716032" /><DocumentWindow Key="D:\Desktop\Lab2Part3.cydsn\main_cm4.c" Guid="a193ef66-37bf-4fc7-aa52-d4d3679cabc4" /><DocumentWindow Key="D:\Desktop\Lab2Part3.cydsn\FSM.h" Guid="db1ff68e-aa60-4624-9635-32c7a9d2d2fa" /><DocumentWindow Key="D:\Desktop\Lab2Part3.cydsn\Light.h" Guid="fdd022a7-c681-42fb-ae0f-0f0720fb99b0" /><DocumentWindow Key="D:\Desktop\Lab2Part3.cydsn\Generated_Source\PSoC6\I2C.c" Guid="89f7c35c-c8ad-46c3-8056-45111a275a20" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1335, 655" SelectedTabbedMdiWindow="e46410b9-60fb-40bb-915b-1c37f073bfdc"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="90b2499e-cd52-49c3-8eec-f422bc3588bb" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\TopDesign\TopDesign.cysch" Guid="e46410b9-60fb-40bb-915b-1c37f073bfdc" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\main_cm0p.c" Guid="d54f0c0f-7843-43d8-a165-bace87220ddf" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\BLE.h" Guid="a15cd99d-0277-4934-bfc9-d7e7c4ec119f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

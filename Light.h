@@ -31,7 +31,7 @@
 #include "stdio.h"
 
 /* Slave addresses */
-#define LIGHT_ADDRESS 0x74    // 1110100[01]
+#define LIGHT_ADDRESS 0x74    // 1110100[0|1]
 
 /* Control Register Bank */
 #define OSR     0x00        // Operational State Register (default 0x42)

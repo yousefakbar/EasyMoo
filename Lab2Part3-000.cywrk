@@ -3,11 +3,12 @@
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
 <CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="Lab2Part3-000" persistent="Lab2Part3-000.cywrk" platform="NOT_USED">
-<current_project name=".\Lab2Part3.cyprj" />
+<current_project name=".\EasyMoo.cydsn\EasyMoo.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
 <v>.\Lab2Part3.cyprj</v>
+<v>.\EasyMoo.cydsn\EasyMoo.cyprj</v>
 </projects>
 <workspace_id v="c73c0e28-f76a-4e2d-894f-cb4559c06ea4" />
 <WriteAppVersionLastSavedWith v="4.2.0.641" />
