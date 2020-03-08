@@ -161,6 +161,7 @@
 <dep name=".\Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_wpts.h" />
 <dep name=".\Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_wss.h" />
 <dep name=".\Generated_Source\PSoC6\project.h" />
+<dep name=".\Accelerometer.h" />
 <dep name=".\BLE.h" />
 <dep name=".\Light.h" />
 <dep name=".\cy_ble_config.h" />
@@ -316,6 +317,7 @@
 <file name=".\Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_wpts.h" />
 <file name=".\Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_wss.h" />
 <file name=".\Generated_Source\PSoC6\project.h" />
+<file name=".\Accelerometer.h" />
 <file name=".\BLE.h" />
 <file name=".\Light.h" />
 <file name=".\cy_ble_config.h" />
@@ -17420,7 +17422,7 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0p" v="132281412100065681" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0p" v="132281451263935178" />
 <name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM4" v="132281301776465876" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>

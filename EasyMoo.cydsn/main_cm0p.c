@@ -23,9 +23,12 @@
 /* Project Firmware Dependencies */
 #include "BLE.h"
 #include "Light.h"
+#include "Accelerometer.h"
 
 /* Global Variables */
-uint16_t xChannel, yChannel, zChannel, temperature;
+uint16_t xChannel, yChannel, zChannel, temperature;	// Light Sensor Vars
+uint16_t accX, accY, accZ;				// Accelerometer
+uint16_t gyroX, gyroY, gyroZ;				// Gyroscope
 
 int main(void)
 {
@@ -53,6 +56,7 @@ int main(void)
         //printf("%d Connected Devices\r\n", bonded_list.noOfDevices);
         lightMeasure(&xChannel, &yChannel, &zChannel, &temperature);
         lightPrint(xChannel, yChannel, zChannel);
+        
         CyDelay(1000);
     }
 }
