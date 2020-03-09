@@ -1,173 +1,116 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
+#ifndef _QUEUE_H
+#define _QUEUE_H
 
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-
+/*
+ * queue_t - Queue type
+ *
+ * A queue is a FIFO data structure. Data items are enqueued one after the
+ * other.  When dequeueing, the queue must returned the oldest enqueued item
+ * first and so on.
+ *
+ * Apart from delete and iterate operations, all operations should be O(1).
+ */
 typedef struct queue* queue_t;
 
-typedef struct Node
-{
-    void *data;
-    struct Node *next;
-}*node_t;
+/*
+ * queue_create - Allocate an empty queue
+ *
+ * Create a new object of type 'struct queue' and return its address.
+ *
+ * Return: Pointer to new empty queue. NULL in case of failure when allocating
+ * the new queue.
+ */
+queue_t queue_create(void);
 
-struct queue
-{
-    node_t first;
-    node_t last;
-    int size;
-};
+/*
+ * queue_destroy - Deallocate a queue
+ * @queue: Queue to deallocate
+ *
+ * Deallocate the memory associated to the queue object pointed by @queue.
+ *
+ * Return: -1 if @queue is NULL or if @queue is not empty. 0 if @queue was
+ * successfully destroyed.
+ */
+int queue_destroy(queue_t queue);
 
-queue_t queue_create(void)
-{
-    queue_t queue;
+/*
+ * queue_enqueue - Enqueue data item
+ * @queue: Queue in which to enqueue item
+ * @data: Address of data item to enqueue
+ *
+ * Enqueue the address contained in @data in the queue @queue.
+ *
+ * Return: -1 if @queue or @data are NULL, or in case of memory allocation error
+ * when enqueing. 0 if @data was successfully enqueued in @queue.
+ */
+int queue_enqueue(queue_t queue, void *data);
 
-    queue = malloc(sizeof(*queue));
-    queue->first = queue->last = NULL;
-    queue->size = 0;
-    return queue;
-}
+/*
+ * queue_dequeue - Dequeue data item
+ * @queue: Queue in which to dequeue item
+ * @data: Address of data pointer where item is received
+ *
+ * Remove the oldest item of queue @queue and assign this item (the value of a
+ * pointer) to @data.
+ *
+ * Return: -1 if @queue or @data are NULL, or if the queue is empty. 0 if @data
+ * was set with the oldest item available in @queue.
+ */
+int queue_dequeue(queue_t queue, void **data);
 
-int queue_destroy(queue_t queue)
-{
-    if (!queue  || queue->size != 0)
-    {
-        return -1;
-    }
-    free(queue);
-    return 0;
-}
+/*
+ * queue_delete - Delete data item
+ * @queue: Queue in which to delete item
+ * @data: Data to delete
+ *
+ * Find in queue @queue, the first (ie oldest) item equal to @data and delete
+ * this item.
+ *
+ * Return: -1 if @queue or @data are NULL, of if @data was not found in the
+ * queue. 0 if @data was found and deleted from @queue.
+ */
+int queue_delete(queue_t queue, void *data);
 
-int queue_enqueue(queue_t queue, void *data)
-{
-    node_t pushed;
-
-    if (!queue  || !data )
-    {
-        return -1;
-    }
-
-    pushed = malloc(sizeof(*pushed));
-    if (!pushed )
-    {
-        return -1;
-    }
-    pushed->data = data;
-    pushed->next = NULL;
-
-    if (queue->last != NULL)
-    {
-        queue->last->next = pushed;
-    }
-    else
-    {
-        queue->first = pushed;
-    }
-
-    queue->last = pushed;
-    queue->size++;
-    return 0;
-}
-
-int queue_dequeue(queue_t queue, void **data)
-{
-    node_t popped, next;
-
-    if (!queue || !data || queue->size == 0)
-    {
-        return -1;
-    }
-
-    popped = queue->first;
-    *data = popped->data;
-    next = popped->next;
-    free(popped);
-
-    queue->first = next;
-    queue->size--;
-    if (queue->size == 0)
-    {
-        queue->last = NULL;
-    }
-    return 0;
-}
-
-int queue_delete(queue_t queue, void *data)
-{
-    node_t current, previous, next;
-
-    if (!queue  || !data  || queue->size == 0)
-    {
-        return -1;
-    }
-
-    for (current = queue->first, previous = NULL;
-         current != NULL && current->data != data;
-         previous = current, current = current->next)
-        ;
-    if (!current )
-    {
-        return -1;
-    }
-    next = current->next;
-    free(current);
-
-    if (!previous )
-    {
-        queue->first = next;
-    }
-    else
-    {
-        previous->next = next;
-    }
-    queue->size--;
-    if (queue->size == 0)
-    {
-        queue->last = NULL;
-    }
-    return 0;
-}
-
+/*
+ * queue_func_t - Queue callback function type
+ * @data: Data item
+ * @arg: Extra argument
+ *
+ * Return: 0 to continue iterating, 1 to stop iterating at this particular item.
+ */
 typedef int (*queue_func_t)(void *data, void *arg);
 
-int queue_iterate(queue_t queue, queue_func_t func, void *arg, void **data)
-{
-    node_t current;
-    if (data != NULL)
-    {
-        *data = NULL;
-    }
+/*
+ * queue_iterate - Iterate through a queue
+ * @queue: Queue to iterate through
+ * @func: Function to call on each queue item
+ * @arg: (Optional) Extra argument to be passed to the callback function
+ * @data: (Optional) Address of data pointer where an item can be received
+ *
+ * This function iterates through the items in the queue @queue, from the oldest
+ * item to the newest item, and calls the given callback function @func on each
+ * item. The callback function receives the current data item and @arg.
+ *
+ * If @func returns 1 for a specific item, the iteration stops prematurely. In
+ * this case only, if @data is different than NULL, then @data receives the data
+ * item where the iteration was stopped.
+ *
+ * We assume that operations that modify the queue (such as queue_delete(),
+ * queue_enqueue(), or queue_dequeue()) cannot be called inside @func on the
+ * current data item. Doing so would result in undefined behavior.
+ *
+ * Return: -1 if @queue or @func are NULL, 0 otherwise.
+ */
+int queue_iterate(queue_t queue, queue_func_t func, void *arg, void **data);
 
-    if (!queue  || !func )
-    {
-        return -1;
-    }
+/*
+ * queue_length - Queue length
+ * @queue: Queue to get the length of
+ *
+ * Return the length of queue @queue.
+ *
+ * Return: -1 if @queue is NULL. Length of @queue otherwise.
+ */
+int queue_length(queue_t queue);
 
-    for (current = queue->first;
-         current != NULL && func(current->data, arg) != 1;
-         current = current->next);    
-    if (current != NULL && data != NULL)
-    {
-        *data = current->data;
-    }
-
-    return 0;
-}
-
-int queue_length(queue_t queue)
-{
-    return queue ? queue->size : -1;
-}
-
-/* [] END OF FILE */
+#endif /* _QUEUE_H */

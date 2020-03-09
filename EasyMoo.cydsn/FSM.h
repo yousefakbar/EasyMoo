@@ -27,8 +27,8 @@
 
 #include "stdio.h"
 
-/* Number of states in our Finite State Machines */
-#define NUM_STATES	(5)
+#define NUM_STATES      (5)
+#define CRIT_INACTIVE   (600)
 
 enum STATES{OFF, SENSOR, SLEEP, CRITICAL, TALK};
 

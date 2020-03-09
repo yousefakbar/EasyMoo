@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2Part3-000\EasyMoo\CM4 (Core 1)\Source Files\main_cm4.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\Light.h">
 <ExpandedNodeIds>
 <v>Lab2Part3-000</v>
 <v>Lab2Part3-000\Custom_TickTimer_RTC01</v>
@@ -30,6 +30,8 @@
 <v>Lab2Part3-000\EasyMoo\CM0p (Core 0)</v>
 <v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files</v>
 <v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\RTC_Alarm.h</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files\Queue.c</v>
 <v>Lab2Part3-000\EasyMoo\CM4 (Core 1)</v>
 <v>Lab2Part3-000\EasyMoo\CM4 (Core 1)\Source Files</v>
 <v>Lab2Part3-000\Lab2Part3\TopDesign</v>
@@ -61,6 +63,12 @@
 <v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\Queue.h</v>
 <v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Header Files\RTC_Alarm.h</v>
 <v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files\ARM GCC Generic</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files\ARM IAR Generic</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files\ARM MDK Generic</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files\main_cm0p.c</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files\Queue.c</v>
+<v>Lab2Part3-000\EasyMoo\CM0p (Core 0)\Source Files\system_psoc6_cm0plus.c</v>
 <v>Lab2Part3-000\EasyMoo\CM4 (Core 1)</v>
 <v>Lab2Part3-000\EasyMoo\CM4 (Core 1)\ARM GCC Generic</v>
 <v>Lab2Part3-000\EasyMoo\CM4 (Core 1)\ARM IAR Generic</v>
@@ -190,6 +198,7 @@
 <v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
 <v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
 <v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
+<v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\Queue.lst</v>
 <v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\retarget.lst</v>
 <v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\RTC.lst</v>
 <v>Lab2Part3-000\EasyMoo\CortexM0p\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm0plus.lst</v>
@@ -633,10 +642,10 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\EasyMoo.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\EasyMoo.cydsn\main_cm0p.c" />
+<name v=".\EasyMoo.cydsn\FSM.h" />
+<name v=".\EasyMoo.cydsn\RTC_Alarm.h" />
 <name v=".\EasyMoo.cydsn\Light.h" />
-<name v=".\EasyMoo.cydsn\Accelerometer.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -644,7 +653,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1396, 721" SelectedTabbedMdiWindow="d54f0c0f-7843-43d8-a165-bace87220ddf"><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\TopDesign\TopDesign.cysch" Guid="e46410b9-60fb-40bb-915b-1c37f073bfdc" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\main_cm0p.c" Guid="d54f0c0f-7843-43d8-a165-bace87220ddf" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Light.h" Guid="9bcd96b1-c049-48ce-a1dc-3af19067f12e" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Accelerometer.h" Guid="bb71c3f6-79b4-48c3-a19e-ba8be5e2e188" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1370, 601" SelectedTabbedMdiWindow="d54f0c0f-7843-43d8-a165-bace87220ddf"><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\main_cm0p.c" Guid="d54f0c0f-7843-43d8-a165-bace87220ddf" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\FSM.h" Guid="b89aba5a-2c41-45ef-9b8e-f7ab98bccbc5" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\RTC_Alarm.h" Guid="24898bab-1ff8-4546-ae77-578ecee0bc38" /><DocumentWindow Key="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Light.h" Guid="4cacb459-334f-4a4e-9446-36008413ee30" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

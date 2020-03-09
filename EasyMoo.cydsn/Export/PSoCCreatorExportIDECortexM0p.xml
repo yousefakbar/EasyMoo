@@ -47,6 +47,7 @@
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">iar\startup_psoc6_01_cm0plus.s</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">mdk\startup_psoc6_01_cm0plus.s</File>
           <File BuildType="BUILD" Toolchain="">system_psoc6_cm0plus.c</File>
+          <File BuildType="BUILD" Toolchain="">Queue.c</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">cy8c6xx7_cm0plus.ld</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">cy8c6xx7_cm0plus.icf</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">cy8c6xx7_cm0plus.scat</File>
