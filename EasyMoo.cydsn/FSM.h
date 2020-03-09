@@ -25,10 +25,6 @@
 * As mentioned, OFF is the starting state.
 ******************************************************************************/
 
-/* TODO
- *  - (optional) blink lights accordingly
- */
-
 #include "stdio.h"
 
 /* Number of states in our Finite State Machines */

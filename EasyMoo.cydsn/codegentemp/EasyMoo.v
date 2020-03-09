@@ -1,6 +1,6 @@
 // ======================================================================
 // EasyMoo.v generated from TopDesign.cysch
-// 03/08/2020 at 00:35
+// 03/08/2020 at 20:05
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -499,6 +499,27 @@ module SCB_I2C_PDL_v2_0_3 (
 
 endmodule
 
+// RTC_PDL_v2_0(DateFormat=0, DaylightSavingsTimeEn=false, DayOfMonth=8, DayOfMonthDstStart=22, DayOfMonthDstStop=22, DayOfWeek=1, DayOfWeekDstStart=1, DayOfWeekDstStop=1, DstDateType=0, EnableRtcInterrupt=true, Hour=20, HoursDstStart=0, HoursDstStop=0, Month=3, MonthDstStart=3, MonthDstStop=10, RemoveIntr=false, TimeFormat=0, TimeResetOnStart=false, WeekOfMonthDstStart=6, WeekOfMonthDstStop=6, Year=20, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=RTC_PDL_v2_0, CY_CONFIG_TITLE=RTC, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=RTC, CY_INSTANCE_SHORT_NAME=RTC, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_PDL_DRIVER_NAME=rtc, CY_PDL_DRIVER_REQ_VERSION=2.0.0, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.2, INSTANCE_NAME=RTC, )
+module RTC_PDL_v2_0_4 ;
+
+
+          wire  Net_3;
+
+    cy_mxs40_rtc_v1_0 RTC (
+        .interrupt(Net_3));
+
+
+	cy_mxs40_isr_v1_0
+		#(.deepsleep_required(0),
+		  .int_type(2'b10))
+		RTC_IRQ
+		 (.int_signal(Net_3));
+
+
+
+
+endmodule
+
 // top
 module top ;
 
@@ -612,6 +633,8 @@ module top ;
 		  .io({Net_19}),
 		  .siovref(tmpSIOVREF__I2C_SDA_net));
 
+
+    RTC_PDL_v2_0_4 RTC ();
 
 
 

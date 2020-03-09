@@ -20,6 +20,13 @@
 /* ARM CM0+ */
 #if (((__CORTEX_M == 0) && (CY_CORE_ID == 0)))
 
+    /* RTC_RTC_IRQ */
+    const cy_stc_sysint_t RTC_RTC_IRQ_cfg = {
+        .intrSrc = (IRQn_Type)RTC_RTC_IRQ__INTC_CORTEXM0P_MUX,
+        .cm0pSrc = (cy_en_intr_t)RTC_RTC_IRQ__INTC_NUMBER,
+        .intrPriority = RTC_RTC_IRQ__INTC_CORTEXM0P_PRIORITY
+    };
+
     /* BLE_bless_isr */
     const cy_stc_sysint_t BLE_bless_isr_cfg = {
         .intrSrc = (IRQn_Type)BLE_bless_isr__INTC_CORTEXM0P_MUX,

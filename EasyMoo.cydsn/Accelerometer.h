@@ -108,3 +108,19 @@ void gyroMeasure(uint16_t *gyroX, uint16_t *gyroY, uint16_t *gyroZ)
     *gyroY       = accI2CRead(YGYRO_H);
     *gyroZ       = accI2CRead(ZGYRO_H);
 }
+
+void accPrint(uint16_t x, uint16_t y, uint16_t z)
+{
+    printf("\r\n\r\nAccelerometer Data:\r\n"
+        "X Acceleration: %d\r\n"
+        "Y Acceleration: %d\r\n"
+        "Z Acceleration: %d\r\n", x, y, z);
+}
+
+void gyroPrint(uint16_t x, uint16_t y, uint16_t z)
+{
+    printf("\r\n\r\nGyroscope Data:\r\n"
+        "X Gyroscope: %d\r\n"
+        "Y Gyroscope: %d\r\n"
+        "Z Gyroscope: %d\r\n", x, y, z);
+}

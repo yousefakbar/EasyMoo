@@ -1,5 +1,5 @@
 # EasyMoo
-# 2020-03-08 08:35:10Z
+# 2020-03-09 03:05:23Z
 
 dont_use_location p4usbcell -1 -1 0
 dont_use_location USB -1 -1 0
@@ -22,3 +22,5 @@ set_location "\BLE:cy_mxs40_ble\" BLE -1 -1 0
 set_location "\BLE:bless_isr\" interrupt -1 -1 24
 set_location "\I2C:SCB\" SCB -1 -1 6
 set_location "\I2C:SCB_IRQ\" interrupt -1 -1 47
+set_location "\RTC:RTC\" RTC -1 -1 0
+set_location "\RTC:RTC_IRQ\" interrupt -1 -1 21

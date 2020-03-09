@@ -13,6 +13,7 @@
     <Dir fileName="drivers/peripheral/lvd/" buildType="OTHER;;;;" />
     <Dir fileName="drivers/peripheral/profile/" buildType="OTHER;;;;" />
     <Dir fileName="drivers/peripheral/prot/" buildType="OTHER;;;;" />
+    <Dir fileName="drivers/peripheral/rtc/" buildType="OTHER;;;;" />
     <Dir fileName="drivers/peripheral/scb/" buildType="OTHER;;;;" />
     <Dir fileName="drivers/peripheral/sysanalog/" buildType="OTHER;;;;" />
     <Dir fileName="drivers/peripheral/sysclk/" buildType="OTHER;;;;" />
@@ -98,6 +99,10 @@
           <folder folderName="prot">
             <file fileName="cy_prot.c" physicalFilePath="D:\Program Files (x86)\Cypress\PDL\3.1.0\drivers\peripheral\prot\cy_prot.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
             <file fileName="cy_prot.h" physicalFilePath="D:\Program Files (x86)\Cypress\PDL\3.1.0\drivers\peripheral\prot\cy_prot.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          </folder>
+          <folder folderName="rtc">
+            <file fileName="cy_rtc.c" physicalFilePath="D:\Program Files (x86)\Cypress\PDL\3.1.0\drivers\peripheral\rtc\cy_rtc.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+            <file fileName="cy_rtc.h" physicalFilePath="D:\Program Files (x86)\Cypress\PDL\3.1.0\drivers\peripheral\rtc\cy_rtc.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
           </folder>
           <folder folderName="scb">
             <file fileName="cy_scb_common.c" physicalFilePath="D:\Program Files (x86)\Cypress\PDL\3.1.0\drivers\peripheral\scb\cy_scb_common.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />

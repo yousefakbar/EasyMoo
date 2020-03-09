@@ -1,4 +1,4 @@
-Loading plugins phase: Elapsed time ==> 0s.172ms
+Loading plugins phase: Elapsed time ==> 0s.166ms
 <CYPRESSTAG name="CyDsfit arguments...">
 cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -d CYBLE-416045-02 -s D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Generated_Source\PSoC6 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
@@ -7,10 +7,10 @@ ADD: fit.M0067: information: Clock Information: (The WCO is enabled. Chip startu
 
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 1s.842ms
+Elaboration phase: Elapsed time ==> 2s.267ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.050ms
+HDL generation phase: Elapsed time ==> 0s.048ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -44,7 +44,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\L
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Sun Mar 08 00:35:03 2020
+Sun Mar 08 20:05:15 2020
 
 
 ======================================================================
@@ -54,7 +54,7 @@ Options  :    -yv2 -q10 EasyMoo.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Sun Mar 08 00:35:03 2020
+Sun Mar 08 20:05:15 2020
 
 Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
 Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
@@ -86,7 +86,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\L
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Sun Mar 08 00:35:03 2020
+Sun Mar 08 20:05:15 2020
 
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -113,7 +113,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\L
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Sun Mar 08 00:35:03 2020
+Sun Mar 08 20:05:16 2020
 
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -195,14 +195,14 @@ CYPRESS_DIR    : D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\wa
 Warp Program   : D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 EasyMoo.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 0s.580ms
+Warp synthesis phase: Elapsed time ==> 0s.664ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Sunday, 08 March 2020 00:35:03
+cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Sunday, 08 March 2020 20:05:16
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -d CYBLE-416045-02 EasyMoo.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.204ms
+Design parsing phase: Elapsed time ==> 0s.222ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -593,6 +593,16 @@ Design Equations
             deepsleep_required = 0
             int_type = "10"
         }
+
+    interrupt: Name =\RTC:RTC_IRQ\
+        PORT MAP (
+            interrupt => \RTC:Net_3\ );
+        Properties:
+        {
+            cy_registers = ""
+            deepsleep_required = 0
+            int_type = "10"
+        }
     </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Technology mapping summary" expanded>
@@ -605,14 +615,14 @@ Resource Type                 : Used : Free :  Max :  % Used
 ============================================================
 Digital Clocks                :    0 :    8 :    8 :  0.00 %
 Crypto Accelerator            :    0 :    1 :    1 :  0.00 %
-Interrupts [CM0+]             :    6 :   26 :   32 : 18.75 %
+Interrupts [CM0+]             :    7 :   25 :   32 : 21.88 %
 Interrupts [CM4]              :    2 :  145 :  147 :  1.36 %
 IO                            :    8 :   28 :   36 : 22.22 %
 Interprocessor Communication  :    0 :   16 :   16 :  0.00 %
 MCWDT                         :    0 :    2 :    2 :  0.00 %
 CapSense                      :    0 :    1 :    1 :  0.00 %
 Energy Profiler               :    0 :    1 :    1 :  0.00 %
-Real Time Clock               :    0 :    1 :    1 :  0.00 %
+Real Time Clock               :    1 :    0 :    1 : 100.00 %
 Bluetooth Low Energy          :    1 :    0 :    1 : 100.00 %
 I2S                           :    0 :    1 :    1 :  0.00 %
 PDM/PCM                       :    0 :    1 :    1 :  0.00 %
@@ -637,8 +647,8 @@ Sample and Hold               :    0 :    1 :    1 :  0.00 %
 SAR ADC                       :    0 :    1 :    1 :  0.00 %
 DieTemp Sensor                :    0 :    1 :    1 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.050ms
-Tech Mapping phase: Elapsed time ==> 0s.106ms
+Technology Mapping: Elapsed time ==> 0s.059ms
+Tech Mapping phase: Elapsed time ==> 0s.120ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="FFB & IO Pre Placement">
@@ -657,6 +667,7 @@ CPUSS                               : CPUSS_[FFB(CPUSS,0)]
 SRSS                                : SRSS_[FFB(SRSS,0)]                 
 \BLE:cy_mxs40_ble\                  : BLE_[FFB(BLE,0)]                   
 \I2C:SCB\                           : SCB_[FFB(SCB,6)]                   
+\RTC:RTC\                           : RTC_[FFB(RTC,0)]                   
 \UART:rx(0)\                        : [IOP=(5)][IoId=(0)]                
 \UART:tx(0)\                        : [IOP=(5)][IoId=(1)]                
 \UART:SCB\                          : SCB_[FFB(SCB,5)]                   
@@ -664,15 +675,15 @@ SRSS                                : SRSS_[FFB(SRSS,0)]
 </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Real Analog Placement">
-Elapsed time ==> 0.1181630s
+Elapsed time ==> 0.1380625s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 0s.711ms
+Analog Placement phase: Elapsed time ==> 0s.836ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0049050 secs
+Route success=True, Iterations=1 Elapsed=0.0019680 secs
 </CYPRESSTAG>
-Analog Routing phase: Elapsed time ==> 0s.005ms
+Analog Routing phase: Elapsed time ==> 0s.001ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -699,7 +710,7 @@ Map of item to net {
 }
 Mux Info {
 }
-Analog Code Generation phase: Elapsed time ==> 0s.018ms
+Analog Code Generation phase: Elapsed time ==> 0s.021ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
@@ -718,7 +729,7 @@ PLD Packing: Elapsed time ==> 0s.000ms
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.010ms
+Partitioning: Elapsed time ==> 0s.011ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -748,6 +759,16 @@ UDB [UDB=(1,3)] is empty.
 UDB [UDB=(1,4)] is empty.
 UDB [UDB=(1,5)] is empty.
 Intr container @ [IntrContainer=(0)]: 
+  Intr@ [IntrContainer=(0)][IntrId=(21)] 
+    interrupt: Name =\RTC:RTC_IRQ\
+        PORT MAP (
+            interrupt => \RTC:Net_3\ );
+        Properties:
+        {
+            cy_registers = ""
+            deepsleep_required = 0
+            int_type = "10"
+        }
   Intr@ [IntrContainer=(0)][IntrId=(24)] 
     interrupt: Name =\BLE:bless_isr\
         PORT MAP (
@@ -1236,7 +1257,15 @@ PDM group 0: empty
 CTDAC group 0: empty
 SAMPLEHOLD group 0: empty
 MCWDT group 0: empty
-RTC group 0: empty
+RTC group 0: 
+    Real Time Clock @ F(RTC,0): 
+    RTC: Name =\RTC:RTC\
+        PORT MAP (
+            interrupt => \RTC:Net_3\ );
+        Properties:
+        {
+            cy_registers = ""
+        }
 </CYPRESSTAG>
 <CYPRESSTAG name="Port Configuration Details">
 
@@ -1260,33 +1289,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |                       Name |
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.014ms
-Digital Placement phase: Elapsed time ==> 5s.602ms
+Digital component placer commit/Report: Elapsed time ==> 0s.017ms
+Digital Placement phase: Elapsed time ==> 5s.653ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 "D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjrouter.exe" --xml-path "D:\Documents\PSoC Creator\4.2\Devices\psoc6/0/route_arch-rrg.cydata" --vh2-path "EasyMoo_r.vh2" --pcf-path "EasyMoo.pco" --des-name "EasyMoo" --dsf-path "EasyMoo.dsf" --sdc-path "EasyMoo.sdc" --lib-path "EasyMoo_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 0s.953ms
+Digital Routing phase: Elapsed time ==> 0s.904ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.559ms
+Bitstream Generation phase: Elapsed time ==> 0s.516ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
 Bitstream Verification phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in EasyMoo_timing.html.
-Static timing analysis phase: Elapsed time ==> 7s.743ms
+Static timing analysis phase: Elapsed time ==> 8s.378ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.167ms
+Design database save phase: Elapsed time ==> 0s.170ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 16s.125ms
+cydsfit: Elapsed time ==> 16s.865ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 16s.126ms
-API generation phase: Elapsed time ==> 0s.847ms
-Dependency generation phase: Elapsed time ==> 0s.036ms
+Fitter phase: Elapsed time ==> 16s.866ms
+API generation phase: Elapsed time ==> 0s.815ms
+Dependency generation phase: Elapsed time ==> 0s.024ms
 Cleanup phase: Elapsed time ==> 0s.000ms

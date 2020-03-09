@@ -46,6 +46,11 @@ net \I2C:intr_wire\
 	switch ":SCBcontainer:SCB[6].interrupt==>:intc_0:interrupt47.interrupt"
 	term   ":intc_0:interrupt47.interrupt"
 end \I2C:intr_wire\
+net \RTC:Net_3\
+	term   ":RTCcontainer:RTC[0].interrupt"
+	switch ":RTCcontainer:RTC[0].interrupt==>:intc_0:interrupt21.interrupt"
+	term   ":intc_0:interrupt21.interrupt"
+end \RTC:Net_3\
 net \UART:Net_1172\
 	term   ":ioport5:pin0.fb"
 	switch ":ioport5:pin0.fb==>:ioport5:smartio_mux_out0.direct_in"

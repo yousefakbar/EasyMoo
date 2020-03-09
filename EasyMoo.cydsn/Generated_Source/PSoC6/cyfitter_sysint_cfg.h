@@ -21,6 +21,9 @@
 
 /* ARM CM0+ */
 #if (((__CORTEX_M == 0) && (CY_CORE_ID == 0)))
+    #define RTC_RTC_IRQ__INTC_ASSIGNED 1u
+    extern const cy_stc_sysint_t RTC_RTC_IRQ_cfg;
+
     #define BLE_bless_isr__INTC_ASSIGNED 1u
     extern const cy_stc_sysint_t BLE_bless_isr_cfg;
 

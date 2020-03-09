@@ -1,5 +1,5 @@
 -- Project:   EasyMoo
--- Generated: 03/08/2020 00:35:10
+-- Generated: 03/08/2020 20:05:23
 -- PSoC Creator  4.2
 
 ENTITY EasyMoo IS
@@ -63,6 +63,7 @@ ARCHITECTURE __DEFAULT__ OF EasyMoo IS
     SIGNAL \I2C:clock_wire_ff0\ : bit;
     ATTRIBUTE global_signal OF \I2C:clock_wire_ff0\ : SIGNAL IS true;
     SIGNAL \I2C:intr_wire\ : bit;
+    SIGNAL \RTC:Net_3\ : bit;
     SIGNAL \UART:Net_1172\ : bit;
     SIGNAL \UART:Net_161\ : bit;
     SIGNAL \UART:Net_847_ff1\ : bit;
@@ -107,6 +108,8 @@ ARCHITECTURE __DEFAULT__ OF EasyMoo IS
     ATTRIBUTE Location OF \BLE:bless_isr\ : LABEL IS "[IntrContainer=(0)][IntrId=(24)]";
     ATTRIBUTE Location OF \I2C:SCB\ : LABEL IS "F(SCB,6)";
     ATTRIBUTE Location OF \I2C:SCB_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(47)]";
+    ATTRIBUTE Location OF \RTC:RTC\ : LABEL IS "F(RTC,0)";
+    ATTRIBUTE Location OF \RTC:RTC_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(21)]";
     COMPONENT BLE
         PORT (
             ext_pa_lna_chip_en_out : OUT std_ulogic;
@@ -442,6 +445,10 @@ ARCHITECTURE __DEFAULT__ OF EasyMoo IS
             out_clock : IN std_ulogic;
             out_clock_en : IN std_ulogic;
             out_reset : IN std_ulogic);
+    END COMPONENT;
+    COMPONENT RTC
+        PORT (
+            interrupt : OUT std_ulogic);
     END COMPONENT;
     COMPONENT SCB
         PORT (
@@ -1034,6 +1041,21 @@ BEGIN
             int_type => "10")
         PORT MAP(
             interrupt => \I2C:intr_wire\,
+            clock => ClockBlock_PeriClk);
+
+    \RTC:RTC\:RTC
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            interrupt => \RTC:Net_3\);
+
+    \RTC:RTC_IRQ\:interrupt
+        GENERIC MAP(
+            cy_registers => "",
+            deepsleep_required => 0,
+            int_type => "10")
+        PORT MAP(
+            interrupt => \RTC:Net_3\,
             clock => ClockBlock_PeriClk);
 
 END __DEFAULT__;

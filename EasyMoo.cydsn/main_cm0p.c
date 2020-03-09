@@ -15,7 +15,6 @@
 *	Yousef H. Akbar & and Cow Team
 *	Dept. Electrical and Computer Engineering
 *	University of California, Davis
-
 ******************************************************************************/
 #include "project.h"
 #include "stdio.h"
@@ -24,17 +23,19 @@
 #include "BLE.h"
 #include "Light.h"
 #include "Accelerometer.h"
+#include "RTC_Alarm.h"
 
 /* Global Variables */
 uint16_t xChannel, yChannel, zChannel, temperature;	// Light Sensor Vars
 uint16_t accX, accY, accZ;				// Accelerometer
 uint16_t gyroX, gyroY, gyroZ;				// Gyroscope
 
+/* The interrupt status variable */
+
 int main(void)
 {
     __enable_irq(); /* Enable global interrupts. */
-    /* Enable CM4.  CY_CORTEX_M4_APPL_ADDR must be updated if CM4 memory layout is changed. */
-    Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR); 
+    Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
 
     /* UART Initialization */
     UART_Start();
@@ -43,20 +44,29 @@ int main(void)
     /* initiate I2C */
     I2C_Start();
     
-    /* TODO: BLE Broadcast Trial */
-    //cy_stc_ble_gap_bonded_device_list_info_t bonded_list;
-    //broadcastBLE();
     CyDelay(5000);
+    
+    init_RTC();
     
     for(;;)
     {
-        /* TODO: BLE Broadcast Trial */
-        //cy_en_ble_api_result_t bondres = Cy_BLE_GAP_GetBondList(&bonded_list);
-        //printf("Result: %d\r\n", bondres);
-        //printf("%d Connected Devices\r\n", bonded_list.noOfDevices);
         lightMeasure(&xChannel, &yChannel, &zChannel, &temperature);
         lightPrint(xChannel, yChannel, zChannel);
         
         CyDelay(1000);
+        
+        /* If the alarm flag is set, clear it, toggle the LED, and step */
+        if(alarmFlag)  /* the flag is set, meaning time has expired */
+        {
+			/* We have handled this alarm */
+			alarmFlag = 0u;	
+            
+            /* Configure the next RTC alarm, add the interval to the time
+               for the next alarm */
+            RtcStepAlarm();
+        }
+
+        /* Go to Deep Sleep mode until next interrupt  */
+        Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
     }
 }

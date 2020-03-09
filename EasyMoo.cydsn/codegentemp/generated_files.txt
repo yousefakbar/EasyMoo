@@ -23,6 +23,8 @@
   <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\BLE_custom_config.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
   <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\I2C.c" value="SOURCE_C;CortexM0p,CortexM4;;;;I2C" />
   <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\I2C.h" value="HEADER;;;;;I2C" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\RTC.c" value="SOURCE_C;CortexM0p,CortexM4;;;;RTC" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\RTC.h" value="HEADER;;;;;RTC" />
   <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />
   <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\I2C_SCBCLK.h" value="HEADER;;;;;I2C_SCBCLK" />
   <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\project.h" value="OTHER;;;;;" />

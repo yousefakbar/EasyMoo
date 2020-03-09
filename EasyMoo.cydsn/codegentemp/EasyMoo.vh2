@@ -2,7 +2,7 @@
 --	Conversion of EasyMoo.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Mar 08 00:35:03 2020
+--	Sun Mar 08 20:05:16 2020
 --
 
 USE cypress.cypress.all;
@@ -81,6 +81,7 @@ SIGNAL tmpFB_0__I2C_SCL_net_0 : bit;
 TERMINAL tmpSIOVREF__I2C_SCL_net_0 : bit;
 SIGNAL tmpFB_0__I2C_SDA_net_0 : bit;
 TERMINAL tmpSIOVREF__I2C_SDA_net_0 : bit;
+SIGNAL \RTC:Net_3\ : bit;
 BEGIN
 
 one <=  ('1') ;
@@ -307,5 +308,13 @@ I2C_SDA:cy_mxs40_gpio_v1_0
 		io=>Net_19,
 		annotation=>(open),
 		siovref=>(tmpSIOVREF__I2C_SDA_net_0));
+\RTC:RTC\:cy_mxs40_rtc_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(interrupt=>\RTC:Net_3\);
+\RTC:RTC_IRQ\:cy_mxs40_isr_v1_0
+	GENERIC MAP(cy_registers=>"",
+		deepsleep_required=>'0',
+		int_type=>"10")
+	PORT MAP(int_signal=>\RTC:Net_3\);
 
 END R_T_L;
