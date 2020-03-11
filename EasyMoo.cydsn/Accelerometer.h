@@ -20,6 +20,7 @@
 
 #include "project.h"
 #include "stdio.h"
+#include "Queue.h"
 
 /* Slave addresses */
 #define ACC_ADDRESS 0x68    // 1101000[0|1]
@@ -33,6 +34,16 @@
 #define XGYRO_H     0x33
 #define YGYRO_H     0x35
 #define ZGYRO_H     0x37
+
+/* Critical benchmarks */
+#define CRIT_INACTIVITY	(12)
+#define ACC_CUTOFF	(10)
+
+/* Global Variables */
+int accInactive;
+int prev_gX = 0;
+int prev_gY = 0;
+int prev_gZ = 0;
 
 uint16_t accI2CRead(uint8_t reg)
 {
@@ -123,4 +134,45 @@ void gyroPrint(uint16_t x, uint16_t y, uint16_t z)
         "X Gyroscope: %d\r\n"
         "Y Gyroscope: %d\r\n"
         "Z Gyroscope: %d\r\n", x, y, z);
+}
+
+void acc_process_data(uint16_t accX, uint16_t accY, uint16_t accZ, queue_t aq)
+{
+	int inactive_count = 0;
+	int is_cow_moving = accX >= ACC_CUTOFF || accY >= ACC_CUTOFF || accZ >=
+		ACC_CUTOFF;
+	if (!is_cow_moving)
+		inactive_count++;
+	else
+		inactive_count = 0;
+
+	if (queue_enqueue(aq, &accX) != 0)
+		printf("Failed to queue accelerometer data.\r\n");
+	if (queue_enqueue(aq, &accY) != 0)
+		printf("Failed to queue accelerometer data.\r\n");
+	if (queue_enqueue(aq, &accZ) != 0)
+		printf("Failed to queue accelerometer data.\r\n");
+
+	accInactive = inactive_count >= CRIT_INACTIVITY;
+}
+
+void gyro_process_data(uint16_t gyroX, uint16_t gyroY, uint16_t gyroZ, queue_t gq)
+{
+	if (!prev_gX && !prev_gY && !prev_gZ) {
+		prev_gX = gyroX;
+		prev_gY = gyroY;
+		prev_gZ = gyroZ;
+		return;
+	}
+
+	if (queue_enqueue(gq, &gyroX) != 0)
+		printf("Failed to queue gyroscope data.\r\n");
+	if (queue_enqueue(gq, &gyroY) != 0)
+		printf("Failed to queue gyroscope data.\r\n");
+	if (queue_enqueue(gq, &gyroZ) != 0)
+		printf("Failed to queue gyroscope data.\r\n");
+
+	prev_gX = gyroX;
+	prev_gY = gyroY;
+	prev_gZ = gyroZ;
 }

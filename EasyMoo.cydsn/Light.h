@@ -57,7 +57,6 @@ uint16_t temperature;       // declaration of existing temp in main_cm0p.c
 
 /* Global Variables */
 int tempFlag, lightFlag;
-int dark_count = 0;
 
 /* Function Name: lightI2CRead
  *
@@ -194,27 +193,47 @@ void lightMeasure(uint16_t *xChannel, uint16_t *yChannel, uint16_t *zChannel,
  */
 void lightPrint(uint16_t x, uint16_t y, uint16_t z)
 {
-    printf("\r\n\r\nLight Sensor Data:\r\n"
-        "Red Light: %d\r\n"
-        "Green Light: %d\r\n"
-        "Blue Light: %d\r\n"
-        "Temperature: %.2f\r\n", x, y, z, CHIPTEMP);
+	printf("\r\n\r\nLight Sensor Data:\r\n"
+			"Red Light: %d\r\n"
+			"Green Light: %d\r\n"
+			"Blue Light: %d\r\n"
+			"Temperature: %.2f\r\n", x, y, z, CHIPTEMP);
 }
 
+/* Function Name: light_process_data
+ *
+ * Summary:
+ * This function performs the data clustering on the readings from the light
+ * sensor. This includes setting intermediate and critical flags based on the
+ * most recent readings. Namely, the three variables of interest are dark_count,
+ * lightFlag, and tempFlag. The first two check if the cow has not seen light in
+ * too long, and the last flag checks if the temperature is too high.
+ *
+ * Parameters:
+ *	@x:	the xChannel (R) 16 bit result
+ *	@y:	the yChannel (G) 16 bit result
+ *	@z:	the zChannel (B) 16 bit result
+ *	@tq:	queue data structure for temperature results.
+ *	@lq:	queue data structure for light results.
+ *
+ * Return:
+ *	None.
+ */
 void light_process_data(uint16_t x, uint16_t y, uint16_t z, queue_t tq, queue_t lq)
 {
-    int chip_temp = CHIPTEMP;
-    int combined_light = x + y + z;
-    if (combined_light < LIGHT_CUTOFF)
-        dark_count++;
-    else
-        dark_count = 0;
-    
-    if (queue_enqueue(lq, &combined_light) != 0)
-        printf("Failed to queue light data.\r\n");
-    if (queue_enqueue(tq, &chip_temp) != 0)
-        printf("Failed to queue temperature data.\r\n");
-        
-    lightFlag   = dark_count >= CRIT_LIGHT;    
-    tempFlag    = CHIPTEMP >= CRIT_TEMP;
+	int dark_count = 0;
+	int chip_temp = CHIPTEMP;
+	int combined_light = x + y + z;
+	if (combined_light < LIGHT_CUTOFF)
+		dark_count++;
+	else
+		dark_count = 0;
+
+	if (queue_enqueue(lq, combined_light) != 0)
+		printf("Failed to queue light data.\r\n");
+	if (queue_enqueue(tq, chip_temp) != 0)
+		printf("Failed to queue temperature data.\r\n");
+
+	lightFlag   = dark_count >= CRIT_LIGHT;    
+	tempFlag    = CHIPTEMP >= CRIT_TEMP;
 }

@@ -28,7 +28,7 @@
 #include "Queue.h"
 
 /* Happy Score Benchmarks */
-#define TARG_LIGHT_AVG  (8)
+#define TARG_LIGHT_AVG  (25)
 #define TARG_TEMP_AVG   (25)
 
 /* Global Variables */
@@ -43,28 +43,37 @@ queue_t temp_queue  = NULL;
 queue_t acc_queue   = NULL;
 queue_t gyro_queue  = NULL;
 
-void update_happy_score(void)
+int update_happy_score(void)
 {
     int avg_light_score = 0;
     int avg_temp_score  = 0;
     int count           = queue_length(light_queue);
-    int *tmp            = 0;
+    int tmp            = 0;
     
     while (queue_length(light_queue) > 0) {
-        queue_dequeue(light_queue, (void**)&tmp);
-        avg_light_score += *tmp;
-        queue_dequeue(temp_queue, (void**)&tmp);
-        avg_temp_score += *tmp;
+        queue_dequeue(light_queue, &tmp);
+        avg_light_score += tmp;
+        queue_dequeue(temp_queue, &tmp);
+        avg_temp_score += tmp;
     }
     
     avg_light_score = avg_light_score / count;
     avg_temp_score  = avg_temp_score / count;
     
     /* TODO: calculate deviation for happy score (avg - targ_avg) */
+    float happy_light_score = avg_light_score / TARG_LIGHT_AVG * 100;
+    if (happy_light_score > 100)
+	    happy_light_score = 100;
+
+    float happy_temp_score = avg_temp_score / TARG_TEMP_AVG * 100;
+    if (happy_temp_score > 100)
+	    happy_temp_score = 100;
+    
+    return (happy_light_score + happy_temp_score) / 2; //temp
 }
 
 int main(void)
-{ /* TODO: fsm details */
+{
     __enable_irq(); /* Enable global interrupts. */
     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
 
@@ -84,6 +93,7 @@ int main(void)
     acc_queue   = queue_create();
     gyro_queue  = queue_create();
     int *lightdata;
+    int happy_score;
     int data_count = 0;
     
     for(;;)
@@ -91,6 +101,8 @@ int main(void)
         lightMeasure(&xChannel, &yChannel, &zChannel, &temperature);
         lightPrint(xChannel, yChannel, zChannel);
         light_process_data(xChannel, yChannel, zChannel, temp_queue, light_queue);
+        printf("Most recent Combined Light: %d\r\n"
+            "Current Light_queue size: %d\r\n", light_queue->last->data, light_queue->size);
         data_count++;
 
         CyDelay(1000);
@@ -106,7 +118,8 @@ int main(void)
             RtcStepAlarm();
         }
 
-        update_happy_score();
+        happy_score = update_happy_score();
+        printf("Happy Score: %d\r\n", happy_score);
         //updateFSM(&fsm, accInactive, lightFlag, tempFlag);
         /* Go to Deep Sleep mode until next interrupt  */
         Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);

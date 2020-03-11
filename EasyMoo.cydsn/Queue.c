@@ -4,19 +4,6 @@
 
 #include "Queue.h"
 
-typedef struct Node
-{
-    void *data;
-    struct Node *next;
-}*node_t;
-
-struct queue
-{
-    node_t first;
-    node_t last;
-    int size;
-};
-
 queue_t queue_create(void)
 {
     queue_t queue;
@@ -37,7 +24,7 @@ int queue_destroy(queue_t queue)
     return 0;
 }
 
-int queue_enqueue(queue_t queue, void *data)
+int queue_enqueue(queue_t queue, int data)
 {
     node_t pushed;
 
@@ -68,7 +55,7 @@ int queue_enqueue(queue_t queue, void *data)
     return 0;
 }
 
-int queue_dequeue(queue_t queue, void **data)
+int queue_dequeue(queue_t queue, int *data)
 {
     node_t popped, next;
 
@@ -91,7 +78,7 @@ int queue_dequeue(queue_t queue, void **data)
     return 0;
 }
 
-int queue_delete(queue_t queue, void *data)
+int queue_delete(queue_t queue, int data)
 {
     node_t current, previous, next;
 

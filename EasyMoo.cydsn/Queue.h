@@ -11,6 +11,19 @@
  * Apart from delete and iterate operations, all operations should be O(1).
  */
 typedef struct queue* queue_t;
+    
+typedef struct Node
+{
+    int data;
+    struct Node *next;
+}*node_t;
+
+struct queue
+{
+    node_t first;
+    node_t last;
+    int size;
+};
 
 /*
  * queue_create - Allocate an empty queue
@@ -43,7 +56,7 @@ int queue_destroy(queue_t queue);
  * Return: -1 if @queue or @data are NULL, or in case of memory allocation error
  * when enqueing. 0 if @data was successfully enqueued in @queue.
  */
-int queue_enqueue(queue_t queue, void *data);
+int queue_enqueue(queue_t queue, int data);
 
 /*
  * queue_dequeue - Dequeue data item
@@ -56,7 +69,7 @@ int queue_enqueue(queue_t queue, void *data);
  * Return: -1 if @queue or @data are NULL, or if the queue is empty. 0 if @data
  * was set with the oldest item available in @queue.
  */
-int queue_dequeue(queue_t queue, void **data);
+int queue_dequeue(queue_t queue, int *data);
 
 /*
  * queue_delete - Delete data item
@@ -69,7 +82,7 @@ int queue_dequeue(queue_t queue, void **data);
  * Return: -1 if @queue or @data are NULL, of if @data was not found in the
  * queue. 0 if @data was found and deleted from @queue.
  */
-int queue_delete(queue_t queue, void *data);
+int queue_delete(queue_t queue, int data);
 
 /*
  * queue_func_t - Queue callback function type

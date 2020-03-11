@@ -1,0 +1,6 @@
+--------------- Build Started: 03/10/2020 05:16:03 Project: EasyMoo, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\ASUS\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -d CYBLE-416045-02 -s D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Generated_Source\PSoC6 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+ADD: fit.M0067: information: Clock Information: (The WCO is enabled. Chip startup will be slower because clock configuration cannot continue until the WCO is ready. See the device datasheet for WCO startup timing. If WCO is not required during startup, consider starting it in main() for faster chip startup.).
+ * D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cydwr (WCO)
+Elaborating Design...
+--------------- Build Canceled: 03/10/2020 05:16:05 ---------------

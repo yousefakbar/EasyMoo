@@ -110,7 +110,7 @@ void updateFSM(FSM *machine, int accInactive, int lightFlag, int tempFlag)
                 setCurrState(machine, CRITICAL);
             break;
         case CRITICAL:
-            if (!lightFlag && !tempFlag)
+            if (!lightFlag && !tempFlag && !accInactive)
                 setCurrState(machine, SLEEP);
             break;
         case TALK:
