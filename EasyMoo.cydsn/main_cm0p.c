@@ -48,28 +48,30 @@ int update_happy_score(void)
     int avg_light_score = 0;
     int avg_temp_score  = 0;
     int count           = queue_length(light_queue);
-    int tmp            = 0;
+    int tmp             = 0;
     
-    while (queue_length(light_queue) > 0) {
+    for (int i = 0; i < count; i++) {
         queue_dequeue(light_queue, &tmp);
         avg_light_score += tmp;
+        queue_enqueue(light_queue, tmp);
         queue_dequeue(temp_queue, &tmp);
         avg_temp_score += tmp;
+        queue_enqueue(temp_queue, tmp);
     }
     
     avg_light_score = avg_light_score / count;
     avg_temp_score  = avg_temp_score / count;
     
     /* TODO: calculate deviation for happy score (avg - targ_avg) */
-    float happy_light_score = avg_light_score / TARG_LIGHT_AVG * 100;
-    if (happy_light_score > 100)
-	    happy_light_score = 100;
+    float happy_light_score = (float)avg_light_score / TARG_LIGHT_AVG * 100.0;
+    if (happy_light_score > 100.0)
+	    happy_light_score = 100.0;
 
-    float happy_temp_score = avg_temp_score / TARG_TEMP_AVG * 100;
-    if (happy_temp_score > 100)
-	    happy_temp_score = 100;
+    float happy_temp_score = (float)avg_temp_score / TARG_TEMP_AVG * 100.0;
+    if (happy_temp_score > 100.0)
+	    happy_temp_score = 100.0;
     
-    return (happy_light_score + happy_temp_score) / 2; //temp
+    return (happy_light_score + happy_temp_score) / 2.0; //temp
 }
 
 int main(void)
@@ -120,7 +122,14 @@ int main(void)
 
         happy_score = update_happy_score();
         printf("Happy Score: %d\r\n", happy_score);
+        if (light_queue->size > 23) {
+            int tmp = 0;
+            queue_dequeue(light_queue, &tmp);
+            queue_dequeue(temp_queue, &tmp);
+            printf("readjusted queue sizes");
+        }
         //updateFSM(&fsm, accInactive, lightFlag, tempFlag);
+        
         /* Go to Deep Sleep mode until next interrupt  */
         Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
     }

@@ -79,6 +79,7 @@ void broadcastBLE(void)
         if (i == 9)
             break;
     }
+    Cy_BLE_Stop();
 }
 
 /* [] END OF FILE */
