@@ -12,6 +12,12 @@
 #include "stdio.h"
 #include "project.h"
 
+uint16_t xChannel, yChannel, zChannel, temperature;	// Light Sensor Vars
+uint16_t accX, accY, accZ;				// Accelerometer
+uint16_t gyroX, gyroY, gyroZ;				// Gyroscope
+int tempFlag;
+int accInactive;
+int lightFlag;
 static uint8 data[1] = {0};
 
 void genericEventHandler(uint32_t event, void *eventParameter)
@@ -45,10 +51,10 @@ void bleInterruptNotify()
 {
     Cy_BLE_ProcessEvents();
 }
-void broadcastBLE(void)
+void broadcastBLE(int happy_score)
 {
-    int i = 0;
     Cy_BLE_Start(genericEventHandler);
+    uint8_t BLE_data[] = { 0x00, 0x00, 'G', gyroX, gyroY, gyroZ, 'L', xChannel, yChannel, zChannel, 'A', accX, accY, accZ, 'T', temperature, 'C', lightFlag, tempFlag, accInactive, 'H', happy_score, 0x00, 0x00 };
     
     while (Cy_BLE_GetState() != CY_BLE_STATE_ON)
     {
@@ -56,11 +62,9 @@ void broadcastBLE(void)
     }
     Cy_BLE_RegisterAppHostCallback(bleInterruptNotify);
 
-    for(;;)
+    for(int i = 0; i < 24; i++)
     {
-        /* Place your application code here. */
-        i++;
-        printf("Hello world!\r\n");
+        printf("Broadcasting BLE Data!\r\n");
         
         cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
         cy_stc_ble_gatt_value_t serviceData;
@@ -73,11 +77,9 @@ void broadcastBLE(void)
         
         Cy_BLE_GATTS_WriteAttributeValueLocal(&serviceHandle);
         
-        data[0] = i;
+        data[0] = BLE_data[i];
         CyDelay(1000);
-        
-        if (i == 9)
-            break;
+
     }
     Cy_BLE_Stop();
 }

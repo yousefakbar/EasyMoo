@@ -21,7 +21,7 @@
 
 /* Project Firmware Dependencies */
 #include "FSM.h"
-#include "BLE.h"
+
 #include "Light.h"
 #include "Accelerometer.h"
 #include "RTC_Alarm.h"
@@ -43,6 +43,8 @@ queue_t temp_queue  = NULL;
 queue_t acc_queue   = NULL;
 queue_t gyro_queue  = NULL;
 
+#include "BLE.h"
+
 int update_happy_score(void)
 {
     int avg_light_score = 0;
@@ -54,6 +56,7 @@ int update_happy_score(void)
         queue_dequeue(light_queue, &tmp);
         avg_light_score += tmp;
         queue_enqueue(light_queue, tmp);
+        
         queue_dequeue(temp_queue, &tmp);
         avg_temp_score += tmp;
         queue_enqueue(temp_queue, tmp);
@@ -107,7 +110,7 @@ int main(void)
             "Current Light_queue size: %d\r\n", light_queue->last->data, light_queue->size);
         data_count++;
 
-        CyDelay(1000);
+        CyDelay(500);
         
         /* If the alarm flag is set, clear it, toggle the LED, and step */
         if(alarmFlag)  /* the flag is set, meaning time has expired */
@@ -126,9 +129,14 @@ int main(void)
             int tmp = 0;
             queue_dequeue(light_queue, &tmp);
             queue_dequeue(temp_queue, &tmp);
-            printf("readjusted queue sizes");
+            printf("readjusted queue sizes\r\n");
         }
         //updateFSM(&fsm, accInactive, lightFlag, tempFlag);
+        if (data_count % 5 == 0)
+            broadcastBLE(happy_score);
+            
+        CyDelay(500);
+        
         
         /* Go to Deep Sleep mode until next interrupt  */
         Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
