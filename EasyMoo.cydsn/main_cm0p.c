@@ -65,7 +65,6 @@ int update_happy_score(void)
     avg_light_score = avg_light_score / count;
     avg_temp_score  = avg_temp_score / count;
     
-    /* TODO: calculate deviation for happy score (avg - targ_avg) */
     float happy_light_score = (float)avg_light_score / TARG_LIGHT_AVG * 100.0;
     if (happy_light_score > 100.0)
 	    happy_light_score = 100.0;
@@ -100,14 +99,14 @@ int main(void)
     int *lightdata;
     int happy_score;
     int data_count = 0;
+    FSM fsm;
     
     for(;;)
     {
         lightMeasure(&xChannel, &yChannel, &zChannel, &temperature);
         lightPrint(xChannel, yChannel, zChannel);
         light_process_data(xChannel, yChannel, zChannel, temp_queue, light_queue);
-        printf("Most recent Combined Light: %d\r\n"
-            "Current Light_queue size: %d\r\n", light_queue->last->data, light_queue->size);
+        printf("Current FIFO Queue Sizes: %d\r\n", light_queue->size);
         data_count++;
 
         CyDelay(500);
@@ -131,8 +130,9 @@ int main(void)
             queue_dequeue(temp_queue, &tmp);
             printf("readjusted queue sizes\r\n");
         }
+        
         //updateFSM(&fsm, accInactive, lightFlag, tempFlag);
-        if (data_count % 5 == 0)
+        if (data_count % 15 == 0)
             broadcastBLE(happy_score);
             
         CyDelay(500);

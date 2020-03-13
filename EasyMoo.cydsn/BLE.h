@@ -54,7 +54,9 @@ void bleInterruptNotify()
 void broadcastBLE(int happy_score)
 {
     Cy_BLE_Start(genericEventHandler);
-    uint8_t BLE_data[] = { 0x00, 0x00, 'G', gyroX, gyroY, gyroZ, 'L', xChannel, yChannel, zChannel, 'A', accX, accY, accZ, 'T', temperature, 'C', lightFlag, tempFlag, accInactive, 'H', happy_score, 0x00, 0x00 };
+    uint8_t BLE_data[] = { 0x00, 0x00, 'G', gyroX, gyroY, gyroZ, 'L', xChannel,
+	    yChannel, zChannel, 'A', accX, accY, accZ, 'T', temperature, 'C',
+	    lightFlag, tempFlag, accInactive, 'H', happy_score, 0x00, 0x00 };
     
     while (Cy_BLE_GetState() != CY_BLE_STATE_ON)
     {
