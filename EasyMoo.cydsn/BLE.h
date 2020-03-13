@@ -1,14 +1,20 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
+/******************************************************************************
+* File Name: BLE.h
+*
+* Version: Beta
+*
+* Description: This file contains the firmware for setting up communication
+* between the PSoC and the AS73211 True Color Sensor using the I2C protocol.
+*
+* Related Document: TrueColor_LightSensor.pdf
+* Hardware Dependency:  CY8CKIT-063-BLE PSoC 6 BLE Pioneer kit
+*                       AS73211 True Color Sensor
+*
+* Author(s):
+*	Yousef H. Akbar & and Cow Team
+*	Dept. Electrical and Computer Engineering
+*	University of California, Davis
+******************************************************************************/
 #include "stdio.h"
 #include "project.h"
 
@@ -84,4 +90,3 @@ void broadcastBLE(int happy_score)
     Cy_BLE_Stop();
 }
 
-/* [] END OF FILE */
