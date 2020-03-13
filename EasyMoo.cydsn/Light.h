@@ -61,14 +61,17 @@ int tempFlag, lightFlag;
 /* Function Name: lightI2CRead
  *
  * Summary:
- * This function reads from the light sensor using the I2C protocol. The general
+ * This function reads 2 bytes of data from the light sensor register
+ * @reg using the I2C protocol and returns the result. The general
  * procedure for read sequences is detailed in 7.19 and Figure 40.
+ * For any register, the low byte is read first followed by the high
+ * byte.
  *
  * Parameters:
  *	@reg:		The register from which you want to read data.
  *
  * Return:
- *	readBuf:	Buffer containing data read from register
+ *	readBuf:	Two byte buffer with register data.
  */
 uint16_t lightI2CRead(uint8_t reg)
 {
@@ -101,7 +104,7 @@ uint16_t lightI2CRead(uint8_t reg)
 		    "WriteByte: %X,"
 		    "SendReStart: %X,"
 		    "ReadByte: %X,"
-            "ReadByte2: %X"
+		    "ReadByte2: %X"
 		    "SendStop: %X\r\n", ret0, ret1, ret2, ret3, ret5, ret4);
     
     //Start_Number = (Start_Number_High << 8) | (Start_Number_Low & 0xff);
@@ -160,19 +163,19 @@ void lightI2CWrite(uint8_t reg, uint8_t value)
 void lightMeasure(uint16_t *xChannel, uint16_t *yChannel, uint16_t *zChannel,
 		uint16_t *temperature)
 {
-    /* Transition to Measurement mode 0x83 */
-    lightI2CWrite(OSR, 0x83);
-    /* Wait for conversion to finish, defined by TCONV */
-    CyDelay(64);
+	/* Transition to Measurement mode 0x83 */
+	lightI2CWrite(OSR, 0x83);
+	/* Wait for conversion to finish, defined by TCONV */
+	CyDelay(64);
 
-    /* Read completed conversions */
-    *temperature    = lightI2CRead(TEMP);
-    *xChannel       = lightI2CRead(MRES1);
-    *yChannel       = lightI2CRead(MRES2);
-    *zChannel       = lightI2CRead(MRES3);
+	/* Read completed conversions */
+	*temperature    = lightI2CRead(TEMP);
+	*xChannel       = lightI2CRead(MRES1);
+	*yChannel       = lightI2CRead(MRES2);
+	*zChannel       = lightI2CRead(MRES3);
 
-    /* Transition back to PowerDown, for power reduction */
-    lightI2CWrite(OSR, 0x42);
+	/* Transition back to PowerDown, for power reduction */
+	lightI2CWrite(OSR, 0x42);
 }
 
 /* Function Name: lightPrint
