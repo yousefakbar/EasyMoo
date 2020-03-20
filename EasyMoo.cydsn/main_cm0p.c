@@ -16,6 +16,7 @@
 *	Dept. Electrical and Computer Engineering
 *	University of California, Davis
 ******************************************************************************/
+
 #include "project.h"
 #include "stdio.h"
 
@@ -42,6 +43,7 @@ queue_t light_queue = NULL;
 queue_t temp_queue  = NULL;
 queue_t acc_queue   = NULL;
 queue_t gyro_queue  = NULL;
+int data_count = 0;
 
 #include "BLE.h"
 
@@ -98,7 +100,6 @@ int main(void)
     gyro_queue  = queue_create();
     int *lightdata;
     int happy_score;
-    int data_count = 0;
     FSM fsm;
     
     for(;;)
@@ -108,6 +109,9 @@ int main(void)
         light_process_data(xChannel, yChannel, zChannel, temp_queue, light_queue);
         printf("Current FIFO Queue Sizes: %d\r\n", light_queue->size);
         data_count++;
+        
+        accMeasure(&accX, &accY, &accZ, xChannel+yChannel+zChannel);
+        accPrint(accX, accY, accZ);
 
         CyDelay(500);
         
@@ -123,7 +127,7 @@ int main(void)
         }
 
         happy_score = update_happy_score();
-        printf("Happy Score: %d\r\n", happy_score);
+        printf("\r\nHappy Score: %d\r\n", happy_score);
         if (light_queue->size > 23) {
             int tmp = 0;
             queue_dequeue(light_queue, &tmp);
@@ -132,8 +136,8 @@ int main(void)
         }
         
         //updateFSM(&fsm, accInactive, lightFlag, tempFlag);
-        if (data_count % 15 == 0)
-            broadcastBLE(happy_score);
+        //if (data_count % 15 == 0)
+            //broadcastBLE(happy_score);
             
         CyDelay(500);
         

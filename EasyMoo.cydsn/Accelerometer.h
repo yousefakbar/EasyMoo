@@ -21,6 +21,8 @@
 #include "project.h"
 #include "stdio.h"
 #include "Queue.h"
+#include "stdlib.h"
+#include "time.h"
 
 /* Slave addresses */
 #define ACC_ADDRESS 0x68    // 1101000[0|1]
@@ -44,6 +46,7 @@ int accInactive;
 int prev_gX = 0;
 int prev_gY = 0;
 int prev_gZ = 0;
+int data_count;
 
 uint16_t accI2CRead(uint8_t reg)
 {
@@ -104,12 +107,20 @@ void accI2CWrite(uint8_t reg, uint8_t value)
 		    ret2, ret3);
 }
 
-void accMeasure(uint16_t *accX, uint16_t *accY, uint16_t *accZ)
+void accMeasure(uint16_t *accX, uint16_t *accY, uint16_t *accZ, int combined_light)
 {
     /* Read completed conversions */
-    *accX       = accI2CRead(XACCEL_H);
-    *accY       = accI2CRead(YACCEL_H);
-    *accZ       = accI2CRead(ZACCEL_H);
+    int num;
+    srand(data_count);
+    
+    if (combined_light >= 10) {
+        *accX = *accY = *accZ = 0;
+        return;
+    }
+
+    *accX = rand() % 20;
+    *accY = rand() % 20;
+    *accZ = rand() % 20;
 }
 
 void gyroMeasure(uint16_t *gyroX, uint16_t *gyroY, uint16_t *gyroZ)

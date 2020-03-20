@@ -15,6 +15,7 @@
 *	Dept. Electrical and Computer Engineering
 *	University of California, Davis
 ******************************************************************************/
+
 #include "stdio.h"
 #include "project.h"
 
@@ -60,7 +61,11 @@ void bleInterruptNotify()
 void broadcastBLE(int happy_score)
 {
     Cy_BLE_Start(genericEventHandler);
-    uint8_t BLE_data[] = { 0x00, 0x00, 'G', gyroX, gyroY, gyroZ, 'L', xChannel,
+    /*uint8_t BLE_data[] = { 0x00, 0x00, 'G', gyroX, gyroY, gyroZ, 'L', xChannel,
+	    yChannel, zChannel, 'A', accX, accY, accZ, 'T', temperature, 'C',
+	    lightFlag, tempFlag, accInactive, 'H', happy_score, 0x00, 0x00 };*/
+    
+    uint8_t BLE_data[] = { 0x00, 0x00, 'L', xChannel,
 	    yChannel, zChannel, 'A', accX, accY, accZ, 'T', temperature, 'C',
 	    lightFlag, tempFlag, accInactive, 'H', happy_score, 0x00, 0x00 };
     
