@@ -136,8 +136,8 @@ int main(void)
         }
         
         //updateFSM(&fsm, accInactive, lightFlag, tempFlag);
-        //if (data_count % 15 == 0)
-            //broadcastBLE(happy_score);
+        if (data_count % 15 == 0)
+            broadcastBLE(happy_score);
             
         CyDelay(500);
         
