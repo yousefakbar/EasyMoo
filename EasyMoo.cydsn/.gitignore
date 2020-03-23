@@ -22,5 +22,7 @@ system_psoc6.h
 system_psoc6_cm0plus.c
 system_psoc6_cm4.c
 
-# vim swap files while editing
+# vim specific files when working
 *.swp
+*tags
+
