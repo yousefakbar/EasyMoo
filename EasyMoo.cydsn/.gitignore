@@ -25,4 +25,3 @@ system_psoc6_cm4.c
 # vim specific files when working
 *.swp
 *tags
-
