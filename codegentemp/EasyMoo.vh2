@@ -2,7 +2,7 @@
 --	Conversion of EasyMoo.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Mar 19 23:26:17 2020
+--	Mon Mar 23 09:59:58 2020
 --
 
 USE cypress.cypress.all;

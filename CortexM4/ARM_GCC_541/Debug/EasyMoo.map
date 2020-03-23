@@ -155,7 +155,7 @@ Discarded input sections
                 0x00000000       0x28 .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
  .debug_ranges  0x00000000       0x18 .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
  .debug_line    0x00000000      0x357 .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
- .debug_str     0x00000000      0xed1 .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
+ .debug_str     0x00000000      0xec1 .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
  .comment       0x00000000       0x6f .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
  .debug_frame   0x00000000       0x3c .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
  .ARM.attributes
@@ -1614,7 +1614,7 @@ Discarded input sections
                 0x00000000       0x28 .\CortexM4\ARM_GCC_541\Debug\retarget.o
  .debug_ranges  0x00000000       0x18 .\CortexM4\ARM_GCC_541\Debug\retarget.o
  .debug_line    0x00000000      0x2fb .\CortexM4\ARM_GCC_541\Debug\retarget.o
- .debug_str     0x00000000      0xb5d .\CortexM4\ARM_GCC_541\Debug\retarget.o
+ .debug_str     0x00000000      0xb4d .\CortexM4\ARM_GCC_541\Debug\retarget.o
  .comment       0x00000000       0x6f .\CortexM4\ARM_GCC_541\Debug\retarget.o
  .debug_frame   0x00000000       0x50 .\CortexM4\ARM_GCC_541\Debug\retarget.o
  .ARM.attributes
@@ -1627,7 +1627,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 .\CortexM4\ARM_GCC_541\Debug\BLE.o
  .debug_line    0x00000000      0x195 .\CortexM4\ARM_GCC_541\Debug\BLE.o
- .debug_str     0x00000000      0x783 .\CortexM4\ARM_GCC_541\Debug\BLE.o
+ .debug_str     0x00000000      0x773 .\CortexM4\ARM_GCC_541\Debug\BLE.o
  .comment       0x00000000       0x6f .\CortexM4\ARM_GCC_541\Debug\BLE.o
  .ARM.attributes
                 0x00000000       0x37 .\CortexM4\ARM_GCC_541\Debug\BLE.o
@@ -1688,7 +1688,7 @@ Discarded input sections
                 0x00000000       0x20 .\CortexM4\ARM_GCC_541\Debug\RTC.o
  .debug_ranges  0x00000000       0x10 .\CortexM4\ARM_GCC_541\Debug\RTC.o
  .debug_line    0x00000000      0x207 .\CortexM4\ARM_GCC_541\Debug\RTC.o
- .debug_str     0x00000000      0x91f .\CortexM4\ARM_GCC_541\Debug\RTC.o
+ .debug_str     0x00000000      0x90f .\CortexM4\ARM_GCC_541\Debug\RTC.o
  .comment       0x00000000       0x6f .\CortexM4\ARM_GCC_541\Debug\RTC.o
  .debug_frame   0x00000000       0x20 .\CortexM4\ARM_GCC_541\Debug\RTC.o
  .ARM.attributes
@@ -2834,7 +2834,7 @@ END GROUP
                 0x90700000                __cy_memory_4_start = 0x90700000
                 0x00100000                __cy_memory_4_length = 0x100000
                 0x00000001                __cy_memory_4_row_size = 0x1
-OUTPUT(D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\CortexM4\ARM_GCC_541\Debug\EasyMoo_link.elf elf32-littlearm)
+OUTPUT(D:\Documents\EasyMoo.cydsn\CortexM4\ARM_GCC_541\Debug\EasyMoo_link.elf elf32-littlearm)
 
 .rel.dyn        0x08024ae8        0x0 load address 0x9855d144
  .rel.iplt      0x08024ae8        0x0 d:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7e-m/softfp/crtbegin.o
@@ -2979,28 +2979,28 @@ OUTPUT(D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\CortexM4\ARM_GCC_541\Debug\Eas
  .debug_ranges  0x00000260      0x138 .\CortexM4\ARM_GCC_541\Debug\cy_syspm.o
  .debug_ranges  0x00000398       0x10 .\CortexM4\ARM_GCC_541\Debug\cy_device.o
 
-.debug_str      0x00000000     0x5b72
- .debug_str     0x00000000      0xaea .\CortexM4\ARM_GCC_541\Debug\main_cm4.o
-                                0xb59 (size before relaxing)
- .debug_str     0x00000aea     0x1be7 .\CortexM4\ARM_GCC_541\Debug\system_psoc6_cm4.o
+.debug_str      0x00000000     0x5b8d
+ .debug_str     0x00000000      0xada .\CortexM4\ARM_GCC_541\Debug\main_cm4.o
+                                0xb49 (size before relaxing)
+ .debug_str     0x00000ada     0x1c12 .\CortexM4\ARM_GCC_541\Debug\system_psoc6_cm4.o
                                0x23b2 (size before relaxing)
- .debug_str     0x000026d1       0x30 .\CortexM4\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x000026ec       0x30 .\CortexM4\ARM_GCC_541\Debug\cymetadata.o
                                 0x1ad (size before relaxing)
- .debug_str     0x00002701     0x1113 .\CortexM4\ARM_GCC_541\Debug\cy_flash.o
+ .debug_str     0x0000271c     0x1113 .\CortexM4\ARM_GCC_541\Debug\cy_flash.o
                                0x2dac (size before relaxing)
- .debug_str     0x00003814       0xfd .\CortexM4\ARM_GCC_541\Debug\cy_ipc_drv.o
+ .debug_str     0x0000382f       0xfd .\CortexM4\ARM_GCC_541\Debug\cy_ipc_drv.o
                                 0x96e (size before relaxing)
- .debug_str     0x00003911       0xed .\CortexM4\ARM_GCC_541\Debug\cy_ipc_sema.o
+ .debug_str     0x0000392c       0xed .\CortexM4\ARM_GCC_541\Debug\cy_ipc_sema.o
                                 0xb5b (size before relaxing)
- .debug_str     0x000039fe      0x31f .\CortexM4\ARM_GCC_541\Debug\cy_ipc_pipe.o
+ .debug_str     0x00003a19      0x31f .\CortexM4\ARM_GCC_541\Debug\cy_ipc_pipe.o
                                0x207d (size before relaxing)
- .debug_str     0x00003d1d       0xf0 .\CortexM4\ARM_GCC_541\Debug\cy_sysint.o
+ .debug_str     0x00003d38       0xf0 .\CortexM4\ARM_GCC_541\Debug\cy_sysint.o
                                0x194e (size before relaxing)
- .debug_str     0x00003e0d      0xa97 .\CortexM4\ARM_GCC_541\Debug\cy_syslib.o
+ .debug_str     0x00003e28      0xa97 .\CortexM4\ARM_GCC_541\Debug\cy_syslib.o
                                0x1c50 (size before relaxing)
- .debug_str     0x000048a4     0x1271 .\CortexM4\ARM_GCC_541\Debug\cy_syspm.o
+ .debug_str     0x000048bf     0x1271 .\CortexM4\ARM_GCC_541\Debug\cy_syspm.o
                                0x2b17 (size before relaxing)
- .debug_str     0x00005b15       0x5d .\CortexM4\ARM_GCC_541\Debug\cy_device.o
+ .debug_str     0x00005b30       0x5d .\CortexM4\ARM_GCC_541\Debug\cy_device.o
                                 0x7bb (size before relaxing)
 
 .debug_frame    0x00000000      0xba0

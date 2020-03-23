@@ -1,4 +1,4 @@
-D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\TopDesign\TopDesign.cysch
+D:\Documents\EasyMoo.cydsn\TopDesign\TopDesign.cysch
 D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_UART_PDL_v2_0\SCB_UART_PDL_v2_0.cysym
 D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_UART_PDL_v2_0\SCB_UART_PDL_v2_0.cystate
 D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_UART_PDL_v2_0\SCB_UART_PDL_v2_0.pdf
@@ -151,4 +151,4 @@ D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComp
 D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\Custom\cycustomizer.cs
 D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_mxs40_rtc_v1_0\cy_mxs40_rtc_v1_0.cysym
 D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_mxs40_rtc_v1_0\PSoC6\cy_mxs40_rtc_v1_0.cyprimitive
-D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cydwr
+D:\Documents\EasyMoo.cydsn\EasyMoo.cydwr

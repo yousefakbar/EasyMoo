@@ -1,3 +1,3 @@
-# Component constraints for D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\TopDesign\TopDesign.cysch
-# Project: D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj
-# Date: Fri, 20 Mar 2020 06:26:16 GMT
+# Component constraints for D:\Documents\EasyMoo.cydsn\TopDesign\TopDesign.cysch
+# Project: D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj
+# Date: Mon, 23 Mar 2020 16:59:58 GMT

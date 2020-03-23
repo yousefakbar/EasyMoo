@@ -1,16 +1,16 @@
-Loading plugins phase: Elapsed time ==> 0s.168ms
+Loading plugins phase: Elapsed time ==> 0s.154ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -d CYBLE-416045-02 -s D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\Generated_Source\PSoC6 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -d CYBLE-416045-02 -s D:\Documents\EasyMoo.cydsn\Generated_Source\PSoC6 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
 ADD: fit.M0067: information: Clock Information: (The WCO is enabled. Chip startup will be slower because clock configuration cannot continue until the WCO is ready. See the device datasheet for WCO startup timing. If WCO is not required during startup, consider starting it in main() for faster chip startup.).
- * D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cydwr (WCO)
+ * D:\Documents\EasyMoo.cydsn\EasyMoo.cydwr (WCO)
 
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 2s.127ms
+Elaboration phase: Elapsed time ==> 2s.087ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.066ms
+HDL generation phase: Elapsed time ==> 0s.051ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -28,23 +28,23 @@ HDL generation phase: Elapsed time ==> 0s.066ms
 ======================================================================
 Compiling:  EasyMoo.v
 Program  :   D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 EasyMoo.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 EasyMoo.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  EasyMoo.v
 Program  :   D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 EasyMoo.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 EasyMoo.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  EasyMoo.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 -verilog EasyMoo.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 -verilog EasyMoo.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Thu Mar 19 23:26:16 2020
+Mon Mar 23 09:59:58 2020
 
 
 ======================================================================
@@ -54,7 +54,7 @@ Options  :    -yv2 -q10 EasyMoo.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Thu Mar 19 23:26:16 2020
+Mon Mar 23 09:59:58 2020
 
 Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
 Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
@@ -82,11 +82,11 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  EasyMoo.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 -verilog EasyMoo.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 -verilog EasyMoo.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Thu Mar 19 23:26:16 2020
+Mon Mar 23 09:59:58 2020
 
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -97,9 +97,9 @@ Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\c
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\EasyMoo.ctl'.
+Linking 'D:\Documents\EasyMoo.cydsn\codegentemp\EasyMoo.ctl'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\EasyMoo.v'.
+Linking 'D:\Documents\EasyMoo.cydsn\codegentemp\EasyMoo.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 
@@ -109,11 +109,11 @@ tovif:  No errors.
 ======================================================================
 Compiling:  EasyMoo.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 -verilog EasyMoo.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 -verilog EasyMoo.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Thu Mar 19 23:26:16 2020
+Mon Mar 23 09:59:58 2020
 
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -124,9 +124,9 @@ Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\c
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\EasyMoo.ctl'.
+Linking 'D:\Documents\EasyMoo.cydsn\codegentemp\EasyMoo.ctl'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\EasyMoo.v'.
+Linking 'D:\Documents\EasyMoo.cydsn\codegentemp\EasyMoo.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
@@ -193,16 +193,16 @@ topld:  No errors.
 
 CYPRESS_DIR    : D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp
 Warp Program   : D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 EasyMoo.v -verilog
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -dcpsoc3 EasyMoo.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 0s.778ms
+Warp synthesis phase: Elapsed time ==> 0s.706ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Thursday, 19 March 2020 23:26:17
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\EasyMoo.cyprj -d CYBLE-416045-02 EasyMoo.v -verilog
+cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Monday, 23 March 2020 09:59:58
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj -d CYBLE-416045-02 EasyMoo.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.240ms
+Design parsing phase: Elapsed time ==> 0s.225ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -647,8 +647,8 @@ Sample and Hold               :    0 :    1 :    1 :  0.00 %
 SAR ADC                       :    0 :    1 :    1 :  0.00 %
 DieTemp Sensor                :    0 :    1 :    1 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.036ms
-Tech Mapping phase: Elapsed time ==> 0s.117ms
+Technology Mapping: Elapsed time ==> 0s.041ms
+Tech Mapping phase: Elapsed time ==> 0s.113ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="FFB & IO Pre Placement">
@@ -675,13 +675,13 @@ SRSS                                : SRSS_[FFB(SRSS,0)]
 </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Real Analog Placement">
-Elapsed time ==> 0.1280246s
+Elapsed time ==> 0.1295860s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 0s.782ms
+Analog Placement phase: Elapsed time ==> 0s.780ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0033487 secs
+Route success=True, Iterations=1 Elapsed=0.0024974 secs
 </CYPRESSTAG>
 Analog Routing phase: Elapsed time ==> 0s.002ms
 </CYPRESSTAG>
@@ -710,7 +710,7 @@ Map of item to net {
 }
 Mux Info {
 }
-Analog Code Generation phase: Elapsed time ==> 0s.021ms
+Analog Code Generation phase: Elapsed time ==> 0s.023ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
@@ -729,7 +729,7 @@ PLD Packing: Elapsed time ==> 0s.000ms
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.014ms
+Partitioning: Elapsed time ==> 0s.017ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -1289,33 +1289,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |                       Name |
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.016ms
-Digital Placement phase: Elapsed time ==> 6s.407ms
+Digital component placer commit/Report: Elapsed time ==> 0s.020ms
+Digital Placement phase: Elapsed time ==> 8s.764ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 "D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjrouter.exe" --xml-path "D:\Documents\PSoC Creator\4.2\Devices\psoc6/0/route_arch-rrg.cydata" --vh2-path "EasyMoo_r.vh2" --pcf-path "EasyMoo.pco" --des-name "EasyMoo" --dsf-path "EasyMoo.dsf" --sdc-path "EasyMoo.sdc" --lib-path "EasyMoo_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 0s.980ms
+Digital Routing phase: Elapsed time ==> 1s.090ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.554ms
+Bitstream Generation phase: Elapsed time ==> 0s.559ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.011ms
+Bitstream Verification phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in EasyMoo_timing.html.
-Static timing analysis phase: Elapsed time ==> 8s.351ms
+Static timing analysis phase: Elapsed time ==> 8s.527ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.179ms
+Design database save phase: Elapsed time ==> 0s.168ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 17s.685ms
+cydsfit: Elapsed time ==> 20s.291ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 17s.686ms
-API generation phase: Elapsed time ==> 1s.444ms
-Dependency generation phase: Elapsed time ==> 0s.022ms
+Fitter phase: Elapsed time ==> 20s.292ms
+API generation phase: Elapsed time ==> 1s.454ms
+Dependency generation phase: Elapsed time ==> 0s.024ms
 Cleanup phase: Elapsed time ==> 0s.000ms
