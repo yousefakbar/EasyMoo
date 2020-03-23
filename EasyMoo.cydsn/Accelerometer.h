@@ -46,6 +46,7 @@ int accInactive;
 int prev_gX = 0;
 int prev_gY = 0;
 int prev_gZ = 0;
+uint16_t xChannel, zChannel;
 int data_count;
 
 uint16_t accI2CRead(uint8_t reg)
@@ -111,9 +112,9 @@ void accMeasure(uint16_t *accX, uint16_t *accY, uint16_t *accZ, int combined_lig
 {
     /* Read completed conversions */
     int num;
-    srand(data_count);
+    srand(data_count * xChannel * zChannel);
     
-    if (combined_light >= 10) {
+    if (combined_light >= 15) {
         *accX = *accY = *accZ = 0;
         return;
     }
@@ -123,12 +124,23 @@ void accMeasure(uint16_t *accX, uint16_t *accY, uint16_t *accZ, int combined_lig
     *accZ = rand() % 20;
 }
 
-void gyroMeasure(uint16_t *gyroX, uint16_t *gyroY, uint16_t *gyroZ)
+void gyroMeasure(uint16_t *gyroX, uint16_t *gyroY, uint16_t *gyroZ, int combined_light)
 {
     /* Read completed conversions */
-    *gyroX       = accI2CRead(XGYRO_H);
-    *gyroY       = accI2CRead(YGYRO_H);
-    *gyroZ       = accI2CRead(ZGYRO_H);
+    int num;
+    srand(data_count * combined_light);
+    
+    if (combined_light >= 14) {
+        *gyroX = (rand() % 5) + 10;
+        *gyroY = (rand() % 5) + 10;
+        *gyroZ = (rand() % 5) + 10;
+        return;
+    }
+
+    *gyroX = rand() % 20;
+    *gyroY = rand() % 20;
+    *gyroZ = rand() % 20;
+
 }
 
 void accPrint(uint16_t x, uint16_t y, uint16_t z)

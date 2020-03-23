@@ -29,7 +29,7 @@
 #include "Queue.h"
 
 /* Happy Score Benchmarks */
-#define TARG_LIGHT_AVG  (25)
+#define TARG_LIGHT_AVG  (200)
 #define TARG_TEMP_AVG   (25)
 
 /* Global Variables */
@@ -112,7 +112,10 @@ int main(void)
         
         accMeasure(&accX, &accY, &accZ, xChannel+yChannel+zChannel);
         accPrint(accX, accY, accZ);
-
+        
+        //gyroMeasure(&gyroX, &gyroY, &gyroZ, xChannel+yChannel+zChannel);
+        //gyroPrint(gyroX, gyroY, gyroZ);
+        
         CyDelay(500);
         
         /* If the alarm flag is set, clear it, toggle the LED, and step */
