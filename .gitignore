@@ -1,0 +1,26 @@
+# ignore build files and directories for cleanliness and clarity
+CortexM0p/
+CortexM4/
+Export/
+Generated_Source/
+codegentemp/
+gcc/
+iar/
+mdk/
+
+*.log
+*.cywrk.*
+*.cyprj.*
+*.cyfit
+*.cycdx
+*.rpt
+*_timing.html
+*.icf
+*.ld
+*.scat
+system_psoc6.h
+system_psoc6_cm0plus.c
+system_psoc6_cm4.c
+
+# vim swap files while editing
+*.swp
