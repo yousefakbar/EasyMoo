@@ -19,28 +19,25 @@
 
 #include "sysint/cy_sysint.h"
 
-/* ARM CM4 */
-#if (((__CORTEX_M == 4) && (CY_CORE_ID == 0)))
+/* ARM CM0+ */
+#if (((__CORTEX_M == 0) && (CY_CORE_ID == 0)))
+    #define RTC_RTC_IRQ__INTC_ASSIGNED 1u
+    extern const cy_stc_sysint_t RTC_RTC_IRQ_cfg;
+
     #define BLE_bless_isr__INTC_ASSIGNED 1u
     extern const cy_stc_sysint_t BLE_bless_isr_cfg;
 
-    #define UART_1_SCB_IRQ__INTC_ASSIGNED 1u
-    extern const cy_stc_sysint_t UART_1_SCB_IRQ_cfg;
+#endif /* ((__CORTEX_M == 0) && (CY_CORE_ID == 0)) */
+
+/* ARM CM4 */
+#if (((__CORTEX_M == 4) && (CY_CORE_ID == 0)))
+    #define UART_SCB_IRQ__INTC_ASSIGNED 1u
+    extern const cy_stc_sysint_t UART_SCB_IRQ_cfg;
 
     #define I2C_SCB_IRQ__INTC_ASSIGNED 1u
     extern const cy_stc_sysint_t I2C_SCB_IRQ_cfg;
 
-    #define ADC_1_IRQ__INTC_ASSIGNED 1u
-    extern const cy_stc_sysint_t ADC_1_IRQ_cfg;
-
 #endif /* ((__CORTEX_M == 4) && (CY_CORE_ID == 0)) */
-
-/* ARM CM0+ */
-#if (((__CORTEX_M == 0) && (CY_CORE_ID == 0)))
-    #define UART_SCB_IRQ__INTC_ASSIGNED 1u
-    extern const cy_stc_sysint_t UART_SCB_IRQ_cfg;
-
-#endif /* ((__CORTEX_M == 0) && (CY_CORE_ID == 0)) */
 
 
 #endif /* INCLUDED_CYFITTER_SYSINT_CFG_H */

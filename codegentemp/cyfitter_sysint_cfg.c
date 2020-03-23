@@ -17,19 +17,32 @@
 #include "cyfitter_sysint.h"
 #include "cyfitter_sysint_cfg.h"
 
-/* ARM CM4 */
-#if (((__CORTEX_M == 4) && (CY_CORE_ID == 0)))
+/* ARM CM0+ */
+#if (((__CORTEX_M == 0) && (CY_CORE_ID == 0)))
+
+    /* RTC_RTC_IRQ */
+    const cy_stc_sysint_t RTC_RTC_IRQ_cfg = {
+        .intrSrc = (IRQn_Type)RTC_RTC_IRQ__INTC_CORTEXM0P_MUX,
+        .cm0pSrc = (cy_en_intr_t)RTC_RTC_IRQ__INTC_NUMBER,
+        .intrPriority = RTC_RTC_IRQ__INTC_CORTEXM0P_PRIORITY
+    };
 
     /* BLE_bless_isr */
     const cy_stc_sysint_t BLE_bless_isr_cfg = {
-        .intrSrc = (IRQn_Type)BLE_bless_isr__INTC_NUMBER,
-        .intrPriority = BLE_bless_isr__INTC_CORTEXM4_PRIORITY
+        .intrSrc = (IRQn_Type)BLE_bless_isr__INTC_CORTEXM0P_MUX,
+        .cm0pSrc = (cy_en_intr_t)BLE_bless_isr__INTC_NUMBER,
+        .intrPriority = BLE_bless_isr__INTC_CORTEXM0P_PRIORITY
     };
 
-    /* UART_1_SCB_IRQ */
-    const cy_stc_sysint_t UART_1_SCB_IRQ_cfg = {
-        .intrSrc = (IRQn_Type)UART_1_SCB_IRQ__INTC_NUMBER,
-        .intrPriority = UART_1_SCB_IRQ__INTC_CORTEXM4_PRIORITY
+#endif /* ((__CORTEX_M == 0) && (CY_CORE_ID == 0)) */
+
+/* ARM CM4 */
+#if (((__CORTEX_M == 4) && (CY_CORE_ID == 0)))
+
+    /* UART_SCB_IRQ */
+    const cy_stc_sysint_t UART_SCB_IRQ_cfg = {
+        .intrSrc = (IRQn_Type)UART_SCB_IRQ__INTC_NUMBER,
+        .intrPriority = UART_SCB_IRQ__INTC_CORTEXM4_PRIORITY
     };
 
     /* I2C_SCB_IRQ */
@@ -38,23 +51,5 @@
         .intrPriority = I2C_SCB_IRQ__INTC_CORTEXM4_PRIORITY
     };
 
-    /* ADC_1_IRQ */
-    const cy_stc_sysint_t ADC_1_IRQ_cfg = {
-        .intrSrc = (IRQn_Type)ADC_1_IRQ__INTC_NUMBER,
-        .intrPriority = ADC_1_IRQ__INTC_CORTEXM4_PRIORITY
-    };
-
 #endif /* ((__CORTEX_M == 4) && (CY_CORE_ID == 0)) */
-
-/* ARM CM0+ */
-#if (((__CORTEX_M == 0) && (CY_CORE_ID == 0)))
-
-    /* UART_SCB_IRQ */
-    const cy_stc_sysint_t UART_SCB_IRQ_cfg = {
-        .intrSrc = (IRQn_Type)UART_SCB_IRQ__INTC_CORTEXM0P_MUX,
-        .cm0pSrc = (cy_en_intr_t)UART_SCB_IRQ__INTC_NUMBER,
-        .intrPriority = UART_SCB_IRQ__INTC_CORTEXM0P_PRIORITY
-    };
-
-#endif /* ((__CORTEX_M == 0) && (CY_CORE_ID == 0)) */
 

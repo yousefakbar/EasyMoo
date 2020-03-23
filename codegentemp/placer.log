@@ -6,7 +6,7 @@
 
 #Build Date:         Dec  5 2017 15:35:27
 
-#File Generated:     Feb 25 2020 11:48:53
+#File Generated:     Mar 19 2020 23:26:23
 
 #Purpose:            
 
@@ -14,7 +14,7 @@
 
 #***************************************************************************
 
-Executing : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjplacer.exe --proj-name Lab2Part3 --netlist-vh2 Lab2Part3_p.vh2 --arch p6_udb2x6 --arch-file C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\arch/udbdsi2_2x6_12.cydata --ip-file C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\psoc6/0/ip_blocks.cydata --rrg-file C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\psoc6/0/route_arch-rrg.cydata --irq-file C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\psoc6/0/irqconn.cydata --drq-file C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\psoc6/0/triggerconn.cydata --dsi-conn-file C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\psoc6/0/dsiconn.cydata --pins-file pins_43-SMT.xml --lib-file Lab2Part3_p.lib --sdc-file Lab2Part3.sdc --io-pcf Lab2Part3.pci --outdir .
+Executing : D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjplacer.exe --proj-name EasyMoo --netlist-vh2 EasyMoo_p.vh2 --arch p6_udb2x6 --arch-file D:\Documents\PSoC Creator\4.2\Devices\arch/udbdsi2_2x6_12.cydata --ip-file D:\Documents\PSoC Creator\4.2\Devices\psoc6/0/ip_blocks.cydata --rrg-file D:\Documents\PSoC Creator\4.2\Devices\psoc6/0/route_arch-rrg.cydata --irq-file D:\Documents\PSoC Creator\4.2\Devices\psoc6/0/irqconn.cydata --drq-file D:\Documents\PSoC Creator\4.2\Devices\psoc6/0/triggerconn.cydata --dsi-conn-file D:\Documents\PSoC Creator\4.2\Devices\psoc6/0/dsiconn.cydata --pins-file pins_43-SMT.xml --lib-file EasyMoo_p.lib --sdc-file EasyMoo.sdc --io-pcf EasyMoo.pci --outdir .
 
 		Softjin Techologies Placer, Version 1.1
 
@@ -22,19 +22,19 @@ Build Date : Dec  5 2017	15:33:41
 
 D2004: Option and Settings Summary
 =============================================================
-Netlist vh2 file          - Lab2Part3_p.vh2
-Architecture file         - C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\arch/udbdsi2_2x6_12.cydata
+Netlist vh2 file          - EasyMoo_p.vh2
+Architecture file         - D:\Documents\PSoC Creator\4.2\Devices\arch/udbdsi2_2x6_12.cydata
 Package                   - 
 Defparam file             - 
-SDC file                  - Lab2Part3.sdc
+SDC file                  - EasyMoo.sdc
 Output directory          - .
-Timing library            - Lab2Part3_p.lib
-IO Placement file         - Lab2Part3.pci
+Timing library            - EasyMoo_p.lib
+IO Placement file         - EasyMoo.pci
 
 D2050: Starting reading inputs for placer
 =============================================================
-D2065: Reading netlist file : "Lab2Part3_p.vh2"
-D2065: Reading arch file : "C:\Users\Yousef Akbar\Documents\PSoC Creator\4.2\Devices\arch/udbdsi2_2x6_12.cydata"
+D2065: Reading netlist file : "EasyMoo_p.vh2"
+D2065: Reading arch file : "D:\Documents\PSoC Creator\4.2\Devices\arch/udbdsi2_2x6_12.cydata"
 D2051: Reading of inputs for placer completed successfully
 
 D2053: Starting placement of the design
@@ -56,7 +56,7 @@ Design Statistics after Packing
 Device Utilization Summary after Packing
     Macrocells                  :	0/96
     UDBS                        :	0/12
-    IOs                         :	11/96
+    IOs                         :	8/96
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -75,11 +75,11 @@ Final Design Statistics
     Number of Status            	:	0
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
-    Number of IOs       	:	11
+    Number of IOs       	:	8
 
 Device Utilization Summary
     Macrocells                  :	0/96
-    IOs                         :	11/96
+    IOs                         :	8/96
 
 
 Phase 8
@@ -87,5 +87,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.4 sec.
+I2076: Total run-time: 0.8 sec.
 

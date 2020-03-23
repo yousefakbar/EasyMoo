@@ -1,16 +1,30 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
+/******************************************************************************
+* File Name: BLE.h
+*
+* Version: Beta
+*
+* Description: This file contains the firmware for setting up communication
+* between the PSoC and the AS73211 True Color Sensor using the I2C protocol.
+*
+* Related Document: TrueColor_LightSensor.pdf
+* Hardware Dependency:  CY8CKIT-063-BLE PSoC 6 BLE Pioneer kit
+*                       AS73211 True Color Sensor
+*
+* Author(s):
+*	Yousef H. Akbar & and Cow Team
+*	Dept. Electrical and Computer Engineering
+*	University of California, Davis
+******************************************************************************/
+
+#include "stdio.h"
 #include "project.h"
 
+uint16_t xChannel, yChannel, zChannel, temperature;	// Light Sensor Vars
+uint16_t accX, accY, accZ;				// Accelerometer
+uint16_t gyroX, gyroY, gyroZ;				// Gyroscope
+int tempFlag;
+int accInactive;
+int lightFlag;
 static uint8 data[1] = {0};
 
 void genericEventHandler(uint32_t event, void *eventParameter)
@@ -44,9 +58,16 @@ void bleInterruptNotify()
 {
     Cy_BLE_ProcessEvents();
 }
-void broadcastBLE(void)
+void broadcastBLE(int happy_score)
 {
     Cy_BLE_Start(genericEventHandler);
+    /*uint8_t BLE_data[] = { 0x00, 0x00, 'G', gyroX, gyroY, gyroZ, 'L', xChannel,
+	    yChannel, zChannel, 'A', accX, accY, accZ, 'T', temperature, 'C',
+	    lightFlag, tempFlag, accInactive, 'H', happy_score, 0x00, 0x00 };*/
+    
+    uint8_t BLE_data[] = { 0x00, 0x00, 'L', xChannel,
+	    yChannel, zChannel, 'A', accX, accY, accZ, 'T', temperature, 'C',
+	    lightFlag, tempFlag, accInactive, 'H', happy_score, 0x00, 0x00 };
     
     while (Cy_BLE_GetState() != CY_BLE_STATE_ON)
     {
@@ -54,9 +75,9 @@ void broadcastBLE(void)
     }
     Cy_BLE_RegisterAppHostCallback(bleInterruptNotify);
 
-    for(;;)
+    for(int i = 0; i < 24; i++)
     {
-        /* Place your application code here. */
+        printf("Broadcasting BLE Data!\r\n");
         
         cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
         cy_stc_ble_gatt_value_t serviceData;
@@ -69,9 +90,10 @@ void broadcastBLE(void)
         
         Cy_BLE_GATTS_WriteAttributeValueLocal(&serviceHandle);
         
-        data[0] = 0xEA;
+        data[0] = BLE_data[i];
         CyDelay(1000);
+
     }
+    Cy_BLE_Stop();
 }
 
-/* [] END OF FILE */

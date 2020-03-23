@@ -150,7 +150,12 @@ static void ClockInit(void)
 	uint32_t status;
 
 	/* Enable all source clocks */
-	Cy_SysClk_ClkLfSetSource(CY_SYSCLK_CLKLF_IN_ILO);
+	status = Cy_SysClk_WcoEnable(500000u);
+	if (CY_RET_SUCCESS != status)
+	{
+		CyClockStartupError(CYCLOCKSTART_WCO_ERROR);
+	}
+	Cy_SysClk_ClkLfSetSource(CY_SYSCLK_CLKLF_IN_WCO);
 
 	/* Configure CPU clock dividers */
 	Cy_SysClk_ClkFastSetDivider(0u);
@@ -202,7 +207,7 @@ static void ClockInit(void)
 	Cy_SysClk_ClkPumpSetSource(CY_SYSCLK_PUMP_IN_CLKPATH0);
 	Cy_SysClk_ClkPumpSetDivider(CY_SYSCLK_PUMP_DIV_4);
 	Cy_SysClk_ClkPumpEnable();
-	Cy_SysClk_ClkBakSetSource(CY_SYSCLK_BAK_IN_CLKLF);
+	Cy_SysClk_ClkBakSetSource(CY_SYSCLK_BAK_IN_WCO);
 	Cy_SysTick_SetClockSource(CY_SYSTICK_CLOCK_SOURCE_CLK_LF);
 	Cy_SysClk_IloEnable();
 	Cy_SysClk_IloHibernateOn(1u);
@@ -211,18 +216,12 @@ static void ClockInit(void)
 	Cy_SysLib_SetWaitStates(false, 100);
 
 	/* Configure peripheral clock dividers */
-	Cy_SysClk_PeriphAssignDivider(PCLK_SCB2_CLOCK, CY_SYSCLK_DIV_8_BIT, 2u);
-	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_8_BIT, 2u, 35u);
-	Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_8_BIT, 2u);
 	Cy_SysClk_PeriphAssignDivider(PCLK_SCB5_CLOCK, CY_SYSCLK_DIV_8_BIT, 1u);
 	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_8_BIT, 1u, 35u);
 	Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_8_BIT, 1u);
 	Cy_SysClk_PeriphAssignDivider(PCLK_SCB6_CLOCK, CY_SYSCLK_DIV_8_BIT, 0u);
 	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_8_BIT, 0u, 31u);
 	Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_8_BIT, 0u);
-	Cy_SysClk_PeriphAssignDivider(PCLK_PASS_CLOCK_SAR, CY_SYSCLK_DIV_8_BIT, 3u);
-	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_8_BIT, 3u, 49u);
-	Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_8_BIT, 3u);
 }
 
 
@@ -247,8 +246,6 @@ static void ClockInit(void)
 static void AnalogSetDefault(void);
 static void AnalogSetDefault(void)
 {
-	CY_SET_REG32(CYREG_SAR_CTRL, 0x80000000u);
-	CY_SET_REG32(CYREG_SAR_MUX_SWITCH0, 0x00050000u);
 	CY_SET_REG32(CYREG_PASS_AREF_AREF_CTRL, 0x80110001u);
 }
 
@@ -289,6 +286,28 @@ void Cy_SystemInit(void)
 	Cy_SysPm_UnlockPmic();
 	Cy_SysPm_DisablePmicOutput();
 
+	/* Pin0_0 configuration */
+	{
+	    const cy_stc_gpio_pin_config_t pin0_0_cfg =
+	    {
+	        .outVal    = 0x00u,
+	        .driveMode = 0x00u,
+	        .hsiom     = P0_0_GPIO,
+	    };
+	    (void)Cy_GPIO_Pin_Init(GPIO_PRT0, 0, &pin0_0_cfg);
+	}
+
+	/* Pin0_1 configuration */
+	{
+	    const cy_stc_gpio_pin_config_t pin0_1_cfg =
+	    {
+	        .outVal    = 0x00u,
+	        .driveMode = 0x00u,
+	        .hsiom     = P0_1_GPIO,
+	    };
+	    (void)Cy_GPIO_Pin_Init(GPIO_PRT0, 1, &pin0_1_cfg);
+	}
+
 	/* Clock */
 	ClockInit();
 	{
@@ -304,10 +323,10 @@ void Cy_SystemInit(void)
 	{
 	    const cy_stc_gpio_prt_config_t port0_cfg =
 	    {
-	        .out        = 0x00000010u,
+	        .out        = 0x00000000u,
 	        .intrMask   = 0x00000000u,
 	        .intrCfg    = 0x00000000u,
-	        .cfg        = 0x000A0000u,
+	        .cfg        = 0x00000000u,
 	        .cfgIn      = 0x00000000u,
 	        .cfgOut     = 0x00000000u,
 	        .cfgSIO     = 0x00000000u,
@@ -338,10 +357,10 @@ void Cy_SystemInit(void)
 	{
 	    const cy_stc_gpio_prt_config_t port6_cfg =
 	    {
-	        .out        = 0x00000038u,
+	        .out        = 0x00000030u,
 	        .intrMask   = 0x00000000u,
 	        .intrCfg    = 0x00000000u,
-	        .cfg        = 0xBAAA2000u,
+	        .cfg        = 0xBAAA0000u,
 	        .cfgIn      = 0x00000000u,
 	        .cfgOut     = 0x00000000u,
 	        .cfgSIO     = 0x00000000u,
@@ -349,40 +368,6 @@ void Cy_SystemInit(void)
 	        .sel1Active = 0x1D1D1313u,
 	    };
 	    (void)Cy_GPIO_Port_Init(GPIO_PRT6, &port6_cfg);
-	}
-
-	/* Port7 configuration */
-	{
-	    const cy_stc_gpio_prt_config_t port7_cfg =
-	    {
-	        .out        = 0x00000002u,
-	        .intrMask   = 0x00000000u,
-	        .intrCfg    = 0x00000000u,
-	        .cfg        = 0x00000020u,
-	        .cfgIn      = 0x00000000u,
-	        .cfgOut     = 0x00000000u,
-	        .cfgSIO     = 0x00000000u,
-	        .sel0Active = 0x00000000u,
-	        .sel1Active = 0x00000000u,
-	    };
-	    (void)Cy_GPIO_Port_Init(GPIO_PRT7, &port7_cfg);
-	}
-
-	/* Port9 configuration */
-	{
-	    const cy_stc_gpio_prt_config_t port9_cfg =
-	    {
-	        .out        = 0x00000022u,
-	        .intrMask   = 0x00000000u,
-	        .intrCfg    = 0x00000000u,
-	        .cfg        = 0x00000060u,
-	        .cfgIn      = 0x00000000u,
-	        .cfgOut     = 0x00000000u,
-	        .cfgSIO     = 0x00000000u,
-	        .sel0Active = 0x00001200u,
-	        .sel1Active = 0x00000400u,
-	    };
-	    (void)Cy_GPIO_Port_Init(GPIO_PRT9, &port9_cfg);
 	}
 
 

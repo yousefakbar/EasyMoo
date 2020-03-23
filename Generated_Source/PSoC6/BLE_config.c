@@ -26,7 +26,7 @@
 ***************************************/
 /* Initializes the cy_stc_ble_gapp_disc_mode_info_t cy_ble_discoveryModeInfo  structure */
 #if(CY_BLE_GAP_ROLE_PERIPHERAL || CY_BLE_GAP_ROLE_BROADCASTER)
-static cy_stc_ble_gapp_adv_params_t cy_ble_gappAdvConfig[0x01u] = {
+static cy_stc_ble_gapp_adv_params_t cy_ble_gappAdvConfig[0x02u] = {
 
     /* Peripheral configuration 0 */
     {
@@ -38,10 +38,21 @@ static cy_stc_ble_gapp_adv_params_t cy_ble_gappAdvConfig[0x01u] = {
         .slowAdvIntervalMax                 = 0x4000u, 
         .slowAdvTimeOut                     = 0x0096u, 
     },
+
+    /* Broadcaster configuration 0 */
+    {
+        .fastAdvIntervalMin                 = 0x0020u, 
+        .fastAdvIntervalMax                 = 0x0030u, 
+        .fastAdvTimeOut                     = 0x001Eu, 
+        .slowAdvEnable                      = 0x01u, 
+        .slowAdvIntervalMin                 = 0x0640u, 
+        .slowAdvIntervalMax                 = 0x4000u, 
+        .slowAdvTimeOut                     = 0x0096u, 
+    },
 };
 
 
-cy_stc_ble_gapp_disc_param_t cy_ble_discoveryParam[0x01u] = {
+cy_stc_ble_gapp_disc_param_t cy_ble_discoveryParam[0x02u] = {
 
     /* Peripheral configuration 0 */
     {
@@ -54,10 +65,22 @@ cy_stc_ble_gapp_disc_param_t cy_ble_discoveryParam[0x01u] = {
         0x07u, /* uint8_t advertising_channel_map */ 
         0x00u, /* uint8_t advertising_filter_policy */ 
     },
+
+    /* Broadcaster configuration 0 */
+    {
+        0x0020u, /* uint16_t advertising_interval_min */ 
+        0x0030u, /* uint16_t advertising_interval_max */ 
+        CY_BLE_GAPP_SCANNABLE_UNDIRECTED_ADV, /* uint8_t advertising_type */ 
+        0x00u, /* uint8_t own_addr_type */ 
+        0x00u, /* uint8_t direct_addr_type */ 
+        {0x00u, 0x00u, 0x00u, 0x50u, 0xA0u, 0x00u}, /* uint8_t* direct_addr */ 
+        0x07u, /* uint8_t advertising_channel_map */ 
+        0x00u, /* uint8_t advertising_filter_policy */ 
+    },
 };
 
 
-cy_stc_ble_gapp_disc_data_t cy_ble_discoveryData[0x01u] = {
+cy_stc_ble_gapp_disc_data_t cy_ble_discoveryData[0x02u] = {
 
     /* Peripheral configuration 0 */
     {
@@ -68,12 +91,32 @@ cy_stc_ble_gapp_disc_data_t cy_ble_discoveryData[0x01u] = {
         0x84u, 0x00u, 0x00u }, /* uint8_t advertising_data[CY_BLE_MAX_ADV_DATA_LEN] */ 
         0x1Du, /* uint8_t adv_data_length */ 
     },
+
+    /* Broadcaster configuration 0 */
+    {
+        { 0x02u, 0x01u, 0x04u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u }, /* uint8_t advertising_data[CY_BLE_MAX_ADV_DATA_LEN] */ 
+        0x03u, /* uint8_t adv_data_length */ 
+    },
 };
 
 
-cy_stc_ble_gapp_scan_rsp_data_t cy_ble_scanRspData[0x01u] = {
+cy_stc_ble_gapp_scan_rsp_data_t cy_ble_scanRspData[0x02u] = {
 
     /* Peripheral configuration 0 */
+    {
+        { 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+        0x00u, 0x00u, 0x00u }, /* uint8_t scan_rsp_data[CY_BLE_MAX_SCAN_RSP_DATA_LEN] */ 
+        0x00u, /* uint8_t scan_rsp_data_length */ 
+    },
+
+    /* Broadcaster configuration 0 */
     {
         { 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
         0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
@@ -92,7 +135,7 @@ cy_stc_ble_gapp_scan_rsp_data_t cy_ble_scanRspData[0x01u] = {
    can be used by advanced users to change Advertisement settings,
    Advertisement or Scan response data in runtime. 
 */
-cy_stc_ble_gapp_disc_mode_info_t cy_ble_discoveryModeInfo[0x01u] = {
+cy_stc_ble_gapp_disc_mode_info_t cy_ble_discoveryModeInfo[0x02u] = {
 
     /* Peripheral configuration 0 */
     {
@@ -101,6 +144,15 @@ cy_stc_ble_gapp_disc_mode_info_t cy_ble_discoveryModeInfo[0x01u] = {
         &cy_ble_discoveryData[0], 
         &cy_ble_scanRspData[0], 
         0x0000u, /* uint16_t advTo */ 
+    },
+
+    /* Broadcaster configuration 0 */
+    {
+        0x00u, /* uint8_t discMode */ 
+        &cy_ble_discoveryParam[1], 
+        &cy_ble_discoveryData[1], 
+        &cy_ble_scanRspData[1], 
+        0x001Eu, /* uint16_t advTo */ 
     },
 };
 

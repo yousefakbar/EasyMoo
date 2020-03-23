@@ -1,43 +1,34 @@
 <?xml version="1.0" encoding="us-ascii"?>
 
-<fileSet version="1" anchorPath="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cyfitter_sysint_cfg.h" value="HEADER;;;;;Pins and Interrupts" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cyfitter_sysint_cfg.c" value="SOURCE_C;CortexM0p,CortexM4;;;;Pins and Interrupts" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM0p;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM0p,CortexM4;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cyfitter_gpio.h" value="HEADER;;;;;Pins and Interrupts" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cyfitter_sysint.h" value="HEADER;;;;;Pins and Interrupts" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\UART.c" value="SOURCE_C;CortexM0p,CortexM4;;;;UART" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\UART.h" value="HEADER;;;;;UART" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\UART_1.c" value="SOURCE_C;CortexM0p,CortexM4;;;;UART_1" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\UART_1.h" value="HEADER;;;;;UART_1" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\MCWDT_0_PDL.c" value="SOURCE_C;CortexM0p,CortexM4;;;;MCWDT_0" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\MCWDT_0_PDL.h" value="HEADER;;;;;MCWDT_0" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\ADC_1.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ADC_1" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\ADC_1.h" value="HEADER;;;;;ADC_1" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\ADC_1_INT.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ADC_1" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\ADC_1_INIT.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ADC_1" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\ADC_1_PM.c" value="SOURCE_C;CortexM0p,CortexM4;;;;ADC_1" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\I2C.c" value="SOURCE_C;CortexM0p,CortexM4;;;;I2C" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\I2C.h" value="HEADER;;;;;I2C" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\BLE.h" value="HEADER;;;;;BLE" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\BLE.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\BLE_config.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\BLE_config.h" value="HEADER;;;;;BLE" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\BLE_custom_config.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\UART_1_SCBCLK.h" value="HEADER;;;;;UART_1_SCBCLK" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\ADC_1_intSarClock.h" value="HEADER;;;;;ADC_1_intSarClock" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\I2C_SCBCLK.h" value="HEADER;;;;;I2C_SCBCLK" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
-  <file name="C:\Users\Yousef Akbar\Desktop\Lab2Part3.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
+<fileSet version="1" anchorPath="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cyfitter_cfg.h" value="HEADER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cyfitter_sysint_cfg.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cyfitter_sysint_cfg.c" value="SOURCE_C;CortexM0p,CortexM4;;;;Pins and Interrupts" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cyfitter_cfg.c" value="SOURCE_C;CortexM0p;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cymetadata.c" value="SOURCE_C;CortexM0p,CortexM4;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cydevice_trm.h" value="HEADER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cydevicegnu_trm.inc" value="HEADER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cydevicerv_trm.inc" value="HEADER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cydeviceiar_trm.inc" value="HEADER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cyfitter_gpio.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cyfitter_sysint.h" value="HEADER;;;;;Pins and Interrupts" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\UART.c" value="SOURCE_C;CortexM0p,CortexM4;;;;UART" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\UART.h" value="HEADER;;;;;UART" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\BLE.h" value="HEADER;;;;;BLE" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\BLE.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\BLE_config.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\BLE_config.h" value="HEADER;;;;;BLE" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\BLE_custom_config.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\I2C.c" value="SOURCE_C;CortexM0p,CortexM4;;;;I2C" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\I2C.h" value="HEADER;;;;;I2C" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\RTC.c" value="SOURCE_C;CortexM0p,CortexM4;;;;RTC" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\RTC.h" value="HEADER;;;;;RTC" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\I2C_SCBCLK.h" value="HEADER;;;;;I2C_SCBCLK" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
+  <file name="D:\Documents\Lab2Part3.cydsn\EasyMoo.cydsn\codegentemp\cycodeshareimport.scat" value="OTHER;;;;;" />
 </fileSet>

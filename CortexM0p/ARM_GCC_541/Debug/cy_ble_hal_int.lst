@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 1
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 1
 
 
    1              		.syntax unified
@@ -19,1444 +19,2303 @@ ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              	.Letext0:
-  20              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
-  21              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
-  22              		.file 3 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
-  23              		.section	.debug_info,"",%progbits
-  24              	.Ldebug_info0:
-  25 0000 14050000 		.4byte	0x514
-  26 0004 0400     		.2byte	0x4
-  27 0006 00000000 		.4byte	.Ldebug_abbrev0
-  28 000a 04       		.byte	0x4
-  29 000b 01       		.uleb128 0x1
-  30 000c E3000000 		.4byte	.LASF110
-  31 0010 0C       		.byte	0xc
-  32 0011 53020000 		.4byte	.LASF111
-  33 0015 49060000 		.4byte	.LASF112
-  34 0019 00000000 		.4byte	.Ldebug_line0
-  35 001d 02       		.uleb128 0x2
-  36 001e 04       		.byte	0x4
-  37 001f 05       		.byte	0x5
-  38 0020 696E7400 		.ascii	"int\000"
-  39 0024 03       		.uleb128 0x3
-  40 0025 04       		.byte	0x4
-  41 0026 07       		.byte	0x7
-  42 0027 03040000 		.4byte	.LASF0
-  43 002b 03       		.uleb128 0x3
-  44 002c 08       		.byte	0x8
-  45 002d 05       		.byte	0x5
-  46 002e 45020000 		.4byte	.LASF1
-  47 0032 03       		.uleb128 0x3
-  48 0033 08       		.byte	0x8
-  49 0034 04       		.byte	0x4
-  50 0035 7F030000 		.4byte	.LASF2
-  51 0039 03       		.uleb128 0x3
-  52 003a 01       		.byte	0x1
-  53 003b 06       		.byte	0x6
-  54 003c B9030000 		.4byte	.LASF3
-  55 0040 04       		.uleb128 0x4
-  56 0041 FA020000 		.4byte	.LASF5
-  57 0045 01       		.byte	0x1
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 2
+  19              		.section	.text.Cy_BLE_BlessInterrupt,"ax",%progbits
+  20              		.align	2
+  21              		.global	Cy_BLE_BlessInterrupt
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	Cy_BLE_BlessInterrupt, %function
+  25              	Cy_BLE_BlessInterrupt:
+  26              	.LFB165:
+  27              		.file 1 "Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_ble_hal_int.c"
+   1:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \file cy_ble_hal_int.c
+   3:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \version 2.30
+   4:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+   5:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \brief
+   6:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  This file contains the source code for the Interrupt Service Routine for the
+   7:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  HAL section of the BLE Middleware.
+   8:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+   9:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** ********************************************************************************
+  10:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \copyright
+  11:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Copyright 2017-2018, Cypress Semiconductor Corporation.  All rights reserved.
+  12:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * the software package with which this file was provided.
+  15:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/
+  16:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #include "cy_ble.h"
+  17:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #include "cy_ble_hal_pvt.h"
+  18:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #include "ipc/cy_ipc_sema.h"
+  19:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  20:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /* C binding of definitions if building with C++ compiler */
+  21:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #ifdef __cplusplus
+  22:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** extern "C" {
+  23:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* __cplusplus */
+  24:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  25:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  26:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_STACK_MODE_IPC) && (CY_BLE_MODE_PROFILE)
+  27:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  28:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /*******************************************************************************
+  29:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Function Name: Cy_BLE_HAL_IntrNotifyIpcHandler
+  30:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** ****************************************************************************//**
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 2
 
 
-  58 0046 1D       		.byte	0x1d
-  59 0047 4B000000 		.4byte	0x4b
-  60 004b 03       		.uleb128 0x3
-  61 004c 01       		.byte	0x1
-  62 004d 08       		.byte	0x8
-  63 004e A2030000 		.4byte	.LASF4
-  64 0052 04       		.uleb128 0x4
-  65 0053 2A060000 		.4byte	.LASF6
-  66 0057 01       		.byte	0x1
-  67 0058 29       		.byte	0x29
-  68 0059 5D000000 		.4byte	0x5d
-  69 005d 03       		.uleb128 0x3
-  70 005e 02       		.byte	0x2
-  71 005f 05       		.byte	0x5
-  72 0060 97000000 		.4byte	.LASF7
-  73 0064 04       		.uleb128 0x4
-  74 0065 B7010000 		.4byte	.LASF8
-  75 0069 01       		.byte	0x1
-  76 006a 2B       		.byte	0x2b
-  77 006b 6F000000 		.4byte	0x6f
-  78 006f 03       		.uleb128 0x3
-  79 0070 02       		.byte	0x2
-  80 0071 07       		.byte	0x7
-  81 0072 70040000 		.4byte	.LASF9
-  82 0076 03       		.uleb128 0x3
-  83 0077 04       		.byte	0x4
-  84 0078 05       		.byte	0x5
-  85 0079 C6020000 		.4byte	.LASF10
-  86 007d 04       		.uleb128 0x4
-  87 007e 81010000 		.4byte	.LASF11
-  88 0082 01       		.byte	0x1
-  89 0083 41       		.byte	0x41
-  90 0084 88000000 		.4byte	0x88
-  91 0088 03       		.uleb128 0x3
-  92 0089 04       		.byte	0x4
-  93 008a 07       		.byte	0x7
-  94 008b 6B050000 		.4byte	.LASF12
-  95 008f 03       		.uleb128 0x3
-  96 0090 08       		.byte	0x8
-  97 0091 07       		.byte	0x7
-  98 0092 C5030000 		.4byte	.LASF13
-  99 0096 03       		.uleb128 0x3
- 100 0097 04       		.byte	0x4
- 101 0098 07       		.byte	0x7
- 102 0099 B1000000 		.4byte	.LASF14
- 103 009d 03       		.uleb128 0x3
- 104 009e 01       		.byte	0x1
- 105 009f 08       		.byte	0x8
- 106 00a0 83040000 		.4byte	.LASF15
- 107 00a4 04       		.uleb128 0x4
- 108 00a5 D3010000 		.4byte	.LASF16
- 109 00a9 02       		.byte	0x2
- 110 00aa 18       		.byte	0x18
- 111 00ab 40000000 		.4byte	0x40
- 112 00af 04       		.uleb128 0x4
- 113 00b0 EB040000 		.4byte	.LASF17
- 114 00b4 02       		.byte	0x2
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 3
+  31:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+  32:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  Handles the IPC notification for Interrupt Notification Feature.
+  33:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+  34:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \return
+  35:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  None
+  36:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+  37:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/    
+  38:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** void Cy_BLE_HAL_IntrNotifyIpcHandler(void)
+  39:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** {    
+  40:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     uint32_t interruptMasked;
+  41:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     IPC_INTR_STRUCT_Type *intrTypePtr = Cy_IPC_Drv_GetIntrBaseAddr(CY_BLE_INTR_NOTIFY_IPC_INTR);
+  42:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****    /**
+  43:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     * Check that there is really the IPC Notify interrupt,
+  44:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     * because the same line can be used for the IPC Release interrupt.
+  45:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     */
+  46:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     
+  47:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     interruptMasked = Cy_IPC_Drv_ExtractAcquireMask(Cy_IPC_Drv_GetInterruptStatusMasked(intrTypePtr
+  48:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  49:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     if ((1uL << (CY_BLE_INTR_NOTIFY_IPC_CHAN)) == interruptMasked )
+  50:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     {
+  51:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         Cy_IPC_Drv_ClearInterrupt(intrTypePtr, CY_IPC_NO_NOTIFICATION, interruptMasked);
+  52:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         
+  53:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         if(Cy_BLE_InterruptCallback != NULL)
+  54:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {
+  55:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             /* Call the BLE interrupt feature handler */
+  56:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             Cy_BLE_InterruptCallback(intrNotify.data);
+  57:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
+  58:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      
+  59:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         /* Release the IPC channel with the Release interrupt */
+  60:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         (void)Cy_IPC_Drv_LockRelease(Cy_IPC_Drv_GetIpcBaseAddress(CY_BLE_INTR_NOTIFY_IPC_CHAN),
+  61:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                                     (1uL << CY_BLE_INTR_NOTIFY_IPC_INTR));
+  62:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     }
+  63:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** }
+  64:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_STACK_MODE_IPC) && (CY_BLE_MODE_PROFILE) 
+  65:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  66:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_HOST_CONTR_CORE)
+  67:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_STACK_CONTR_CORE)
+  68:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  69:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED)    
+  70:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /* Globals */    
+  71:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** cy_stc_ble_intr_notify_t *intrNotifyPtr = NULL;
+  72:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     
+  73:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /* Private Function Prototypes  */
+  74:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** static void Cy_BLE_HAL_SendInterruptNotification(void);
+  75:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  76:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /*******************************************************************************
+  77:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Function Name: Cy_BLE_HAL_SendInterruptNotification
+  78:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** ****************************************************************************//**
+  79:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+  80:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  This function sends notification (with interrupt type information) to user 
+  81:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  callback for the BLE interrupts subscribed by user. The list of supported 
+  82:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  interrupts described in the enumeration cy_en_ble_interrupt_callback_feature_t.
+  83:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  Cy_BLE_RegisterInterruptCallback() API used to register callback for receiving
+  84:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  the BLE interrupts.
+  85:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+  86:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/
+  87:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** static void Cy_BLE_HAL_SendInterruptNotification(void)
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 3
 
 
- 115 00b5 20       		.byte	0x20
- 116 00b6 52000000 		.4byte	0x52
- 117 00ba 04       		.uleb128 0x4
- 118 00bb 88040000 		.4byte	.LASF18
- 119 00bf 02       		.byte	0x2
- 120 00c0 24       		.byte	0x24
- 121 00c1 64000000 		.4byte	0x64
- 122 00c5 04       		.uleb128 0x4
- 123 00c6 E5030000 		.4byte	.LASF19
- 124 00ca 02       		.byte	0x2
- 125 00cb 30       		.byte	0x30
- 126 00cc 7D000000 		.4byte	0x7d
- 127 00d0 05       		.uleb128 0x5
- 128 00d1 B8       		.byte	0xb8
- 129 00d2 03       		.byte	0x3
- 130 00d3 34       		.byte	0x34
- 131 00d4 E1040000 		.4byte	0x4e1
- 132 00d8 06       		.uleb128 0x6
- 133 00d9 A0010000 		.4byte	.LASF20
- 134 00dd 03       		.byte	0x3
- 135 00de 37       		.byte	0x37
- 136 00df C5000000 		.4byte	0xc5
- 137 00e3 00       		.byte	0
- 138 00e4 06       		.uleb128 0x6
- 139 00e5 CF020000 		.4byte	.LASF21
- 140 00e9 03       		.byte	0x3
- 141 00ea 38       		.byte	0x38
- 142 00eb C5000000 		.4byte	0xc5
- 143 00ef 04       		.byte	0x4
- 144 00f0 06       		.uleb128 0x6
- 145 00f1 B0030000 		.4byte	.LASF22
- 146 00f5 03       		.byte	0x3
- 147 00f6 39       		.byte	0x39
- 148 00f7 C5000000 		.4byte	0xc5
- 149 00fb 08       		.byte	0x8
- 150 00fc 06       		.uleb128 0x6
- 151 00fd CC040000 		.4byte	.LASF23
- 152 0101 03       		.byte	0x3
- 153 0102 3A       		.byte	0x3a
- 154 0103 C5000000 		.4byte	0xc5
- 155 0107 0C       		.byte	0xc
- 156 0108 06       		.uleb128 0x6
- 157 0109 F9060000 		.4byte	.LASF24
- 158 010d 03       		.byte	0x3
- 159 010e 3B       		.byte	0x3b
- 160 010f C5000000 		.4byte	0xc5
- 161 0113 10       		.byte	0x10
- 162 0114 06       		.uleb128 0x6
- 163 0115 21020000 		.4byte	.LASF25
- 164 0119 03       		.byte	0x3
- 165 011a 3C       		.byte	0x3c
- 166 011b C5000000 		.4byte	0xc5
- 167 011f 14       		.byte	0x14
- 168 0120 06       		.uleb128 0x6
- 169 0121 DC030000 		.4byte	.LASF26
- 170 0125 03       		.byte	0x3
- 171 0126 3D       		.byte	0x3d
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 4
+  88:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** {
+  89:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     if((intrNotifyPtr != NULL) && (intrNotifyPtr->mask != 0u))
+  90:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     {
+  91:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         uint32_t interruptType = (uint32_t)CY_BLE_INTR_CALLBACK_NONE;
+  92:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         
+  93:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         /* Read BLE_BLELL->EVENT_INTR */      
+  94:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         if((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLESS_STACK_ISR) != 0u) 
+  95:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {
+  96:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             interruptType |= CY_BLE_INTR_CALLBACK_BLESS_STACK_ISR;    
+  97:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
+  98:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         else
+  99:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {
+ 100:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             if(((BLE_BLESS->INTR_STAT & BLE_BLESS_INTR_STAT_DSM_ENTERED_INTR_Msk) != 0u) &&
+ 101:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLESS_INTR_STAT_DSM_ENTERED)!= 0u))
+ 102:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             {
+ 103:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 interruptType |= CY_BLE_INTR_CALLBACK_BLESS_INTR_STAT_DSM_ENTERED;
+ 104:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             }
+ 105:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             
+ 106:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             if(((BLE_BLESS->INTR_STAT & BLE_BLESS_INTR_STAT_DSM_EXITED_INTR_Msk) != 0u) &&
+ 107:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLESS_INTR_STAT_DSM_EXITED) != 0u))
+ 108:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             {
+ 109:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 interruptType |= CY_BLE_INTR_CALLBACK_BLESS_INTR_STAT_DSM_EXITED;
+ 110:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             }
+ 111:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****        
+ 112:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             if(((BLE_BLESS->INTR_STAT & BLE_BLESS_INTR_STAT_LL_INTR_Msk) != 0u))
+ 113:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             { 
+ 114:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 /**
+ 115:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                  *  Updates the firmware and hardware to exit sleep mode, when
+ 116:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                  *  called from the interrupt mode, after checking the state machine.
+ 117:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                  */
+ 118:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 Cy_BLE_LlIsrExitLowPowerMode();
+ 119:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****            
+ 120:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 if(BLE_BLELL->EVENT_INTR != 0x0u)
+ 121:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 {            
+ 122:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if((BLE_BLELL->EVENT_INTR & BLE_BLELL_EVENT_INTR_CONN_INTR_Msk) != 0u)
+ 123:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
+ 124:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_INTR & BLE_BLELL_CONN_INTR_CLOSE_CE_Msk) != 0u) &&
+ 125:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CLOSE_CE) 
+ 126:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
+ 127:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CLOSE_CE 
+ 128:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CLOSE_CE;
+ 129:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
+ 130:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
+ 131:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_INTR & BLE_BLELL_CONN_INTR_CE_TX_ACK_Msk) != 0u) &&
+ 132:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_TX_ACK) 
+ 133:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
+ 134:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_TX_ACK
+ 135:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_TX_ACK;
+ 136:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
+ 137:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
+ 138:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_EXT_INTR & BLE_BLELL_CONN_EXT_INTR_EARLY_INTR_Msk) != 
+ 139:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_CONN_EXT_INTR_EARLY) 
+ 140:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
+ 141:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_EXT_INTR_EARLY
+ 142:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_EXT_INTR_EARLY;       
+ 143:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
+ 144:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 4
 
 
- 172 0127 C5000000 		.4byte	0xc5
- 173 012b 18       		.byte	0x18
- 174 012c 06       		.uleb128 0x6
- 175 012d 99030000 		.4byte	.LASF27
- 176 0131 03       		.byte	0x3
- 177 0132 3E       		.byte	0x3e
- 178 0133 C5000000 		.4byte	0xc5
- 179 0137 1C       		.byte	0x1c
- 180 0138 06       		.uleb128 0x6
- 181 0139 F1060000 		.4byte	.LASF28
- 182 013d 03       		.byte	0x3
- 183 013e 3F       		.byte	0x3f
- 184 013f C5000000 		.4byte	0xc5
- 185 0143 20       		.byte	0x20
- 186 0144 06       		.uleb128 0x6
- 187 0145 75000000 		.4byte	.LASF29
- 188 0149 03       		.byte	0x3
- 189 014a 40       		.byte	0x40
- 190 014b C5000000 		.4byte	0xc5
- 191 014f 24       		.byte	0x24
- 192 0150 06       		.uleb128 0x6
- 193 0151 AA010000 		.4byte	.LASF30
- 194 0155 03       		.byte	0x3
- 195 0156 43       		.byte	0x43
- 196 0157 A4000000 		.4byte	0xa4
- 197 015b 28       		.byte	0x28
- 198 015c 06       		.uleb128 0x6
- 199 015d 28050000 		.4byte	.LASF31
- 200 0161 03       		.byte	0x3
- 201 0162 44       		.byte	0x44
- 202 0163 A4000000 		.4byte	0xa4
- 203 0167 29       		.byte	0x29
- 204 0168 06       		.uleb128 0x6
- 205 0169 92050000 		.4byte	.LASF32
- 206 016d 03       		.byte	0x3
- 207 016e 45       		.byte	0x45
- 208 016f A4000000 		.4byte	0xa4
- 209 0173 2A       		.byte	0x2a
- 210 0174 06       		.uleb128 0x6
- 211 0175 A7050000 		.4byte	.LASF33
- 212 0179 03       		.byte	0x3
- 213 017a 46       		.byte	0x46
- 214 017b A4000000 		.4byte	0xa4
- 215 017f 2B       		.byte	0x2b
- 216 0180 06       		.uleb128 0x6
- 217 0181 36050000 		.4byte	.LASF34
- 218 0185 03       		.byte	0x3
- 219 0186 47       		.byte	0x47
- 220 0187 A4000000 		.4byte	0xa4
- 221 018b 2C       		.byte	0x2c
- 222 018c 06       		.uleb128 0x6
- 223 018d 49000000 		.4byte	.LASF35
- 224 0191 03       		.byte	0x3
- 225 0192 48       		.byte	0x48
- 226 0193 A4000000 		.4byte	0xa4
- 227 0197 2D       		.byte	0x2d
- 228 0198 06       		.uleb128 0x6
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 5
+ 145:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_INTR & BLE_BLELL_CONN_INTR_CE_RX_Msk) != 0u) &&
+ 146:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_RX) != 
+ 147:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
+ 148:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_RX */ 
+ 149:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_RX;
+ 150:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
+ 151:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }    
+ 152:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
+ 153:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if((BLE_BLELL->EVENT_INTR & BLE_BLELL_EVENT_INTR_SCAN_INTR_Msk) != 0u)
+ 154:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
+ 155:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->SCAN_INTR & BLE_BLELL_SCAN_INTR_ADV_RX_INTR_Msk) != 0u) &&
+ 156:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_ADV_RX) != 
+ 157:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
+ 158:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type Return interrupt type CY_BLE_INTR_CALLBACK_BLE
+ 159:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_ADV_RX;
+ 160:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
+ 161:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
+ 162:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->SCAN_INTR & BLE_BLELL_SCAN_INTR_SCAN_RSP_RX_INTR_Msk) != 0u
+ 163:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_SCAN_RSP_RX
+ 164:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
+ 165:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_SCAN_RSP_
+ 166:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_SCAN_RSP_RX;
+ 167:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }  
+ 168:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
+ 169:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
+ 170:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if((BLE_BLELL->EVENT_INTR & BLE_BLELL_EVENT_INTR_ADV_INTR_Msk) != 0u)
+ 171:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
+ 172:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->ADV_INTR & BLE_BLELL_ADV_INTR_CONN_REQ_RX_INTR_Msk) != 0u) 
+ 173:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_ADV_INTR_CONN_REQ_RX)
+ 174:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
+ 175:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_ADV_INTR_CONN_REQ_R
+ 176:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_ADV_INTR_CONN_REQ_RX;
+ 177:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }   
+ 178:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
+ 179:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 }
+ 180:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             }
+ 181:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
+ 182:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         
+ 183:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         /* Send interrupt type information to registered callback */
+ 184:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         if(interruptType != (uint32_t)CY_BLE_INTR_CALLBACK_NONE)
+ 185:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {       
+ 186:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             #if (CY_BLE_MODE_PROFILE) 
+ 187:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 if(Cy_BLE_InterruptCallback != NULL)
+ 188:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 {
+ 189:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     Cy_BLE_InterruptCallback((uint32_t)interruptType);
+ 190:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 }
+ 191:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             #else
+ 192:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 {
+ 193:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     uint32_t rTimeout = 100u; /* us */                 
+ 194:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     intrNotifyPtr->data = (uint32_t)interruptType; 
+ 195:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****   
+ 196:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     /* Check if IPC is released */
+ 197:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     while((Cy_IPC_Drv_IsLockAcquired(Cy_IPC_Drv_GetIpcBaseAddress(CY_BLE_INTR_NOTIF
+ 198:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                           (rTimeout !=0u))
+ 199:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
+ 200:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         Cy_SysLib_DelayUs(1u);
+ 201:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         rTimeout--;
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 5
 
 
- 229 0199 BA000000 		.4byte	.LASF36
- 230 019d 03       		.byte	0x3
- 231 019e 49       		.byte	0x49
- 232 019f A4000000 		.4byte	0xa4
- 233 01a3 2E       		.byte	0x2e
- 234 01a4 06       		.uleb128 0x6
- 235 01a5 DB010000 		.4byte	.LASF37
- 236 01a9 03       		.byte	0x3
- 237 01aa 4A       		.byte	0x4a
- 238 01ab A4000000 		.4byte	0xa4
- 239 01af 2F       		.byte	0x2f
- 240 01b0 06       		.uleb128 0x6
- 241 01b1 75010000 		.4byte	.LASF38
- 242 01b5 03       		.byte	0x3
- 243 01b6 4B       		.byte	0x4b
- 244 01b7 A4000000 		.4byte	0xa4
- 245 01bb 30       		.byte	0x30
- 246 01bc 06       		.uleb128 0x6
- 247 01bd 9C050000 		.4byte	.LASF39
- 248 01c1 03       		.byte	0x3
- 249 01c2 4E       		.byte	0x4e
- 250 01c3 A4000000 		.4byte	0xa4
- 251 01c7 31       		.byte	0x31
- 252 01c8 06       		.uleb128 0x6
- 253 01c9 04030000 		.4byte	.LASF40
- 254 01cd 03       		.byte	0x3
- 255 01ce 4F       		.byte	0x4f
- 256 01cf A4000000 		.4byte	0xa4
- 257 01d3 32       		.byte	0x32
- 258 01d4 06       		.uleb128 0x6
- 259 01d5 69000000 		.4byte	.LASF41
- 260 01d9 03       		.byte	0x3
- 261 01da 50       		.byte	0x50
- 262 01db A4000000 		.4byte	0xa4
- 263 01df 33       		.byte	0x33
- 264 01e0 06       		.uleb128 0x6
- 265 01e1 00000000 		.4byte	.LASF42
- 266 01e5 03       		.byte	0x3
- 267 01e6 51       		.byte	0x51
- 268 01e7 A4000000 		.4byte	0xa4
- 269 01eb 34       		.byte	0x34
- 270 01ec 06       		.uleb128 0x6
- 271 01ed FF010000 		.4byte	.LASF43
- 272 01f1 03       		.byte	0x3
- 273 01f2 52       		.byte	0x52
- 274 01f3 AF000000 		.4byte	0xaf
- 275 01f7 36       		.byte	0x36
- 276 01f8 06       		.uleb128 0x6
- 277 01f9 D3050000 		.4byte	.LASF44
- 278 01fd 03       		.byte	0x3
- 279 01fe 53       		.byte	0x53
- 280 01ff AF000000 		.4byte	0xaf
- 281 0203 38       		.byte	0x38
- 282 0204 06       		.uleb128 0x6
- 283 0205 36040000 		.4byte	.LASF45
- 284 0209 03       		.byte	0x3
- 285 020a 54       		.byte	0x54
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 6
+ 202:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
+ 203:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
+ 204:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     /* Generates a notify event by IPC interrupt structures */
+ 205:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if(rTimeout != 0u)
+ 206:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
+ 207:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         (void)Cy_IPC_Drv_AcquireNotify(Cy_IPC_Drv_GetIpcBaseAddress(CY_BLE_INTR_NOT
+ 208:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                                        (1uL << (uint32_t)CY_BLE_INTR_NOTIFY_IPC_INTR));            
+ 209:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }                   
+ 210:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
+ 211:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 }
+ 212:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             #endif /* (CY_BLE_MODE_PROFILE) */
+ 213:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
+ 214:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     }
+ 215:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** }
+ 216:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) */
+ 217:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     
+ 218:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 219:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /*******************************************************************************
+ 220:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Function Name: Cy_BLE_BlessInterrupt
+ 221:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** ****************************************************************************//**
+ 222:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+ 223:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  Handles the Interrupt Service Routine for the BLE sub-system.
+ 224:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+ 225:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \return
+ 226:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  None
+ 227:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
+ 228:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/
+ 229:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** void Cy_BLE_BlessInterrupt(void)
+ 230:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** {  
+  28              		.loc 1 230 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  36              	.LVL0:
+ 231:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)    
+ 232:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     bool sendNotification = false;
+ 233:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_MODE_PROFILE) */
+ 234:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      
+ 235:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED)    
+ 236:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /** 
+ 237:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * Send notification (with interrupt type) to user callback for the 
+ 238:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * BLE interrupts subscribed by user. Cy_BLE_RegisterInterruptCallback API 
+ 239:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * used to register callback for receiving BLE interrupts.
+ 240:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      */
+ 241:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     Cy_BLE_HAL_SendInterruptNotification();
+ 242:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) */ 
+ 243:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 244:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /* Call BLE Stack manager bless function handler */
+ 245:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)    
+ 246:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     sendNotification = Cy_BLE_HAL_BlessInterruptHandler();
+  37              		.loc 1 246 0
+  38 0002 FFF7FEFF 		bl	Cy_BLE_HAL_BlessInterruptHandler
+  39              	.LVL1:
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 6
 
 
- 286 020b AF000000 		.4byte	0xaf
- 287 020f 3A       		.byte	0x3a
- 288 0210 06       		.uleb128 0x6
- 289 0211 10040000 		.4byte	.LASF46
- 290 0215 03       		.byte	0x3
- 291 0216 55       		.byte	0x55
- 292 0217 A4000000 		.4byte	0xa4
- 293 021b 3C       		.byte	0x3c
- 294 021c 06       		.uleb128 0x6
- 295 021d E0040000 		.4byte	.LASF47
- 296 0221 03       		.byte	0x3
- 297 0222 56       		.byte	0x56
- 298 0223 A4000000 		.4byte	0xa4
- 299 0227 3D       		.byte	0x3d
- 300 0228 06       		.uleb128 0x6
- 301 0229 27000000 		.4byte	.LASF48
- 302 022d 03       		.byte	0x3
- 303 022e 57       		.byte	0x57
- 304 022f A4000000 		.4byte	0xa4
- 305 0233 3E       		.byte	0x3e
- 306 0234 06       		.uleb128 0x6
- 307 0235 D4040000 		.4byte	.LASF49
- 308 0239 03       		.byte	0x3
- 309 023a 58       		.byte	0x58
- 310 023b A4000000 		.4byte	0xa4
- 311 023f 3F       		.byte	0x3f
- 312 0240 06       		.uleb128 0x6
- 313 0241 0E070000 		.4byte	.LASF50
- 314 0245 03       		.byte	0x3
- 315 0246 59       		.byte	0x59
- 316 0247 A4000000 		.4byte	0xa4
- 317 024b 40       		.byte	0x40
- 318 024c 06       		.uleb128 0x6
- 319 024d F4050000 		.4byte	.LASF51
- 320 0251 03       		.byte	0x3
- 321 0252 5A       		.byte	0x5a
- 322 0253 A4000000 		.4byte	0xa4
- 323 0257 41       		.byte	0x41
- 324 0258 06       		.uleb128 0x6
- 325 0259 77060000 		.4byte	.LASF52
- 326 025d 03       		.byte	0x3
- 327 025e 5B       		.byte	0x5b
- 328 025f A4000000 		.4byte	0xa4
- 329 0263 42       		.byte	0x42
- 330 0264 06       		.uleb128 0x6
- 331 0265 74030000 		.4byte	.LASF53
- 332 0269 03       		.byte	0x3
- 333 026a 5C       		.byte	0x5c
- 334 026b A4000000 		.4byte	0xa4
- 335 026f 43       		.byte	0x43
- 336 0270 06       		.uleb128 0x6
- 337 0271 8E020000 		.4byte	.LASF54
- 338 0275 03       		.byte	0x3
- 339 0276 5D       		.byte	0x5d
- 340 0277 A4000000 		.4byte	0xa4
- 341 027b 44       		.byte	0x44
- 342 027c 06       		.uleb128 0x6
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 7
+ 247:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #else
+ 248:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     (void)Cy_BLE_HAL_BlessInterruptHandler();
+ 249:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_MODE_PROFILE) */
+ 250:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /* Host stack takes care of clearing interrupts */   
+ 251:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 252:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)
+ 253:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /**
+ 254:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * Call the application application Host callback. This notification indicates
+ 255:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * that user should call Cy_BLE_ProcessEvents() to process
+ 256:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * pending Stack events. 
+ 257:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      */
+ 258:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     if((Cy_BLE_HostRegisteredCallback != NULL) && sendNotification)
+  40              		.loc 1 258 0
+  41 0006 044B     		ldr	r3, .L3
+  42 0008 1B68     		ldr	r3, [r3]
+  43 000a 002B     		cmp	r3, #0
+  44 000c 02D0     		beq	.L1
+  45              		.loc 1 258 0 is_stmt 0 discriminator 1
+  46 000e 0028     		cmp	r0, #0
+  47 0010 00D0     		beq	.L1
+ 259:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     {
+ 260:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         Cy_BLE_HostRegisteredCallback();
+  48              		.loc 1 260 0 is_stmt 1
+  49 0012 9847     		blx	r3
+  50              	.LVL2:
+  51              	.L1:
+ 261:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     }
+ 262:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_MODE_PROFILE) */
+ 263:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** }
+  52              		.loc 1 263 0
+  53              		@ sp needed
+  54 0014 10BD     		pop	{r4, pc}
+  55              	.L4:
+  56 0016 C046     		.align	2
+  57              	.L3:
+  58 0018 00000000 		.word	Cy_BLE_HostRegisteredCallback
+  59              		.cfi_endproc
+  60              	.LFE165:
+  61              		.size	Cy_BLE_BlessInterrupt, .-Cy_BLE_BlessInterrupt
+  62              		.text
+  63              	.Letext0:
+  64              		.file 2 "d:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  65              		.file 3 "d:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  66              		.file 4 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+  67              		.file 5 "Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_ble_stack_host_main.h"
+  68              		.file 6 "Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_ble_gap.h"
+  69              		.file 7 "Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_ble.h"
+  70              		.file 8 "Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_ble_stack_pvt.h"
+  71              		.section	.debug_info,"",%progbits
+  72              	.Ldebug_info0:
+  73 0000 6C060000 		.4byte	0x66c
+  74 0004 0400     		.2byte	0x4
+  75 0006 00000000 		.4byte	.Ldebug_abbrev0
+  76 000a 04       		.byte	0x4
+  77 000b 01       		.uleb128 0x1
+  78 000c 3A070000 		.4byte	.LASF134
+  79 0010 0C       		.byte	0xc
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 7
 
 
- 343 027d 91040000 		.4byte	.LASF55
- 344 0281 03       		.byte	0x3
- 345 0282 5E       		.byte	0x5e
- 346 0283 C5000000 		.4byte	0xc5
- 347 0287 48       		.byte	0x48
- 348 0288 06       		.uleb128 0x6
- 349 0289 09050000 		.4byte	.LASF56
- 350 028d 03       		.byte	0x3
- 351 028e 5F       		.byte	0x5f
- 352 028f C5000000 		.4byte	0xc5
- 353 0293 4C       		.byte	0x4c
- 354 0294 06       		.uleb128 0x6
- 355 0295 C2010000 		.4byte	.LASF57
- 356 0299 03       		.byte	0x3
- 357 029a 60       		.byte	0x60
- 358 029b A4000000 		.4byte	0xa4
- 359 029f 50       		.byte	0x50
- 360 02a0 06       		.uleb128 0x6
- 361 02a1 D1060000 		.4byte	.LASF58
- 362 02a5 03       		.byte	0x3
- 363 02a6 61       		.byte	0x61
- 364 02a7 A4000000 		.4byte	0xa4
- 365 02ab 51       		.byte	0x51
- 366 02ac 06       		.uleb128 0x6
- 367 02ad A1000000 		.4byte	.LASF59
- 368 02b1 03       		.byte	0x3
- 369 02b2 62       		.byte	0x62
- 370 02b3 A4000000 		.4byte	0xa4
- 371 02b7 52       		.byte	0x52
- 372 02b8 06       		.uleb128 0x6
- 373 02b9 04060000 		.4byte	.LASF60
- 374 02bd 03       		.byte	0x3
- 375 02be 63       		.byte	0x63
- 376 02bf A4000000 		.4byte	0xa4
- 377 02c3 53       		.byte	0x53
- 378 02c4 06       		.uleb128 0x6
- 379 02c5 4B040000 		.4byte	.LASF61
- 380 02c9 03       		.byte	0x3
- 381 02ca 64       		.byte	0x64
- 382 02cb A4000000 		.4byte	0xa4
- 383 02cf 54       		.byte	0x54
- 384 02d0 06       		.uleb128 0x6
- 385 02d1 8C010000 		.4byte	.LASF62
- 386 02d5 03       		.byte	0x3
- 387 02d6 65       		.byte	0x65
- 388 02d7 A4000000 		.4byte	0xa4
- 389 02db 55       		.byte	0x55
- 390 02dc 06       		.uleb128 0x6
- 391 02dd 57050000 		.4byte	.LASF63
- 392 02e1 03       		.byte	0x3
- 393 02e2 66       		.byte	0x66
- 394 02e3 A4000000 		.4byte	0xa4
- 395 02e7 56       		.byte	0x56
- 396 02e8 06       		.uleb128 0x6
- 397 02e9 83060000 		.4byte	.LASF64
- 398 02ed 03       		.byte	0x3
- 399 02ee 67       		.byte	0x67
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 8
+  80 0011 D8060000 		.4byte	.LASF135
+  81 0015 87020000 		.4byte	.LASF136
+  82 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  83 001d 00000000 		.4byte	0
+  84 0021 00000000 		.4byte	.Ldebug_line0
+  85 0025 02       		.uleb128 0x2
+  86 0026 04       		.byte	0x4
+  87 0027 05       		.byte	0x5
+  88 0028 696E7400 		.ascii	"int\000"
+  89 002c 03       		.uleb128 0x3
+  90 002d 04       		.byte	0x4
+  91 002e 07       		.byte	0x7
+  92 002f 91030000 		.4byte	.LASF0
+  93 0033 03       		.uleb128 0x3
+  94 0034 08       		.byte	0x8
+  95 0035 05       		.byte	0x5
+  96 0036 57010000 		.4byte	.LASF1
+  97 003a 03       		.uleb128 0x3
+  98 003b 08       		.byte	0x8
+  99 003c 04       		.byte	0x4
+ 100 003d CC070000 		.4byte	.LASF2
+ 101 0041 03       		.uleb128 0x3
+ 102 0042 01       		.byte	0x1
+ 103 0043 06       		.byte	0x6
+ 104 0044 65010000 		.4byte	.LASF3
+ 105 0048 04       		.uleb128 0x4
+ 106 0049 7E000000 		.4byte	.LASF5
+ 107 004d 02       		.byte	0x2
+ 108 004e 1D       		.byte	0x1d
+ 109 004f 53000000 		.4byte	0x53
+ 110 0053 03       		.uleb128 0x3
+ 111 0054 01       		.byte	0x1
+ 112 0055 08       		.byte	0x8
+ 113 0056 98060000 		.4byte	.LASF4
+ 114 005a 04       		.uleb128 0x4
+ 115 005b 28030000 		.4byte	.LASF6
+ 116 005f 02       		.byte	0x2
+ 117 0060 29       		.byte	0x29
+ 118 0061 65000000 		.4byte	0x65
+ 119 0065 03       		.uleb128 0x3
+ 120 0066 02       		.byte	0x2
+ 121 0067 05       		.byte	0x5
+ 122 0068 BA060000 		.4byte	.LASF7
+ 123 006c 04       		.uleb128 0x4
+ 124 006d F7070000 		.4byte	.LASF8
+ 125 0071 02       		.byte	0x2
+ 126 0072 2B       		.byte	0x2b
+ 127 0073 77000000 		.4byte	0x77
+ 128 0077 03       		.uleb128 0x3
+ 129 0078 02       		.byte	0x2
+ 130 0079 07       		.byte	0x7
+ 131 007a 6C080000 		.4byte	.LASF9
+ 132 007e 03       		.uleb128 0x3
+ 133 007f 04       		.byte	0x4
+ 134 0080 05       		.byte	0x5
+ 135 0081 F7010000 		.4byte	.LASF10
+ 136 0085 04       		.uleb128 0x4
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 8
 
 
- 400 02ef A4000000 		.4byte	0xa4
- 401 02f3 57       		.byte	0x57
- 402 02f4 06       		.uleb128 0x6
- 403 02f5 60030000 		.4byte	.LASF65
- 404 02f9 03       		.byte	0x3
- 405 02fa 68       		.byte	0x68
- 406 02fb A4000000 		.4byte	0xa4
- 407 02ff 58       		.byte	0x58
- 408 0300 06       		.uleb128 0x6
- 409 0301 BF050000 		.4byte	.LASF66
- 410 0305 03       		.byte	0x3
- 411 0306 69       		.byte	0x69
- 412 0307 A4000000 		.4byte	0xa4
- 413 030b 59       		.byte	0x59
- 414 030c 06       		.uleb128 0x6
- 415 030d EF020000 		.4byte	.LASF67
- 416 0311 03       		.byte	0x3
- 417 0312 6E       		.byte	0x6e
- 418 0313 BA000000 		.4byte	0xba
- 419 0317 5A       		.byte	0x5a
- 420 0318 06       		.uleb128 0x6
- 421 0319 E7010000 		.4byte	.LASF68
- 422 031d 03       		.byte	0x3
- 423 031e 6F       		.byte	0x6f
- 424 031f BA000000 		.4byte	0xba
- 425 0323 5C       		.byte	0x5c
- 426 0324 06       		.uleb128 0x6
- 427 0325 F0010000 		.4byte	.LASF69
- 428 0329 03       		.byte	0x3
- 429 032a 70       		.byte	0x70
- 430 032b A4000000 		.4byte	0xa4
- 431 032f 5E       		.byte	0x5e
- 432 0330 06       		.uleb128 0x6
- 433 0331 41070000 		.4byte	.LASF70
- 434 0335 03       		.byte	0x3
- 435 0336 71       		.byte	0x71
- 436 0337 A4000000 		.4byte	0xa4
- 437 033b 5F       		.byte	0x5f
- 438 033c 06       		.uleb128 0x6
- 439 033d 30070000 		.4byte	.LASF71
- 440 0341 03       		.byte	0x3
- 441 0342 72       		.byte	0x72
- 442 0343 A4000000 		.4byte	0xa4
- 443 0347 60       		.byte	0x60
- 444 0348 06       		.uleb128 0x6
- 445 0349 9F020000 		.4byte	.LASF72
- 446 034d 03       		.byte	0x3
- 447 034e 73       		.byte	0x73
- 448 034f C5000000 		.4byte	0xc5
- 449 0353 64       		.byte	0x64
- 450 0354 06       		.uleb128 0x6
- 451 0355 F9040000 		.4byte	.LASF73
- 452 0359 03       		.byte	0x3
- 453 035a 76       		.byte	0x76
- 454 035b BA000000 		.4byte	0xba
- 455 035f 68       		.byte	0x68
- 456 0360 06       		.uleb128 0x6
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 9
+ 137 0086 0D030000 		.4byte	.LASF11
+ 138 008a 02       		.byte	0x2
+ 139 008b 41       		.byte	0x41
+ 140 008c 90000000 		.4byte	0x90
+ 141 0090 03       		.uleb128 0x3
+ 142 0091 04       		.byte	0x4
+ 143 0092 07       		.byte	0x7
+ 144 0093 14040000 		.4byte	.LASF12
+ 145 0097 03       		.uleb128 0x3
+ 146 0098 08       		.byte	0x8
+ 147 0099 07       		.byte	0x7
+ 148 009a CF000000 		.4byte	.LASF13
+ 149 009e 03       		.uleb128 0x3
+ 150 009f 04       		.byte	0x4
+ 151 00a0 07       		.byte	0x7
+ 152 00a1 27050000 		.4byte	.LASF14
+ 153 00a5 03       		.uleb128 0x3
+ 154 00a6 01       		.byte	0x1
+ 155 00a7 08       		.byte	0x8
+ 156 00a8 D8070000 		.4byte	.LASF15
+ 157 00ac 05       		.uleb128 0x5
+ 158 00ad 04       		.byte	0x4
+ 159 00ae B2000000 		.4byte	0xb2
+ 160 00b2 06       		.uleb128 0x6
+ 161 00b3 04       		.uleb128 0x4
+ 162 00b4 46090000 		.4byte	.LASF16
+ 163 00b8 03       		.byte	0x3
+ 164 00b9 18       		.byte	0x18
+ 165 00ba 48000000 		.4byte	0x48
+ 166 00be 04       		.uleb128 0x4
+ 167 00bf 4F010000 		.4byte	.LASF17
+ 168 00c3 03       		.byte	0x3
+ 169 00c4 20       		.byte	0x20
+ 170 00c5 5A000000 		.4byte	0x5a
+ 171 00c9 04       		.uleb128 0x4
+ 172 00ca E5030000 		.4byte	.LASF18
+ 173 00ce 03       		.byte	0x3
+ 174 00cf 24       		.byte	0x24
+ 175 00d0 6C000000 		.4byte	0x6c
+ 176 00d4 04       		.uleb128 0x4
+ 177 00d5 31070000 		.4byte	.LASF19
+ 178 00d9 03       		.byte	0x3
+ 179 00da 30       		.byte	0x30
+ 180 00db 85000000 		.4byte	0x85
+ 181 00df 07       		.uleb128 0x7
+ 182 00e0 B8       		.byte	0xb8
+ 183 00e1 04       		.byte	0x4
+ 184 00e2 34       		.byte	0x34
+ 185 00e3 F0040000 		.4byte	0x4f0
+ 186 00e7 08       		.uleb128 0x8
+ 187 00e8 B6000000 		.4byte	.LASF20
+ 188 00ec 04       		.byte	0x4
+ 189 00ed 37       		.byte	0x37
+ 190 00ee D4000000 		.4byte	0xd4
+ 191 00f2 00       		.byte	0
+ 192 00f3 08       		.uleb128 0x8
+ 193 00f4 02030000 		.4byte	.LASF21
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 9
 
 
- 457 0361 4E030000 		.4byte	.LASF74
- 458 0365 03       		.byte	0x3
- 459 0366 77       		.byte	0x77
- 460 0367 BA000000 		.4byte	0xba
- 461 036b 6A       		.byte	0x6a
- 462 036c 06       		.uleb128 0x6
- 463 036d AC060000 		.4byte	.LASF75
- 464 0371 03       		.byte	0x3
- 465 0372 78       		.byte	0x78
- 466 0373 BA000000 		.4byte	0xba
- 467 0377 6C       		.byte	0x6c
- 468 0378 06       		.uleb128 0x6
- 469 0379 57070000 		.4byte	.LASF76
- 470 037d 03       		.byte	0x3
- 471 037e 79       		.byte	0x79
- 472 037f BA000000 		.4byte	0xba
- 473 0383 6E       		.byte	0x6e
- 474 0384 06       		.uleb128 0x6
- 475 0385 B8040000 		.4byte	.LASF77
- 476 0389 03       		.byte	0x3
- 477 038a 7B       		.byte	0x7b
- 478 038b A4000000 		.4byte	0xa4
- 479 038f 70       		.byte	0x70
- 480 0390 06       		.uleb128 0x6
- 481 0391 A3040000 		.4byte	.LASF78
- 482 0395 03       		.byte	0x3
- 483 0396 7C       		.byte	0x7c
- 484 0397 A4000000 		.4byte	0xa4
- 485 039b 71       		.byte	0x71
- 486 039c 06       		.uleb128 0x6
- 487 039d DE050000 		.4byte	.LASF79
- 488 03a1 03       		.byte	0x3
- 489 03a2 7D       		.byte	0x7d
- 490 03a3 A4000000 		.4byte	0xa4
- 491 03a7 72       		.byte	0x72
- 492 03a8 06       		.uleb128 0x6
- 493 03a9 1F040000 		.4byte	.LASF80
- 494 03ad 03       		.byte	0x3
- 495 03ae 7E       		.byte	0x7e
- 496 03af A4000000 		.4byte	0xa4
- 497 03b3 73       		.byte	0x73
- 498 03b4 06       		.uleb128 0x6
- 499 03b5 25030000 		.4byte	.LASF81
- 500 03b9 03       		.byte	0x3
- 501 03ba 80       		.byte	0x80
- 502 03bb BA000000 		.4byte	0xba
- 503 03bf 74       		.byte	0x74
- 504 03c0 06       		.uleb128 0x6
- 505 03c1 12030000 		.4byte	.LASF82
- 506 03c5 03       		.byte	0x3
- 507 03c6 81       		.byte	0x81
- 508 03c7 BA000000 		.4byte	0xba
- 509 03cb 76       		.byte	0x76
- 510 03cc 06       		.uleb128 0x6
- 511 03cd 97060000 		.4byte	.LASF83
- 512 03d1 03       		.byte	0x3
- 513 03d2 82       		.byte	0x82
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 10
+ 194 00f8 04       		.byte	0x4
+ 195 00f9 38       		.byte	0x38
+ 196 00fa D4000000 		.4byte	0xd4
+ 197 00fe 04       		.byte	0x4
+ 198 00ff 08       		.uleb128 0x8
+ 199 0100 3B020000 		.4byte	.LASF22
+ 200 0104 04       		.byte	0x4
+ 201 0105 39       		.byte	0x39
+ 202 0106 D4000000 		.4byte	0xd4
+ 203 010a 08       		.byte	0x8
+ 204 010b 08       		.uleb128 0x8
+ 205 010c 60060000 		.4byte	.LASF23
+ 206 0110 04       		.byte	0x4
+ 207 0111 3A       		.byte	0x3a
+ 208 0112 D4000000 		.4byte	0xd4
+ 209 0116 0C       		.byte	0xc
+ 210 0117 08       		.uleb128 0x8
+ 211 0118 A4010000 		.4byte	.LASF24
+ 212 011c 04       		.byte	0x4
+ 213 011d 3B       		.byte	0x3b
+ 214 011e D4000000 		.4byte	0xd4
+ 215 0122 10       		.byte	0x10
+ 216 0123 08       		.uleb128 0x8
+ 217 0124 ED010000 		.4byte	.LASF25
+ 218 0128 04       		.byte	0x4
+ 219 0129 3C       		.byte	0x3c
+ 220 012a D4000000 		.4byte	0xd4
+ 221 012e 14       		.byte	0x14
+ 222 012f 08       		.uleb128 0x8
+ 223 0130 31040000 		.4byte	.LASF26
+ 224 0134 04       		.byte	0x4
+ 225 0135 3D       		.byte	0x3d
+ 226 0136 D4000000 		.4byte	0xd4
+ 227 013a 18       		.byte	0x18
+ 228 013b 08       		.uleb128 0x8
+ 229 013c 67000000 		.4byte	.LASF27
+ 230 0140 04       		.byte	0x4
+ 231 0141 3E       		.byte	0x3e
+ 232 0142 D4000000 		.4byte	0xd4
+ 233 0146 1C       		.byte	0x1c
+ 234 0147 08       		.uleb128 0x8
+ 235 0148 C1090000 		.4byte	.LASF28
+ 236 014c 04       		.byte	0x4
+ 237 014d 3F       		.byte	0x3f
+ 238 014e D4000000 		.4byte	0xd4
+ 239 0152 20       		.byte	0x20
+ 240 0153 08       		.uleb128 0x8
+ 241 0154 D1050000 		.4byte	.LASF29
+ 242 0158 04       		.byte	0x4
+ 243 0159 40       		.byte	0x40
+ 244 015a D4000000 		.4byte	0xd4
+ 245 015e 24       		.byte	0x24
+ 246 015f 08       		.uleb128 0x8
+ 247 0160 F9040000 		.4byte	.LASF30
+ 248 0164 04       		.byte	0x4
+ 249 0165 43       		.byte	0x43
+ 250 0166 B3000000 		.4byte	0xb3
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 10
 
 
- 514 03d3 BA000000 		.4byte	0xba
- 515 03d7 78       		.byte	0x78
- 516 03d8 06       		.uleb128 0x6
- 517 03d9 5B040000 		.4byte	.LASF84
- 518 03dd 03       		.byte	0x3
- 519 03de 83       		.byte	0x83
- 520 03df BA000000 		.4byte	0xba
- 521 03e3 7A       		.byte	0x7a
- 522 03e4 06       		.uleb128 0x6
- 523 03e5 DA020000 		.4byte	.LASF85
- 524 03e9 03       		.byte	0x3
- 525 03ea 86       		.byte	0x86
- 526 03eb A4000000 		.4byte	0xa4
- 527 03ef 7C       		.byte	0x7c
- 528 03f0 06       		.uleb128 0x6
- 529 03f1 17050000 		.4byte	.LASF86
- 530 03f5 03       		.byte	0x3
- 531 03f6 87       		.byte	0x87
- 532 03f7 A4000000 		.4byte	0xa4
- 533 03fb 7D       		.byte	0x7d
- 534 03fc 06       		.uleb128 0x6
- 535 03fd 56000000 		.4byte	.LASF87
- 536 0401 03       		.byte	0x3
- 537 0402 88       		.byte	0x88
- 538 0403 A4000000 		.4byte	0xa4
- 539 0407 7E       		.byte	0x7e
- 540 0408 06       		.uleb128 0x6
- 541 0409 35000000 		.4byte	.LASF88
- 542 040d 03       		.byte	0x3
- 543 040e 89       		.byte	0x89
- 544 040f A4000000 		.4byte	0xa4
- 545 0413 7F       		.byte	0x7f
- 546 0414 06       		.uleb128 0x6
- 547 0415 31020000 		.4byte	.LASF89
- 548 0419 03       		.byte	0x3
- 549 041a 8A       		.byte	0x8a
- 550 041b A4000000 		.4byte	0xa4
- 551 041f 80       		.byte	0x80
- 552 0420 06       		.uleb128 0x6
- 553 0421 80000000 		.4byte	.LASF90
- 554 0425 03       		.byte	0x3
- 555 0426 8D       		.byte	0x8d
- 556 0427 C5000000 		.4byte	0xc5
- 557 042b 84       		.byte	0x84
- 558 042c 06       		.uleb128 0x6
- 559 042d 37030000 		.4byte	.LASF91
- 560 0431 03       		.byte	0x3
- 561 0432 8E       		.byte	0x8e
- 562 0433 C5000000 		.4byte	0xc5
- 563 0437 88       		.byte	0x88
- 564 0438 06       		.uleb128 0x6
- 565 0439 EE030000 		.4byte	.LASF92
- 566 043d 03       		.byte	0x3
- 567 043e 8F       		.byte	0x8f
- 568 043f C5000000 		.4byte	0xc5
- 569 0443 8C       		.byte	0x8c
- 570 0444 06       		.uleb128 0x6
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 11
+ 251 016a 28       		.byte	0x28
+ 252 016b 08       		.uleb128 0x8
+ 253 016c 4D000000 		.4byte	.LASF31
+ 254 0170 04       		.byte	0x4
+ 255 0171 44       		.byte	0x44
+ 256 0172 B3000000 		.4byte	0xb3
+ 257 0176 29       		.byte	0x29
+ 258 0177 08       		.uleb128 0x8
+ 259 0178 B7090000 		.4byte	.LASF32
+ 260 017c 04       		.byte	0x4
+ 261 017d 45       		.byte	0x45
+ 262 017e B3000000 		.4byte	0xb3
+ 263 0182 2A       		.byte	0x2a
+ 264 0183 08       		.uleb128 0x8
+ 265 0184 C3050000 		.4byte	.LASF33
+ 266 0188 04       		.byte	0x4
+ 267 0189 46       		.byte	0x46
+ 268 018a B3000000 		.4byte	0xb3
+ 269 018e 2B       		.byte	0x2b
+ 270 018f 08       		.uleb128 0x8
+ 271 0190 89040000 		.4byte	.LASF34
+ 272 0194 04       		.byte	0x4
+ 273 0195 47       		.byte	0x47
+ 274 0196 B3000000 		.4byte	0xb3
+ 275 019a 2C       		.byte	0x2c
+ 276 019b 08       		.uleb128 0x8
+ 277 019c 3E080000 		.4byte	.LASF35
+ 278 01a0 04       		.byte	0x4
+ 279 01a1 48       		.byte	0x48
+ 280 01a2 B3000000 		.4byte	0xb3
+ 281 01a6 2D       		.byte	0x2d
+ 282 01a7 08       		.uleb128 0x8
+ 283 01a8 AD010000 		.4byte	.LASF36
+ 284 01ac 04       		.byte	0x4
+ 285 01ad 49       		.byte	0x49
+ 286 01ae B3000000 		.4byte	0xb3
+ 287 01b2 2E       		.byte	0x2e
+ 288 01b3 08       		.uleb128 0x8
+ 289 01b4 06050000 		.4byte	.LASF37
+ 290 01b8 04       		.byte	0x4
+ 291 01b9 4A       		.byte	0x4a
+ 292 01ba B3000000 		.4byte	0xb3
+ 293 01be 2F       		.byte	0x2f
+ 294 01bf 08       		.uleb128 0x8
+ 295 01c0 DD070000 		.4byte	.LASF38
+ 296 01c4 04       		.byte	0x4
+ 297 01c5 4B       		.byte	0x4b
+ 298 01c6 B3000000 		.4byte	0xb3
+ 299 01ca 30       		.byte	0x30
+ 300 01cb 08       		.uleb128 0x8
+ 301 01cc 26040000 		.4byte	.LASF39
+ 302 01d0 04       		.byte	0x4
+ 303 01d1 4E       		.byte	0x4e
+ 304 01d2 B3000000 		.4byte	0xb3
+ 305 01d6 31       		.byte	0x31
+ 306 01d7 08       		.uleb128 0x8
+ 307 01d8 70000000 		.4byte	.LASF40
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 11
 
 
- 571 0445 1B070000 		.4byte	.LASF93
- 572 0449 03       		.byte	0x3
- 573 044a 90       		.byte	0x90
- 574 044b C5000000 		.4byte	0xc5
- 575 044f 90       		.byte	0x90
- 576 0450 06       		.uleb128 0x6
- 577 0451 42050000 		.4byte	.LASF94
- 578 0455 03       		.byte	0x3
- 579 0456 91       		.byte	0x91
- 580 0457 C5000000 		.4byte	0xc5
- 581 045b 94       		.byte	0x94
- 582 045c 06       		.uleb128 0x6
- 583 045d 11000000 		.4byte	.LASF95
- 584 0461 03       		.byte	0x3
- 585 0462 92       		.byte	0x92
- 586 0463 C5000000 		.4byte	0xc5
- 587 0467 98       		.byte	0x98
- 588 0468 06       		.uleb128 0x6
- 589 0469 BB060000 		.4byte	.LASF96
- 590 046d 03       		.byte	0x3
- 591 046e 93       		.byte	0x93
- 592 046f C5000000 		.4byte	0xc5
- 593 0473 9C       		.byte	0x9c
- 594 0474 06       		.uleb128 0x6
- 595 0475 B0020000 		.4byte	.LASF97
- 596 0479 03       		.byte	0x3
- 597 047a 94       		.byte	0x94
- 598 047b C5000000 		.4byte	0xc5
- 599 047f A0       		.byte	0xa0
- 600 0480 06       		.uleb128 0x6
- 601 0481 0C020000 		.4byte	.LASF98
- 602 0485 03       		.byte	0x3
- 603 0486 95       		.byte	0x95
- 604 0487 BA000000 		.4byte	0xba
- 605 048b A4       		.byte	0xa4
- 606 048c 06       		.uleb128 0x6
- 607 048d 34060000 		.4byte	.LASF99
- 608 0491 03       		.byte	0x3
- 609 0492 96       		.byte	0x96
- 610 0493 BA000000 		.4byte	0xba
- 611 0497 A6       		.byte	0xa6
- 612 0498 06       		.uleb128 0x6
- 613 0499 02070000 		.4byte	.LASF100
- 614 049d 03       		.byte	0x3
- 615 049e 97       		.byte	0x97
- 616 049f BA000000 		.4byte	0xba
- 617 04a3 A8       		.byte	0xa8
- 618 04a4 06       		.uleb128 0x6
- 619 04a5 84050000 		.4byte	.LASF101
- 620 04a9 03       		.byte	0x3
- 621 04aa 98       		.byte	0x98
- 622 04ab BA000000 		.4byte	0xba
- 623 04af AA       		.byte	0xaa
- 624 04b0 06       		.uleb128 0x6
- 625 04b1 C5000000 		.4byte	.LASF102
- 626 04b5 03       		.byte	0x3
- 627 04b6 99       		.byte	0x99
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 12
+ 308 01dc 04       		.byte	0x4
+ 309 01dd 4F       		.byte	0x4f
+ 310 01de B3000000 		.4byte	0xb3
+ 311 01e2 32       		.byte	0x32
+ 312 01e3 08       		.uleb128 0x8
+ 313 01e4 85030000 		.4byte	.LASF41
+ 314 01e8 04       		.byte	0x4
+ 315 01e9 50       		.byte	0x50
+ 316 01ea B3000000 		.4byte	0xb3
+ 317 01ee 33       		.byte	0x33
+ 318 01ef 08       		.uleb128 0x8
+ 319 01f0 3B050000 		.4byte	.LASF42
+ 320 01f4 04       		.byte	0x4
+ 321 01f5 51       		.byte	0x51
+ 322 01f6 B3000000 		.4byte	0xb3
+ 323 01fa 34       		.byte	0x34
+ 324 01fb 08       		.uleb128 0x8
+ 325 01fc AC080000 		.4byte	.LASF43
+ 326 0200 04       		.byte	0x4
+ 327 0201 52       		.byte	0x52
+ 328 0202 BE000000 		.4byte	0xbe
+ 329 0206 36       		.byte	0x36
+ 330 0207 08       		.uleb128 0x8
+ 331 0208 55020000 		.4byte	.LASF44
+ 332 020c 04       		.byte	0x4
+ 333 020d 53       		.byte	0x53
+ 334 020e BE000000 		.4byte	0xbe
+ 335 0212 38       		.byte	0x38
+ 336 0213 08       		.uleb128 0x8
+ 337 0214 FB080000 		.4byte	.LASF45
+ 338 0218 04       		.byte	0x4
+ 339 0219 54       		.byte	0x54
+ 340 021a BE000000 		.4byte	0xbe
+ 341 021e 3A       		.byte	0x3a
+ 342 021f 08       		.uleb128 0x8
+ 343 0220 A8090000 		.4byte	.LASF46
+ 344 0224 04       		.byte	0x4
+ 345 0225 55       		.byte	0x55
+ 346 0226 B3000000 		.4byte	0xb3
+ 347 022a 3C       		.byte	0x3c
+ 348 022b 08       		.uleb128 0x8
+ 349 022c 7C020000 		.4byte	.LASF47
+ 350 0230 04       		.byte	0x4
+ 351 0231 56       		.byte	0x56
+ 352 0232 B3000000 		.4byte	0xb3
+ 353 0236 3D       		.byte	0x3d
+ 354 0237 08       		.uleb128 0x8
+ 355 0238 13070000 		.4byte	.LASF48
+ 356 023c 04       		.byte	0x4
+ 357 023d 57       		.byte	0x57
+ 358 023e B3000000 		.4byte	0xb3
+ 359 0242 3E       		.byte	0x3e
+ 360 0243 08       		.uleb128 0x8
+ 361 0244 5B000000 		.4byte	.LASF49
+ 362 0248 04       		.byte	0x4
+ 363 0249 58       		.byte	0x58
+ 364 024a B3000000 		.4byte	0xb3
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 12
 
 
- 628 04b7 BA000000 		.4byte	0xba
- 629 04bb AC       		.byte	0xac
- 630 04bc 06       		.uleb128 0x6
- 631 04bd 8B030000 		.4byte	.LASF103
- 632 04c1 03       		.byte	0x3
- 633 04c2 9A       		.byte	0x9a
- 634 04c3 BA000000 		.4byte	0xba
- 635 04c7 AE       		.byte	0xae
- 636 04c8 06       		.uleb128 0x6
- 637 04c9 E3060000 		.4byte	.LASF104
- 638 04cd 03       		.byte	0x3
- 639 04ce 9D       		.byte	0x9d
- 640 04cf BA000000 		.4byte	0xba
- 641 04d3 B0       		.byte	0xb0
- 642 04d4 06       		.uleb128 0x6
- 643 04d5 16060000 		.4byte	.LASF105
- 644 04d9 03       		.byte	0x3
- 645 04da 9E       		.byte	0x9e
- 646 04db C5000000 		.4byte	0xc5
- 647 04df B4       		.byte	0xb4
- 648 04e0 00       		.byte	0
- 649 04e1 04       		.uleb128 0x4
- 650 04e2 D3000000 		.4byte	.LASF106
- 651 04e6 03       		.byte	0x3
- 652 04e7 9F       		.byte	0x9f
- 653 04e8 D0000000 		.4byte	0xd0
- 654 04ec 03       		.uleb128 0x3
- 655 04ed 04       		.byte	0x4
- 656 04ee 04       		.byte	0x4
- 657 04ef 2B020000 		.4byte	.LASF107
- 658 04f3 03       		.uleb128 0x3
- 659 04f4 08       		.byte	0x8
- 660 04f5 04       		.byte	0x4
- 661 04f6 7D050000 		.4byte	.LASF108
- 662 04fa 03       		.uleb128 0x3
- 663 04fb 01       		.byte	0x1
- 664 04fc 02       		.byte	0x2
- 665 04fd F3040000 		.4byte	.LASF109
- 666 0501 07       		.uleb128 0x7
- 667 0502 B5050000 		.4byte	.LASF113
- 668 0506 03       		.byte	0x3
- 669 0507 A7       		.byte	0xa7
- 670 0508 0C050000 		.4byte	0x50c
- 671 050c 08       		.uleb128 0x8
- 672 050d 04       		.byte	0x4
- 673 050e 12050000 		.4byte	0x512
- 674 0512 09       		.uleb128 0x9
- 675 0513 E1040000 		.4byte	0x4e1
- 676 0517 00       		.byte	0
- 677              		.section	.debug_abbrev,"",%progbits
- 678              	.Ldebug_abbrev0:
- 679 0000 01       		.uleb128 0x1
- 680 0001 11       		.uleb128 0x11
- 681 0002 01       		.byte	0x1
- 682 0003 25       		.uleb128 0x25
- 683 0004 0E       		.uleb128 0xe
- 684 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 13
+ 365 024e 3F       		.byte	0x3f
+ 366 024f 08       		.uleb128 0x8
+ 367 0250 DC050000 		.4byte	.LASF50
+ 368 0254 04       		.byte	0x4
+ 369 0255 59       		.byte	0x59
+ 370 0256 B3000000 		.4byte	0xb3
+ 371 025a 40       		.byte	0x40
+ 372 025b 08       		.uleb128 0x8
+ 373 025c 18030000 		.4byte	.LASF51
+ 374 0260 04       		.byte	0x4
+ 375 0261 5A       		.byte	0x5a
+ 376 0262 B3000000 		.4byte	0xb3
+ 377 0266 41       		.byte	0x41
+ 378 0267 08       		.uleb128 0x8
+ 379 0268 A5040000 		.4byte	.LASF52
+ 380 026c 04       		.byte	0x4
+ 381 026d 5B       		.byte	0x5b
+ 382 026e B3000000 		.4byte	0xb3
+ 383 0272 42       		.byte	0x42
+ 384 0273 08       		.uleb128 0x8
+ 385 0274 A1050000 		.4byte	.LASF53
+ 386 0278 04       		.byte	0x4
+ 387 0279 5C       		.byte	0x5c
+ 388 027a B3000000 		.4byte	0xb3
+ 389 027e 43       		.byte	0x43
+ 390 027f 08       		.uleb128 0x8
+ 391 0280 44020000 		.4byte	.LASF54
+ 392 0284 04       		.byte	0x4
+ 393 0285 5D       		.byte	0x5d
+ 394 0286 B3000000 		.4byte	0xb3
+ 395 028a 44       		.byte	0x44
+ 396 028b 08       		.uleb128 0x8
+ 397 028c 00000000 		.4byte	.LASF55
+ 398 0290 04       		.byte	0x4
+ 399 0291 5E       		.byte	0x5e
+ 400 0292 D4000000 		.4byte	0xd4
+ 401 0296 48       		.byte	0x48
+ 402 0297 08       		.uleb128 0x8
+ 403 0298 17020000 		.4byte	.LASF56
+ 404 029c 04       		.byte	0x4
+ 405 029d 5F       		.byte	0x5f
+ 406 029e D4000000 		.4byte	0xd4
+ 407 02a2 4C       		.byte	0x4c
+ 408 02a3 08       		.uleb128 0x8
+ 409 02a4 220A0000 		.4byte	.LASF57
+ 410 02a8 04       		.byte	0x4
+ 411 02a9 60       		.byte	0x60
+ 412 02aa B3000000 		.4byte	0xb3
+ 413 02ae 50       		.byte	0x50
+ 414 02af 08       		.uleb128 0x8
+ 415 02b0 29010000 		.4byte	.LASF58
+ 416 02b4 04       		.byte	0x4
+ 417 02b5 61       		.byte	0x61
+ 418 02b6 B3000000 		.4byte	0xb3
+ 419 02ba 51       		.byte	0x51
+ 420 02bb 08       		.uleb128 0x8
+ 421 02bc E9050000 		.4byte	.LASF59
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 13
 
 
- 685 0006 0B       		.uleb128 0xb
- 686 0007 03       		.uleb128 0x3
- 687 0008 0E       		.uleb128 0xe
- 688 0009 1B       		.uleb128 0x1b
- 689 000a 0E       		.uleb128 0xe
- 690 000b 10       		.uleb128 0x10
- 691 000c 17       		.uleb128 0x17
- 692 000d 00       		.byte	0
- 693 000e 00       		.byte	0
- 694 000f 02       		.uleb128 0x2
- 695 0010 24       		.uleb128 0x24
- 696 0011 00       		.byte	0
- 697 0012 0B       		.uleb128 0xb
- 698 0013 0B       		.uleb128 0xb
- 699 0014 3E       		.uleb128 0x3e
- 700 0015 0B       		.uleb128 0xb
- 701 0016 03       		.uleb128 0x3
- 702 0017 08       		.uleb128 0x8
- 703 0018 00       		.byte	0
- 704 0019 00       		.byte	0
- 705 001a 03       		.uleb128 0x3
- 706 001b 24       		.uleb128 0x24
- 707 001c 00       		.byte	0
- 708 001d 0B       		.uleb128 0xb
- 709 001e 0B       		.uleb128 0xb
- 710 001f 3E       		.uleb128 0x3e
- 711 0020 0B       		.uleb128 0xb
- 712 0021 03       		.uleb128 0x3
- 713 0022 0E       		.uleb128 0xe
- 714 0023 00       		.byte	0
- 715 0024 00       		.byte	0
- 716 0025 04       		.uleb128 0x4
- 717 0026 16       		.uleb128 0x16
- 718 0027 00       		.byte	0
- 719 0028 03       		.uleb128 0x3
- 720 0029 0E       		.uleb128 0xe
- 721 002a 3A       		.uleb128 0x3a
- 722 002b 0B       		.uleb128 0xb
- 723 002c 3B       		.uleb128 0x3b
- 724 002d 0B       		.uleb128 0xb
- 725 002e 49       		.uleb128 0x49
- 726 002f 13       		.uleb128 0x13
- 727 0030 00       		.byte	0
- 728 0031 00       		.byte	0
- 729 0032 05       		.uleb128 0x5
- 730 0033 13       		.uleb128 0x13
- 731 0034 01       		.byte	0x1
- 732 0035 0B       		.uleb128 0xb
- 733 0036 0B       		.uleb128 0xb
- 734 0037 3A       		.uleb128 0x3a
- 735 0038 0B       		.uleb128 0xb
- 736 0039 3B       		.uleb128 0x3b
- 737 003a 0B       		.uleb128 0xb
- 738 003b 01       		.uleb128 0x1
- 739 003c 13       		.uleb128 0x13
- 740 003d 00       		.byte	0
- 741 003e 00       		.byte	0
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 14
+ 422 02c0 04       		.byte	0x4
+ 423 02c1 62       		.byte	0x62
+ 424 02c2 B3000000 		.4byte	0xb3
+ 425 02c6 52       		.byte	0x52
+ 426 02c7 08       		.uleb128 0x8
+ 427 02c8 DF090000 		.4byte	.LASF60
+ 428 02cc 04       		.byte	0x4
+ 429 02cd 63       		.byte	0x63
+ 430 02ce B3000000 		.4byte	0xb3
+ 431 02d2 53       		.byte	0x53
+ 432 02d3 08       		.uleb128 0x8
+ 433 02d4 21070000 		.4byte	.LASF61
+ 434 02d8 04       		.byte	0x4
+ 435 02d9 64       		.byte	0x64
+ 436 02da B3000000 		.4byte	0xb3
+ 437 02de 54       		.byte	0x54
+ 438 02df 08       		.uleb128 0x8
+ 439 02e0 3B010000 		.4byte	.LASF62
+ 440 02e4 04       		.byte	0x4
+ 441 02e5 65       		.byte	0x65
+ 442 02e6 B3000000 		.4byte	0xb3
+ 443 02ea 55       		.byte	0x55
+ 444 02eb 08       		.uleb128 0x8
+ 445 02ec 00040000 		.4byte	.LASF63
+ 446 02f0 04       		.byte	0x4
+ 447 02f1 66       		.byte	0x66
+ 448 02f2 B3000000 		.4byte	0xb3
+ 449 02f6 56       		.byte	0x56
+ 450 02f7 08       		.uleb128 0x8
+ 451 02f8 3A040000 		.4byte	.LASF64
+ 452 02fc 04       		.byte	0x4
+ 453 02fd 67       		.byte	0x67
+ 454 02fe B3000000 		.4byte	0xb3
+ 455 0302 57       		.byte	0x57
+ 456 0303 08       		.uleb128 0x8
+ 457 0304 12000000 		.4byte	.LASF65
+ 458 0308 04       		.byte	0x4
+ 459 0309 68       		.byte	0x68
+ 460 030a B3000000 		.4byte	0xb3
+ 461 030e 58       		.byte	0x58
+ 462 030f 08       		.uleb128 0x8
+ 463 0310 A6060000 		.4byte	.LASF66
+ 464 0314 04       		.byte	0x4
+ 465 0315 69       		.byte	0x69
+ 466 0316 B3000000 		.4byte	0xb3
+ 467 031a 59       		.byte	0x59
+ 468 031b 08       		.uleb128 0x8
+ 469 031c 30050000 		.4byte	.LASF67
+ 470 0320 04       		.byte	0x4
+ 471 0321 6E       		.byte	0x6e
+ 472 0322 C9000000 		.4byte	0xc9
+ 473 0326 5A       		.byte	0x5a
+ 474 0327 08       		.uleb128 0x8
+ 475 0328 7F080000 		.4byte	.LASF68
+ 476 032c 04       		.byte	0x4
+ 477 032d 6F       		.byte	0x6f
+ 478 032e C9000000 		.4byte	0xc9
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 14
 
 
- 742 003f 06       		.uleb128 0x6
- 743 0040 0D       		.uleb128 0xd
- 744 0041 00       		.byte	0
- 745 0042 03       		.uleb128 0x3
- 746 0043 0E       		.uleb128 0xe
- 747 0044 3A       		.uleb128 0x3a
- 748 0045 0B       		.uleb128 0xb
- 749 0046 3B       		.uleb128 0x3b
- 750 0047 0B       		.uleb128 0xb
- 751 0048 49       		.uleb128 0x49
- 752 0049 13       		.uleb128 0x13
- 753 004a 38       		.uleb128 0x38
- 754 004b 0B       		.uleb128 0xb
- 755 004c 00       		.byte	0
- 756 004d 00       		.byte	0
- 757 004e 07       		.uleb128 0x7
- 758 004f 34       		.uleb128 0x34
- 759 0050 00       		.byte	0
- 760 0051 03       		.uleb128 0x3
- 761 0052 0E       		.uleb128 0xe
- 762 0053 3A       		.uleb128 0x3a
- 763 0054 0B       		.uleb128 0xb
- 764 0055 3B       		.uleb128 0x3b
- 765 0056 0B       		.uleb128 0xb
- 766 0057 49       		.uleb128 0x49
- 767 0058 13       		.uleb128 0x13
- 768 0059 3F       		.uleb128 0x3f
- 769 005a 19       		.uleb128 0x19
- 770 005b 3C       		.uleb128 0x3c
- 771 005c 19       		.uleb128 0x19
- 772 005d 00       		.byte	0
- 773 005e 00       		.byte	0
- 774 005f 08       		.uleb128 0x8
- 775 0060 0F       		.uleb128 0xf
- 776 0061 00       		.byte	0
- 777 0062 0B       		.uleb128 0xb
- 778 0063 0B       		.uleb128 0xb
- 779 0064 49       		.uleb128 0x49
- 780 0065 13       		.uleb128 0x13
- 781 0066 00       		.byte	0
- 782 0067 00       		.byte	0
- 783 0068 09       		.uleb128 0x9
- 784 0069 26       		.uleb128 0x26
- 785 006a 00       		.byte	0
- 786 006b 49       		.uleb128 0x49
- 787 006c 13       		.uleb128 0x13
- 788 006d 00       		.byte	0
- 789 006e 00       		.byte	0
- 790 006f 00       		.byte	0
- 791              		.section	.debug_aranges,"",%progbits
- 792 0000 14000000 		.4byte	0x14
- 793 0004 0200     		.2byte	0x2
- 794 0006 00000000 		.4byte	.Ldebug_info0
- 795 000a 04       		.byte	0x4
- 796 000b 00       		.byte	0
- 797 000c 0000     		.2byte	0
- 798 000e 0000     		.2byte	0
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 15
+ 479 0332 5C       		.byte	0x5c
+ 480 0333 08       		.uleb128 0x8
+ 481 0334 C0000000 		.4byte	.LASF69
+ 482 0338 04       		.byte	0x4
+ 483 0339 70       		.byte	0x70
+ 484 033a B3000000 		.4byte	0xb3
+ 485 033e 5E       		.byte	0x5e
+ 486 033f 08       		.uleb128 0x8
+ 487 0340 4A060000 		.4byte	.LASF70
+ 488 0344 04       		.byte	0x4
+ 489 0345 71       		.byte	0x71
+ 490 0346 B3000000 		.4byte	0xb3
+ 491 034a 5F       		.byte	0x5f
+ 492 034b 08       		.uleb128 0x8
+ 493 034c 90050000 		.4byte	.LASF71
+ 494 0350 04       		.byte	0x4
+ 495 0351 72       		.byte	0x72
+ 496 0352 B3000000 		.4byte	0xb3
+ 497 0356 60       		.byte	0x60
+ 498 0357 08       		.uleb128 0x8
+ 499 0358 23060000 		.4byte	.LASF72
+ 500 035c 04       		.byte	0x4
+ 501 035d 73       		.byte	0x73
+ 502 035e D4000000 		.4byte	0xd4
+ 503 0362 64       		.byte	0x64
+ 504 0363 08       		.uleb128 0x8
+ 505 0364 E6000000 		.4byte	.LASF73
+ 506 0368 04       		.byte	0x4
+ 507 0369 76       		.byte	0x76
+ 508 036a C9000000 		.4byte	0xc9
+ 509 036e 68       		.byte	0x68
+ 510 036f 08       		.uleb128 0x8
+ 511 0370 EE030000 		.4byte	.LASF74
+ 512 0374 04       		.byte	0x4
+ 513 0375 77       		.byte	0x77
+ 514 0376 C9000000 		.4byte	0xc9
+ 515 037a 6A       		.byte	0x6a
+ 516 037b 08       		.uleb128 0x8
+ 517 037c 4E040000 		.4byte	.LASF75
+ 518 0380 04       		.byte	0x4
+ 519 0381 78       		.byte	0x78
+ 520 0382 C9000000 		.4byte	0xc9
+ 521 0386 6C       		.byte	0x6c
+ 522 0387 08       		.uleb128 0x8
+ 523 0388 7C040000 		.4byte	.LASF76
+ 524 038c 04       		.byte	0x4
+ 525 038d 79       		.byte	0x79
+ 526 038e C9000000 		.4byte	0xc9
+ 527 0392 6E       		.byte	0x6e
+ 528 0393 08       		.uleb128 0x8
+ 529 0394 C4060000 		.4byte	.LASF77
+ 530 0398 04       		.byte	0x4
+ 531 0399 7B       		.byte	0x7b
+ 532 039a B3000000 		.4byte	0xb3
+ 533 039e 70       		.byte	0x70
+ 534 039f 08       		.uleb128 0x8
+ 535 03a0 8F010000 		.4byte	.LASF78
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 15
 
 
- 799 0010 00000000 		.4byte	0
- 800 0014 00000000 		.4byte	0
- 801              		.section	.debug_line,"",%progbits
- 802              	.Ldebug_line0:
- 803 0000 5A010000 		.section	.debug_str,"MS",%progbits,1
- 803      02005401 
- 803      00000201 
- 803      FB0E0D00 
- 803      01010101 
- 804              	.LASF42:
- 805 0000 63707573 		.ascii	"cpussFlashPaSize\000"
- 805      73466C61 
- 805      73685061 
- 805      53697A65 
- 805      00
- 806              	.LASF95:
- 807 0011 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
- 807      73547269 
- 807      6D52616D 
- 807      43746C4F 
- 807      66667365 
- 808              	.LASF48:
- 809 0027 73727373 		.ascii	"srssNumHfroot\000"
- 809      4E756D48 
- 809      66726F6F 
- 809      7400
- 810              	.LASF88:
- 811 0035 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
- 811      50727443 
- 811      66674F75 
- 811      744F6666 
- 811      73657400 
- 812              	.LASF35:
- 813 0049 6873696F 		.ascii	"hsiomVersion\000"
- 813      6D566572 
- 813      73696F6E 
- 813      00
- 814              	.LASF87:
- 815 0056 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
- 815      50727443 
- 815      6667496E 
- 815      4F666673 
- 815      657400
- 816              	.LASF41:
- 817 0069 63707573 		.ascii	"cpussDwChNr\000"
- 817      73447743 
- 817      684E7200 
- 818              	.LASF29:
- 819 0075 63727970 		.ascii	"cryptoBase\000"
- 819      746F4261 
- 819      736500
- 820              	.LASF90:
- 821 0080 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
- 821      73436D30 
- 821      436C6F63 
- 821      6B43746C 
- 821      4F666673 
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 16
+ 536 03a4 04       		.byte	0x4
+ 537 03a5 7C       		.byte	0x7c
+ 538 03a6 B3000000 		.4byte	0xb3
+ 539 03aa 71       		.byte	0x71
+ 540 03ab 08       		.uleb128 0x8
+ 541 03ac C9090000 		.4byte	.LASF79
+ 542 03b0 04       		.byte	0x4
+ 543 03b1 7D       		.byte	0x7d
+ 544 03b2 B3000000 		.4byte	0xb3
+ 545 03b6 72       		.byte	0x72
+ 546 03b7 08       		.uleb128 0x8
+ 547 03b8 6B050000 		.4byte	.LASF80
+ 548 03bc 04       		.byte	0x4
+ 549 03bd 7E       		.byte	0x7e
+ 550 03be B3000000 		.4byte	0xb3
+ 551 03c2 73       		.byte	0x73
+ 552 03c3 08       		.uleb128 0x8
+ 553 03c4 B2020000 		.4byte	.LASF81
+ 554 03c8 04       		.byte	0x4
+ 555 03c9 80       		.byte	0x80
+ 556 03ca C9000000 		.4byte	0xc9
+ 557 03ce 74       		.byte	0x74
+ 558 03cf 08       		.uleb128 0x8
+ 559 03d0 1B080000 		.4byte	.LASF82
+ 560 03d4 04       		.byte	0x4
+ 561 03d5 81       		.byte	0x81
+ 562 03d6 C9000000 		.4byte	0xc9
+ 563 03da 76       		.byte	0x76
+ 564 03db 08       		.uleb128 0x8
+ 565 03dc 67020000 		.4byte	.LASF83
+ 566 03e0 04       		.byte	0x4
+ 567 03e1 82       		.byte	0x82
+ 568 03e2 C9000000 		.4byte	0xc9
+ 569 03e6 78       		.byte	0x78
+ 570 03e7 08       		.uleb128 0x8
+ 571 03e8 88000000 		.4byte	.LASF84
+ 572 03ec 04       		.byte	0x4
+ 573 03ed 83       		.byte	0x83
+ 574 03ee C9000000 		.4byte	0xc9
+ 575 03f2 7A       		.byte	0x7a
+ 576 03f3 08       		.uleb128 0x8
+ 577 03f4 63090000 		.4byte	.LASF85
+ 578 03f8 04       		.byte	0x4
+ 579 03f9 86       		.byte	0x86
+ 580 03fa B3000000 		.4byte	0xb3
+ 581 03fe 7C       		.byte	0x7c
+ 582 03ff 08       		.uleb128 0x8
+ 583 0400 B9080000 		.4byte	.LASF86
+ 584 0404 04       		.byte	0x4
+ 585 0405 87       		.byte	0x87
+ 586 0406 B3000000 		.4byte	0xb3
+ 587 040a 7D       		.byte	0x7d
+ 588 040b 08       		.uleb128 0x8
+ 589 040c 26000000 		.4byte	.LASF87
+ 590 0410 04       		.byte	0x4
+ 591 0411 88       		.byte	0x88
+ 592 0412 B3000000 		.4byte	0xb3
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 16
 
 
- 822              	.LASF7:
- 823 0097 73686F72 		.ascii	"short int\000"
- 823      7420696E 
- 823      7400
- 824              	.LASF59:
- 825 00a1 666C6173 		.ascii	"flashWriteDelay\000"
- 825      68577269 
- 825      74654465 
- 825      6C617900 
- 826              	.LASF14:
- 827 00b1 73697A65 		.ascii	"sizetype\000"
- 827      74797065 
- 827      00
- 828              	.LASF36:
- 829 00ba 69706356 		.ascii	"ipcVersion\000"
- 829      65727369 
- 829      6F6E00
- 830              	.LASF102:
- 831 00c5 63707573 		.ascii	"cpussRam1Ctl0\000"
- 831      7352616D 
- 831      3143746C 
- 831      3000
- 832              	.LASF106:
- 833 00d3 63795F73 		.ascii	"cy_stc_device_t\000"
- 833      74635F64 
- 833      65766963 
- 833      655F7400 
- 834              	.LASF110:
- 835 00e3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 835      43313120 
- 835      352E342E 
- 835      31203230 
- 835      31363036 
- 836 0116 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
- 836      20726576 
- 836      6973696F 
- 836      6E203233 
- 836      37373135 
- 837 0149 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
- 837      67202D66 
- 837      66756E63 
- 837      74696F6E 
- 837      2D736563 
- 838              	.LASF38:
- 839 0175 70726F74 		.ascii	"protVersion\000"
- 839      56657273 
- 839      696F6E00 
- 840              	.LASF11:
- 841 0181 5F5F7569 		.ascii	"__uint32_t\000"
- 841      6E743332 
- 841      5F7400
- 842              	.LASF62:
- 843 018c 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
- 843      6843746C 
- 843      4D61696E 
- 843      57733046 
- 843      72657100 
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 17
+ 593 0416 7E       		.byte	0x7e
+ 594 0417 08       		.uleb128 0x8
+ 595 0418 EE020000 		.4byte	.LASF88
+ 596 041c 04       		.byte	0x4
+ 597 041d 89       		.byte	0x89
+ 598 041e B3000000 		.4byte	0xb3
+ 599 0422 7F       		.byte	0x7f
+ 600 0423 08       		.uleb128 0x8
+ 601 0424 71030000 		.4byte	.LASF89
+ 602 0428 04       		.byte	0x4
+ 603 0429 8A       		.byte	0x8a
+ 604 042a B3000000 		.4byte	0xb3
+ 605 042e 80       		.byte	0x80
+ 606 042f 08       		.uleb128 0x8
+ 607 0430 DC040000 		.4byte	.LASF90
+ 608 0434 04       		.byte	0x4
+ 609 0435 8D       		.byte	0x8d
+ 610 0436 D4000000 		.4byte	0xd4
+ 611 043a 84       		.byte	0x84
+ 612 043b 08       		.uleb128 0x8
+ 613 043c 00020000 		.4byte	.LASF91
+ 614 0440 04       		.byte	0x4
+ 615 0441 8E       		.byte	0x8e
+ 616 0442 D4000000 		.4byte	0xd4
+ 617 0446 88       		.byte	0x88
+ 618 0447 08       		.uleb128 0x8
+ 619 0448 4E090000 		.4byte	.LASF92
+ 620 044c 04       		.byte	0x4
+ 621 044d 8F       		.byte	0x8f
+ 622 044e D4000000 		.4byte	0xd4
+ 623 0452 8C       		.byte	0x8c
+ 624 0453 08       		.uleb128 0x8
+ 625 0454 12050000 		.4byte	.LASF93
+ 626 0458 04       		.byte	0x4
+ 627 0459 90       		.byte	0x90
+ 628 045a D4000000 		.4byte	0xd4
+ 629 045e 90       		.byte	0x90
+ 630 045f 08       		.uleb128 0x8
+ 631 0460 32030000 		.4byte	.LASF94
+ 632 0464 04       		.byte	0x4
+ 633 0465 91       		.byte	0x91
+ 634 0466 D4000000 		.4byte	0xd4
+ 635 046a 94       		.byte	0x94
+ 636 046b 08       		.uleb128 0x8
+ 637 046c C6040000 		.4byte	.LASF95
+ 638 0470 04       		.byte	0x4
+ 639 0471 92       		.byte	0x92
+ 640 0472 D4000000 		.4byte	0xd4
+ 641 0476 98       		.byte	0x98
+ 642 0477 08       		.uleb128 0x8
+ 643 0478 89090000 		.4byte	.LASF96
+ 644 047c 04       		.byte	0x4
+ 645 047d 93       		.byte	0x93
+ 646 047e D4000000 		.4byte	0xd4
+ 647 0482 9C       		.byte	0x9c
+ 648 0483 08       		.uleb128 0x8
+ 649 0484 13010000 		.4byte	.LASF97
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 17
 
 
- 844              	.LASF20:
- 845 01a0 63707573 		.ascii	"cpussBase\000"
- 845      73426173 
- 845      6500
- 846              	.LASF30:
- 847 01aa 63707573 		.ascii	"cpussVersion\000"
- 847      73566572 
- 847      73696F6E 
- 847      00
- 848              	.LASF8:
- 849 01b7 5F5F7569 		.ascii	"__uint16_t\000"
- 849      6E743136 
- 849      5F7400
- 850              	.LASF57:
- 851 01c2 666C6173 		.ascii	"flashRwwRequired\000"
- 851      68527777 
- 851      52657175 
- 851      69726564 
- 851      00
- 852              	.LASF16:
- 853 01d3 75696E74 		.ascii	"uint8_t\000"
- 853      385F7400 
- 854              	.LASF37:
- 855 01db 70657269 		.ascii	"periVersion\000"
- 855      56657273 
- 855      696F6E00 
- 856              	.LASF68:
- 857 01e7 64774368 		.ascii	"dwChSize\000"
- 857      53697A65 
- 857      00
- 858              	.LASF69:
- 859 01f0 64774368 		.ascii	"dwChCtlPrioPos\000"
- 859      43746C50 
- 859      72696F50 
- 859      6F7300
- 860              	.LASF43:
- 861 01ff 63707573 		.ascii	"cpussIpc0Irq\000"
- 861      73497063 
- 861      30497271 
- 861      00
- 862              	.LASF98:
- 863 020c 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
- 863      73436D30 
- 863      4E6D6943 
- 863      746C4F66 
- 863      66736574 
- 864              	.LASF25:
- 865 0221 6873696F 		.ascii	"hsiomBase\000"
- 865      6D426173 
- 865      6500
- 866              	.LASF107:
- 867 022b 666C6F61 		.ascii	"float\000"
- 867      7400
- 868              	.LASF89:
- 869 0231 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
- 869      50727443 
- 869      66675369 
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 18
+ 650 0488 04       		.byte	0x4
+ 651 0489 94       		.byte	0x94
+ 652 048a D4000000 		.4byte	0xd4
+ 653 048e A0       		.byte	0xa0
+ 654 048f 08       		.uleb128 0x8
+ 655 0490 B8010000 		.4byte	.LASF98
+ 656 0494 04       		.byte	0x4
+ 657 0495 95       		.byte	0x95
+ 658 0496 C9000000 		.4byte	0xc9
+ 659 049a A4       		.byte	0xa4
+ 660 049b 08       		.uleb128 0x8
+ 661 049c B1040000 		.4byte	.LASF99
+ 662 04a0 04       		.byte	0x4
+ 663 04a1 96       		.byte	0x96
+ 664 04a2 C9000000 		.4byte	0xc9
+ 665 04a6 A6       		.byte	0xa6
+ 666 04a7 08       		.uleb128 0x8
+ 667 04a8 3E060000 		.4byte	.LASF100
+ 668 04ac 04       		.byte	0x4
+ 669 04ad 97       		.byte	0x97
+ 670 04ae C9000000 		.4byte	0xc9
+ 671 04b2 A8       		.byte	0xa8
+ 672 04b3 08       		.uleb128 0x8
+ 673 04b4 E9070000 		.4byte	.LASF101
+ 674 04b8 04       		.byte	0x4
+ 675 04b9 98       		.byte	0x98
+ 676 04ba C9000000 		.4byte	0xc9
+ 677 04be AA       		.byte	0xaa
+ 678 04bf 08       		.uleb128 0x8
+ 679 04c0 5D040000 		.4byte	.LASF102
+ 680 04c4 04       		.byte	0x4
+ 681 04c5 99       		.byte	0x99
+ 682 04c6 C9000000 		.4byte	0xc9
+ 683 04ca AC       		.byte	0xac
+ 684 04cb 08       		.uleb128 0x8
+ 685 04cc 82050000 		.4byte	.LASF103
+ 686 04d0 04       		.byte	0x4
+ 687 04d1 9A       		.byte	0x9a
+ 688 04d2 C9000000 		.4byte	0xc9
+ 689 04d6 AE       		.byte	0xae
+ 690 04d7 08       		.uleb128 0x8
+ 691 04d8 9E080000 		.4byte	.LASF104
+ 692 04dc 04       		.byte	0x4
+ 693 04dd 9D       		.byte	0x9d
+ 694 04de C9000000 		.4byte	0xc9
+ 695 04e2 B0       		.byte	0xb0
+ 696 04e3 08       		.uleb128 0x8
+ 697 04e4 39000000 		.4byte	.LASF105
+ 698 04e8 04       		.byte	0x4
+ 699 04e9 9E       		.byte	0x9e
+ 700 04ea D4000000 		.4byte	0xd4
+ 701 04ee B4       		.byte	0xb4
+ 702 04ef 00       		.byte	0
+ 703 04f0 04       		.uleb128 0x4
+ 704 04f1 95040000 		.4byte	.LASF106
+ 705 04f5 04       		.byte	0x4
+ 706 04f6 9F       		.byte	0x9f
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 18
 
 
- 869      6F4F6666 
- 869      73657400 
- 870              	.LASF1:
- 871 0245 6C6F6E67 		.ascii	"long long int\000"
- 871      206C6F6E 
- 871      6720696E 
- 871      7400
- 872              	.LASF111:
- 873 0253 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_b"
- 873      72617465 
- 873      645F536F 
- 873      75726365 
- 873      5C50536F 
- 874 0281 6C655F68 		.ascii	"le_hal_int.c\000"
- 874      616C5F69 
- 874      6E742E63 
- 874      00
- 875              	.LASF54:
- 876 028e 73797350 		.ascii	"sysPmSimoPresent\000"
- 876      6D53696D 
- 876      6F507265 
- 876      73656E74 
- 876      00
- 877              	.LASF72:
- 878 029f 64775374 		.ascii	"dwStatusChIdxMsk\000"
- 878      61747573 
- 878      43684964 
- 878      784D736B 
- 878      00
- 879              	.LASF97:
- 880 02b0 63707573 		.ascii	"cpussSysTickCtlOffset\000"
- 880      73537973 
- 880      5469636B 
- 880      43746C4F 
- 880      66667365 
- 881              	.LASF10:
- 882 02c6 6C6F6E67 		.ascii	"long int\000"
- 882      20696E74 
- 882      00
- 883              	.LASF21:
- 884 02cf 666C6173 		.ascii	"flashcBase\000"
- 884      68634261 
- 884      736500
- 885              	.LASF85:
- 886 02da 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
- 886      50727449 
- 886      6E747243 
- 886      66674F66 
- 886      66736574 
- 887              	.LASF67:
- 888 02ef 64774368 		.ascii	"dwChOffset\000"
- 888      4F666673 
- 888      657400
- 889              	.LASF5:
- 890 02fa 5F5F7569 		.ascii	"__uint8_t\000"
- 890      6E74385F 
- 890      7400
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 19
+ 707 04f7 DF000000 		.4byte	0xdf
+ 708 04fb 03       		.uleb128 0x3
+ 709 04fc 04       		.byte	0x4
+ 710 04fd 04       		.byte	0x4
+ 711 04fe 1D060000 		.4byte	.LASF107
+ 712 0502 03       		.uleb128 0x3
+ 713 0503 08       		.byte	0x8
+ 714 0504 04       		.byte	0x4
+ 715 0505 60020000 		.4byte	.LASF108
+ 716 0509 09       		.uleb128 0x9
+ 717 050a 02       		.byte	0x2
+ 718 050b 05       		.byte	0x5
+ 719 050c 6001     		.2byte	0x160
+ 720 050e 2D050000 		.4byte	0x52d
+ 721 0512 0A       		.uleb128 0xa
+ 722 0513 9F090000 		.4byte	.LASF109
+ 723 0517 05       		.byte	0x5
+ 724 0518 6A01     		.2byte	0x16a
+ 725 051a B3000000 		.4byte	0xb3
+ 726 051e 00       		.byte	0
+ 727 051f 0A       		.uleb128 0xa
+ 728 0520 F3040000 		.4byte	.LASF110
+ 729 0524 05       		.byte	0x5
+ 730 0525 6E01     		.2byte	0x16e
+ 731 0527 B3000000 		.4byte	0xb3
+ 732 052b 01       		.byte	0x1
+ 733 052c 00       		.byte	0
+ 734 052d 0B       		.uleb128 0xb
+ 735 052e 9D000000 		.4byte	.LASF111
+ 736 0532 05       		.byte	0x5
+ 737 0533 7001     		.2byte	0x170
+ 738 0535 09050000 		.4byte	0x509
+ 739 0539 0C       		.uleb128 0xc
+ 740 053a 01       		.byte	0x1
+ 741 053b 53000000 		.4byte	0x53
+ 742 053f 06       		.byte	0x6
+ 743 0540 7E       		.byte	0x7e
+ 744 0541 5E050000 		.4byte	0x55e
+ 745 0545 0D       		.uleb128 0xd
+ 746 0546 2D090000 		.4byte	.LASF112
+ 747 054a 00       		.byte	0
+ 748 054b 0D       		.uleb128 0xd
+ 749 054c 4C050000 		.4byte	.LASF113
+ 750 0550 01       		.byte	0x1
+ 751 0551 0D       		.uleb128 0xd
+ 752 0552 10090000 		.4byte	.LASF114
+ 753 0556 02       		.byte	0x2
+ 754 0557 0D       		.uleb128 0xd
+ 755 0558 CD010000 		.4byte	.LASF115
+ 756 055c 03       		.byte	0x3
+ 757 055d 00       		.byte	0
+ 758 055e 04       		.uleb128 0x4
+ 759 055f 25020000 		.4byte	.LASF116
+ 760 0563 06       		.byte	0x6
+ 761 0564 83       		.byte	0x83
+ 762 0565 39050000 		.4byte	0x539
+ 763 0569 0C       		.uleb128 0xc
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 19
 
 
- 891              	.LASF40:
- 892 0304 63707573 		.ascii	"cpussIpcIrqNr\000"
- 892      73497063 
- 892      4972714E 
- 892      7200
- 893              	.LASF82:
- 894 0312 70657269 		.ascii	"periDiv16CtlOffset\000"
- 894      44697631 
- 894      3643746C 
- 894      4F666673 
- 894      657400
- 895              	.LASF81:
- 896 0325 70657269 		.ascii	"periDiv8CtlOffset\000"
- 896      44697638 
- 896      43746C4F 
- 896      66667365 
- 896      7400
- 897              	.LASF91:
- 898 0337 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
- 898      73436D34 
- 898      436C6F63 
- 898      6B43746C 
- 898      4F666673 
- 899              	.LASF74:
- 900 034e 70657269 		.ascii	"periTrCmdGrSelMsk\000"
- 900      5472436D 
- 900      64477253 
- 900      656C4D73 
- 900      6B00
- 901              	.LASF65:
- 902 0360 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
- 902      6843746C 
- 902      4D61696E 
- 902      57733346 
- 902      72657100 
- 903              	.LASF53:
- 904 0374 75646250 		.ascii	"udbPresent\000"
- 904      72657365 
- 904      6E7400
- 905              	.LASF2:
- 906 037f 6C6F6E67 		.ascii	"long double\000"
- 906      20646F75 
- 906      626C6500 
- 907              	.LASF103:
- 908 038b 63707573 		.ascii	"cpussRam2Ctl0\000"
- 908      7352616D 
- 908      3243746C 
- 908      3000
- 909              	.LASF27:
- 910 0399 70617373 		.ascii	"passBase\000"
- 910      42617365 
- 910      00
- 911              	.LASF4:
- 912 03a2 756E7369 		.ascii	"unsigned char\000"
- 912      676E6564 
- 912      20636861 
- 912      7200
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 20
+ 764 056a 01       		.byte	0x1
+ 765 056b 53000000 		.4byte	0x53
+ 766 056f 06       		.byte	0x6
+ 767 0570 87       		.byte	0x87
+ 768 0571 A6050000 		.4byte	0x5a6
+ 769 0575 0D       		.uleb128 0xd
+ 770 0576 CA080000 		.4byte	.LASF117
+ 771 057a 00       		.byte	0
+ 772 057b 0D       		.uleb128 0xd
+ 773 057c F1090000 		.4byte	.LASF118
+ 774 0580 01       		.byte	0x1
+ 775 0581 0D       		.uleb128 0xd
+ 776 0582 9E030000 		.4byte	.LASF119
+ 777 0586 02       		.byte	0x2
+ 778 0587 0D       		.uleb128 0xd
+ 779 0588 47030000 		.4byte	.LASF120
+ 780 058c 03       		.byte	0x3
+ 781 058d 0D       		.uleb128 0xd
+ 782 058e C4020000 		.4byte	.LASF121
+ 783 0592 04       		.byte	0x4
+ 784 0593 0D       		.uleb128 0xd
+ 785 0594 68060000 		.4byte	.LASF122
+ 786 0598 05       		.byte	0x5
+ 787 0599 0D       		.uleb128 0xd
+ 788 059a BA030000 		.4byte	.LASF123
+ 789 059e 06       		.byte	0x6
+ 790 059f 0D       		.uleb128 0xd
+ 791 05a0 F9050000 		.4byte	.LASF124
+ 792 05a4 07       		.byte	0x7
+ 793 05a5 00       		.byte	0
+ 794 05a6 04       		.uleb128 0x4
+ 795 05a7 AC050000 		.4byte	.LASF125
+ 796 05ab 06       		.byte	0x6
+ 797 05ac 90       		.byte	0x90
+ 798 05ad 69050000 		.4byte	0x569
+ 799 05b1 03       		.uleb128 0x3
+ 800 05b2 01       		.byte	0x1
+ 801 05b3 02       		.byte	0x2
+ 802 05b4 92060000 		.4byte	.LASF126
+ 803 05b8 0B       		.uleb128 0xb
+ 804 05b9 F6000000 		.4byte	.LASF127
+ 805 05bd 07       		.byte	0x7
+ 806 05be 4C02     		.2byte	0x24c
+ 807 05c0 AC000000 		.4byte	0xac
+ 808 05c4 0E       		.uleb128 0xe
+ 809 05c5 88080000 		.4byte	.LASF137
+ 810 05c9 01       		.byte	0x1
+ 811 05ca E5       		.byte	0xe5
+ 812 05cb 00000000 		.4byte	.LFB165
+ 813 05cf 1C000000 		.4byte	.LFE165-.LFB165
+ 814 05d3 01       		.uleb128 0x1
+ 815 05d4 9C       		.byte	0x9c
+ 816 05d5 F2050000 		.4byte	0x5f2
+ 817 05d9 0F       		.uleb128 0xf
+ 818 05da 78090000 		.4byte	.LASF138
+ 819 05de 01       		.byte	0x1
+ 820 05df E8       		.byte	0xe8
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 20
 
 
- 913              	.LASF22:
- 914 03b0 70657269 		.ascii	"periBase\000"
- 914      42617365 
- 914      00
- 915              	.LASF3:
- 916 03b9 7369676E 		.ascii	"signed char\000"
- 916      65642063 
- 916      68617200 
- 917              	.LASF13:
- 918 03c5 6C6F6E67 		.ascii	"long long unsigned int\000"
- 918      206C6F6E 
- 918      6720756E 
- 918      7369676E 
- 918      65642069 
- 919              	.LASF26:
- 920 03dc 6770696F 		.ascii	"gpioBase\000"
- 920      42617365 
- 920      00
- 921              	.LASF19:
- 922 03e5 75696E74 		.ascii	"uint32_t\000"
- 922      33325F74 
- 922      00
- 923              	.LASF92:
- 924 03ee 63707573 		.ascii	"cpussCm4StatusOffset\000"
- 924      73436D34 
- 924      53746174 
- 924      75734F66 
- 924      66736574 
- 925              	.LASF0:
- 926 0403 756E7369 		.ascii	"unsigned int\000"
- 926      676E6564 
- 926      20696E74 
- 926      00
- 927              	.LASF46:
- 928 0410 73727373 		.ascii	"srssNumClkpath\000"
- 928      4E756D43 
- 928      6C6B7061 
- 928      746800
- 929              	.LASF80:
- 930 041f 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
- 930      44697643 
- 930      6D645061 
- 930      54797065 
- 930      53656C50 
- 931              	.LASF45:
- 932 0436 63707573 		.ascii	"cpussNotConnectedIrq\000"
- 932      734E6F74 
- 932      436F6E6E 
- 932      65637465 
- 932      64497271 
- 933              	.LASF61:
- 934 044b 666C6173 		.ascii	"flashEraseDelay\000"
- 934      68457261 
- 934      73654465 
- 934      6C617900 
- 935              	.LASF84:
- 936 045b 70657269 		.ascii	"periDiv24_5CtlOffset\000"
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 21
+ 821 05e0 B1050000 		.4byte	0x5b1
+ 822 05e4 00000000 		.4byte	.LLST0
+ 823 05e8 10       		.uleb128 0x10
+ 824 05e9 06000000 		.4byte	.LVL1
+ 825 05ed 64060000 		.4byte	0x664
+ 826 05f1 00       		.byte	0
+ 827 05f2 11       		.uleb128 0x11
+ 828 05f3 34060000 		.4byte	.LASF128
+ 829 05f7 04       		.byte	0x4
+ 830 05f8 A7       		.byte	0xa7
+ 831 05f9 FD050000 		.4byte	0x5fd
+ 832 05fd 05       		.uleb128 0x5
+ 833 05fe 04       		.byte	0x4
+ 834 05ff 03060000 		.4byte	0x603
+ 835 0603 12       		.uleb128 0x12
+ 836 0604 F0040000 		.4byte	0x4f0
+ 837 0608 13       		.uleb128 0x13
+ 838 0609 2E080000 		.4byte	.LASF129
+ 839 060d 06       		.byte	0x6
+ 840 060e 2202     		.2byte	0x222
+ 841 0610 5E050000 		.4byte	0x55e
+ 842 0614 14       		.uleb128 0x14
+ 843 0615 2D050000 		.4byte	0x52d
+ 844 0619 24060000 		.4byte	0x624
+ 845 061d 15       		.uleb128 0x15
+ 846 061e 9E000000 		.4byte	0x9e
+ 847 0622 00       		.byte	0
+ 848 0623 00       		.byte	0
+ 849 0624 13       		.uleb128 0x13
+ 850 0625 E9080000 		.4byte	.LASF130
+ 851 0629 06       		.byte	0x6
+ 852 062a 2C02     		.2byte	0x22c
+ 853 062c 14060000 		.4byte	0x614
+ 854 0630 14       		.uleb128 0x14
+ 855 0631 A6050000 		.4byte	0x5a6
+ 856 0635 40060000 		.4byte	0x640
+ 857 0639 15       		.uleb128 0x15
+ 858 063a 9E000000 		.4byte	0x9e
+ 859 063e 00       		.byte	0
+ 860 063f 00       		.byte	0
+ 861 0640 13       		.uleb128 0x13
+ 862 0641 6B040000 		.4byte	.LASF131
+ 863 0645 06       		.byte	0x6
+ 864 0646 2D02     		.2byte	0x22d
+ 865 0648 30060000 		.4byte	0x630
+ 866 064c 13       		.uleb128 0x13
+ 867 064d 02080000 		.4byte	.LASF132
+ 868 0651 06       		.byte	0x6
+ 869 0652 5202     		.2byte	0x252
+ 870 0654 B3000000 		.4byte	0xb3
+ 871 0658 13       		.uleb128 0x13
+ 872 0659 71010000 		.4byte	.LASF133
+ 873 065d 07       		.byte	0x7
+ 874 065e 6302     		.2byte	0x263
+ 875 0660 B8050000 		.4byte	0x5b8
+ 876 0664 16       		.uleb128 0x16
+ 877 0665 4B080000 		.4byte	.LASF139
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 21
 
 
- 936      44697632 
- 936      345F3543 
- 936      746C4F66 
- 936      66736574 
- 937              	.LASF9:
- 938 0470 73686F72 		.ascii	"short unsigned int\000"
- 938      7420756E 
- 938      7369676E 
- 938      65642069 
- 938      6E7400
- 939              	.LASF15:
- 940 0483 63686172 		.ascii	"char\000"
- 940      00
- 941              	.LASF18:
- 942 0488 75696E74 		.ascii	"uint16_t\000"
- 942      31365F74 
- 942      00
- 943              	.LASF55:
- 944 0491 70726F74 		.ascii	"protBusMasterMask\000"
- 944      4275734D 
- 944      61737465 
- 944      724D6173 
- 944      6B00
- 945              	.LASF78:
- 946 04a3 70657269 		.ascii	"periDivCmdTypeSelPos\000"
- 946      44697643 
- 946      6D645479 
- 946      70655365 
- 946      6C506F73 
- 947              	.LASF77:
- 948 04b8 70657269 		.ascii	"periDivCmdDivSelMsk\000"
- 948      44697643 
- 948      6D644469 
- 948      7653656C 
- 948      4D736B00 
- 949              	.LASF23:
- 950 04cc 75646242 		.ascii	"udbBase\000"
- 950      61736500 
- 951              	.LASF49:
- 952 04d4 70657269 		.ascii	"periClockNr\000"
- 952      436C6F63 
- 952      6B4E7200 
- 953              	.LASF47:
- 954 04e0 73727373 		.ascii	"srssNumPll\000"
- 954      4E756D50 
- 954      6C6C00
- 955              	.LASF17:
- 956 04eb 696E7431 		.ascii	"int16_t\000"
- 956      365F7400 
- 957              	.LASF109:
- 958 04f3 5F426F6F 		.ascii	"_Bool\000"
- 958      6C00
- 959              	.LASF73:
- 960 04f9 70657269 		.ascii	"periTrCmdOffset\000"
- 960      5472436D 
- 960      644F6666 
- 960      73657400 
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 22
+ 878 0669 4B080000 		.4byte	.LASF139
+ 879 066d 08       		.byte	0x8
+ 880 066e 87       		.byte	0x87
+ 881 066f 00       		.byte	0
+ 882              		.section	.debug_abbrev,"",%progbits
+ 883              	.Ldebug_abbrev0:
+ 884 0000 01       		.uleb128 0x1
+ 885 0001 11       		.uleb128 0x11
+ 886 0002 01       		.byte	0x1
+ 887 0003 25       		.uleb128 0x25
+ 888 0004 0E       		.uleb128 0xe
+ 889 0005 13       		.uleb128 0x13
+ 890 0006 0B       		.uleb128 0xb
+ 891 0007 03       		.uleb128 0x3
+ 892 0008 0E       		.uleb128 0xe
+ 893 0009 1B       		.uleb128 0x1b
+ 894 000a 0E       		.uleb128 0xe
+ 895 000b 55       		.uleb128 0x55
+ 896 000c 17       		.uleb128 0x17
+ 897 000d 11       		.uleb128 0x11
+ 898 000e 01       		.uleb128 0x1
+ 899 000f 10       		.uleb128 0x10
+ 900 0010 17       		.uleb128 0x17
+ 901 0011 00       		.byte	0
+ 902 0012 00       		.byte	0
+ 903 0013 02       		.uleb128 0x2
+ 904 0014 24       		.uleb128 0x24
+ 905 0015 00       		.byte	0
+ 906 0016 0B       		.uleb128 0xb
+ 907 0017 0B       		.uleb128 0xb
+ 908 0018 3E       		.uleb128 0x3e
+ 909 0019 0B       		.uleb128 0xb
+ 910 001a 03       		.uleb128 0x3
+ 911 001b 08       		.uleb128 0x8
+ 912 001c 00       		.byte	0
+ 913 001d 00       		.byte	0
+ 914 001e 03       		.uleb128 0x3
+ 915 001f 24       		.uleb128 0x24
+ 916 0020 00       		.byte	0
+ 917 0021 0B       		.uleb128 0xb
+ 918 0022 0B       		.uleb128 0xb
+ 919 0023 3E       		.uleb128 0x3e
+ 920 0024 0B       		.uleb128 0xb
+ 921 0025 03       		.uleb128 0x3
+ 922 0026 0E       		.uleb128 0xe
+ 923 0027 00       		.byte	0
+ 924 0028 00       		.byte	0
+ 925 0029 04       		.uleb128 0x4
+ 926 002a 16       		.uleb128 0x16
+ 927 002b 00       		.byte	0
+ 928 002c 03       		.uleb128 0x3
+ 929 002d 0E       		.uleb128 0xe
+ 930 002e 3A       		.uleb128 0x3a
+ 931 002f 0B       		.uleb128 0xb
+ 932 0030 3B       		.uleb128 0x3b
+ 933 0031 0B       		.uleb128 0xb
+ 934 0032 49       		.uleb128 0x49
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 22
 
 
- 961              	.LASF56:
- 962 0509 63727970 		.ascii	"cryptoMemSize\000"
- 962      746F4D65 
- 962      6D53697A 
- 962      6500
- 963              	.LASF86:
- 964 0517 6770696F 		.ascii	"gpioPrtCfgOffset\000"
- 964      50727443 
- 964      66674F66 
- 964      66736574 
- 964      00
- 965              	.LASF31:
- 966 0528 63727970 		.ascii	"cryptoVersion\000"
- 966      746F5665 
- 966      7273696F 
- 966      6E00
- 967              	.LASF34:
- 968 0536 6770696F 		.ascii	"gpioVersion\000"
- 968      56657273 
- 968      696F6E00 
- 969              	.LASF94:
- 970 0542 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
- 970      73436D34 
- 970      50777243 
- 970      746C4F66 
- 970      66736574 
- 971              	.LASF63:
- 972 0557 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
- 972      6843746C 
- 972      4D61696E 
- 972      57733146 
- 972      72657100 
- 973              	.LASF12:
- 974 056b 6C6F6E67 		.ascii	"long unsigned int\000"
- 974      20756E73 
- 974      69676E65 
- 974      6420696E 
- 974      7400
- 975              	.LASF108:
- 976 057d 646F7562 		.ascii	"double\000"
- 976      6C6500
- 977              	.LASF101:
- 978 0584 63707573 		.ascii	"cpussRam0Ctl0\000"
- 978      7352616D 
- 978      3043746C 
- 978      3000
- 979              	.LASF32:
- 980 0592 64775665 		.ascii	"dwVersion\000"
- 980      7273696F 
- 980      6E00
- 981              	.LASF39:
- 982 059c 63707573 		.ascii	"cpussIpcNr\000"
- 982      73497063 
- 982      4E7200
- 983              	.LASF33:
- 984 05a7 666C6173 		.ascii	"flashcVersion\000"
- 984      68635665 
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 23
+ 935 0033 13       		.uleb128 0x13
+ 936 0034 00       		.byte	0
+ 937 0035 00       		.byte	0
+ 938 0036 05       		.uleb128 0x5
+ 939 0037 0F       		.uleb128 0xf
+ 940 0038 00       		.byte	0
+ 941 0039 0B       		.uleb128 0xb
+ 942 003a 0B       		.uleb128 0xb
+ 943 003b 49       		.uleb128 0x49
+ 944 003c 13       		.uleb128 0x13
+ 945 003d 00       		.byte	0
+ 946 003e 00       		.byte	0
+ 947 003f 06       		.uleb128 0x6
+ 948 0040 15       		.uleb128 0x15
+ 949 0041 00       		.byte	0
+ 950 0042 27       		.uleb128 0x27
+ 951 0043 19       		.uleb128 0x19
+ 952 0044 00       		.byte	0
+ 953 0045 00       		.byte	0
+ 954 0046 07       		.uleb128 0x7
+ 955 0047 13       		.uleb128 0x13
+ 956 0048 01       		.byte	0x1
+ 957 0049 0B       		.uleb128 0xb
+ 958 004a 0B       		.uleb128 0xb
+ 959 004b 3A       		.uleb128 0x3a
+ 960 004c 0B       		.uleb128 0xb
+ 961 004d 3B       		.uleb128 0x3b
+ 962 004e 0B       		.uleb128 0xb
+ 963 004f 01       		.uleb128 0x1
+ 964 0050 13       		.uleb128 0x13
+ 965 0051 00       		.byte	0
+ 966 0052 00       		.byte	0
+ 967 0053 08       		.uleb128 0x8
+ 968 0054 0D       		.uleb128 0xd
+ 969 0055 00       		.byte	0
+ 970 0056 03       		.uleb128 0x3
+ 971 0057 0E       		.uleb128 0xe
+ 972 0058 3A       		.uleb128 0x3a
+ 973 0059 0B       		.uleb128 0xb
+ 974 005a 3B       		.uleb128 0x3b
+ 975 005b 0B       		.uleb128 0xb
+ 976 005c 49       		.uleb128 0x49
+ 977 005d 13       		.uleb128 0x13
+ 978 005e 38       		.uleb128 0x38
+ 979 005f 0B       		.uleb128 0xb
+ 980 0060 00       		.byte	0
+ 981 0061 00       		.byte	0
+ 982 0062 09       		.uleb128 0x9
+ 983 0063 13       		.uleb128 0x13
+ 984 0064 01       		.byte	0x1
+ 985 0065 0B       		.uleb128 0xb
+ 986 0066 0B       		.uleb128 0xb
+ 987 0067 3A       		.uleb128 0x3a
+ 988 0068 0B       		.uleb128 0xb
+ 989 0069 3B       		.uleb128 0x3b
+ 990 006a 05       		.uleb128 0x5
+ 991 006b 01       		.uleb128 0x1
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 23
 
 
- 984      7273696F 
- 984      6E00
- 985              	.LASF113:
- 986 05b5 63795F64 		.ascii	"cy_device\000"
- 986      65766963 
- 986      6500
- 987              	.LASF66:
- 988 05bf 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
- 988      6843746C 
- 988      4D61696E 
- 988      57733446 
- 988      72657100 
- 989              	.LASF44:
- 990 05d3 63707573 		.ascii	"cpussFmIrq\000"
- 990      73466D49 
- 990      727100
- 991              	.LASF79:
- 992 05de 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
- 992      44697643 
- 992      6D645061 
- 992      44697653 
- 992      656C506F 
- 993              	.LASF51:
- 994 05f4 70617373 		.ascii	"passSarChannels\000"
- 994      53617243 
- 994      68616E6E 
- 994      656C7300 
- 995              	.LASF60:
- 996 0604 666C6173 		.ascii	"flashProgramDelay\000"
- 996      6850726F 
- 996      6772616D 
- 996      44656C61 
- 996      7900
- 997              	.LASF105:
- 998 0616 6970634C 		.ascii	"ipcLockStatusOffset\000"
- 998      6F636B53 
- 998      74617475 
- 998      734F6666 
- 998      73657400 
- 999              	.LASF6:
- 1000 062a 5F5F696E 		.ascii	"__int16_t\000"
- 1000      7431365F 
- 1000      7400
- 1001              	.LASF99:
- 1002 0634 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
- 1002      73436D34 
- 1002      4E6D6943 
- 1002      746C4F66 
- 1002      66736574 
- 1003              	.LASF112:
- 1004 0649 433A5C55 		.ascii	"C:\\Users\\Yousef Akbar\\Desktop\\Lab2Part3.cydsn\000"
- 1004      73657273 
- 1004      5C596F75 
- 1004      73656620 
- 1004      416B6261 
- 1005              	.LASF52:
- 1006 0677 65704D6F 		.ascii	"epMonitorNr\000"
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 24
+ 992 006c 13       		.uleb128 0x13
+ 993 006d 00       		.byte	0
+ 994 006e 00       		.byte	0
+ 995 006f 0A       		.uleb128 0xa
+ 996 0070 0D       		.uleb128 0xd
+ 997 0071 00       		.byte	0
+ 998 0072 03       		.uleb128 0x3
+ 999 0073 0E       		.uleb128 0xe
+ 1000 0074 3A       		.uleb128 0x3a
+ 1001 0075 0B       		.uleb128 0xb
+ 1002 0076 3B       		.uleb128 0x3b
+ 1003 0077 05       		.uleb128 0x5
+ 1004 0078 49       		.uleb128 0x49
+ 1005 0079 13       		.uleb128 0x13
+ 1006 007a 38       		.uleb128 0x38
+ 1007 007b 0B       		.uleb128 0xb
+ 1008 007c 00       		.byte	0
+ 1009 007d 00       		.byte	0
+ 1010 007e 0B       		.uleb128 0xb
+ 1011 007f 16       		.uleb128 0x16
+ 1012 0080 00       		.byte	0
+ 1013 0081 03       		.uleb128 0x3
+ 1014 0082 0E       		.uleb128 0xe
+ 1015 0083 3A       		.uleb128 0x3a
+ 1016 0084 0B       		.uleb128 0xb
+ 1017 0085 3B       		.uleb128 0x3b
+ 1018 0086 05       		.uleb128 0x5
+ 1019 0087 49       		.uleb128 0x49
+ 1020 0088 13       		.uleb128 0x13
+ 1021 0089 00       		.byte	0
+ 1022 008a 00       		.byte	0
+ 1023 008b 0C       		.uleb128 0xc
+ 1024 008c 04       		.uleb128 0x4
+ 1025 008d 01       		.byte	0x1
+ 1026 008e 0B       		.uleb128 0xb
+ 1027 008f 0B       		.uleb128 0xb
+ 1028 0090 49       		.uleb128 0x49
+ 1029 0091 13       		.uleb128 0x13
+ 1030 0092 3A       		.uleb128 0x3a
+ 1031 0093 0B       		.uleb128 0xb
+ 1032 0094 3B       		.uleb128 0x3b
+ 1033 0095 0B       		.uleb128 0xb
+ 1034 0096 01       		.uleb128 0x1
+ 1035 0097 13       		.uleb128 0x13
+ 1036 0098 00       		.byte	0
+ 1037 0099 00       		.byte	0
+ 1038 009a 0D       		.uleb128 0xd
+ 1039 009b 28       		.uleb128 0x28
+ 1040 009c 00       		.byte	0
+ 1041 009d 03       		.uleb128 0x3
+ 1042 009e 0E       		.uleb128 0xe
+ 1043 009f 1C       		.uleb128 0x1c
+ 1044 00a0 0B       		.uleb128 0xb
+ 1045 00a1 00       		.byte	0
+ 1046 00a2 00       		.byte	0
+ 1047 00a3 0E       		.uleb128 0xe
+ 1048 00a4 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 24
 
 
- 1006      6E69746F 
- 1006      724E7200 
- 1007              	.LASF64:
- 1008 0683 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
- 1008      6843746C 
- 1008      4D61696E 
- 1008      57733246 
- 1008      72657100 
- 1009              	.LASF83:
- 1010 0697 70657269 		.ascii	"periDiv16_5CtlOffset\000"
- 1010      44697631 
- 1010      365F3543 
- 1010      746C4F66 
- 1010      66736574 
- 1011              	.LASF75:
- 1012 06ac 70657269 		.ascii	"periTrGrOffset\000"
- 1012      54724772 
- 1012      4F666673 
- 1012      657400
- 1013              	.LASF96:
- 1014 06bb 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
- 1014      73547269 
- 1014      6D526F6D 
- 1014      43746C4F 
- 1014      66667365 
- 1015              	.LASF58:
- 1016 06d1 666C6173 		.ascii	"flashPipeRequired\000"
- 1016      68506970 
- 1016      65526571 
- 1016      75697265 
- 1016      6400
- 1017              	.LASF104:
- 1018 06e3 69706353 		.ascii	"ipcStructSize\000"
- 1018      74727563 
- 1018      7453697A 
- 1018      6500
- 1019              	.LASF28:
- 1020 06f1 69706342 		.ascii	"ipcBase\000"
- 1020      61736500 
- 1021              	.LASF24:
- 1022 06f9 70726F74 		.ascii	"protBase\000"
- 1022      42617365 
- 1022      00
- 1023              	.LASF100:
- 1024 0702 63707573 		.ascii	"cpussRomCtl\000"
- 1024      73526F6D 
- 1024      43746C00 
- 1025              	.LASF50:
- 1026 070e 736D6966 		.ascii	"smifDeviceNr\000"
- 1026      44657669 
- 1026      63654E72 
- 1026      00
- 1027              	.LASF93:
- 1028 071b 63707573 		.ascii	"cpussCm0StatusOffset\000"
- 1028      73436D30 
- 1028      53746174 
- 1028      75734F66 
-ARM GAS  C:\Users\YOUSEF~1\AppData\Local\Temp\cc08VAbU.s 			page 25
+ 1049 00a5 01       		.byte	0x1
+ 1050 00a6 3F       		.uleb128 0x3f
+ 1051 00a7 19       		.uleb128 0x19
+ 1052 00a8 03       		.uleb128 0x3
+ 1053 00a9 0E       		.uleb128 0xe
+ 1054 00aa 3A       		.uleb128 0x3a
+ 1055 00ab 0B       		.uleb128 0xb
+ 1056 00ac 3B       		.uleb128 0x3b
+ 1057 00ad 0B       		.uleb128 0xb
+ 1058 00ae 27       		.uleb128 0x27
+ 1059 00af 19       		.uleb128 0x19
+ 1060 00b0 11       		.uleb128 0x11
+ 1061 00b1 01       		.uleb128 0x1
+ 1062 00b2 12       		.uleb128 0x12
+ 1063 00b3 06       		.uleb128 0x6
+ 1064 00b4 40       		.uleb128 0x40
+ 1065 00b5 18       		.uleb128 0x18
+ 1066 00b6 9642     		.uleb128 0x2116
+ 1067 00b8 19       		.uleb128 0x19
+ 1068 00b9 01       		.uleb128 0x1
+ 1069 00ba 13       		.uleb128 0x13
+ 1070 00bb 00       		.byte	0
+ 1071 00bc 00       		.byte	0
+ 1072 00bd 0F       		.uleb128 0xf
+ 1073 00be 34       		.uleb128 0x34
+ 1074 00bf 00       		.byte	0
+ 1075 00c0 03       		.uleb128 0x3
+ 1076 00c1 0E       		.uleb128 0xe
+ 1077 00c2 3A       		.uleb128 0x3a
+ 1078 00c3 0B       		.uleb128 0xb
+ 1079 00c4 3B       		.uleb128 0x3b
+ 1080 00c5 0B       		.uleb128 0xb
+ 1081 00c6 49       		.uleb128 0x49
+ 1082 00c7 13       		.uleb128 0x13
+ 1083 00c8 02       		.uleb128 0x2
+ 1084 00c9 17       		.uleb128 0x17
+ 1085 00ca 00       		.byte	0
+ 1086 00cb 00       		.byte	0
+ 1087 00cc 10       		.uleb128 0x10
+ 1088 00cd 898201   		.uleb128 0x4109
+ 1089 00d0 00       		.byte	0
+ 1090 00d1 11       		.uleb128 0x11
+ 1091 00d2 01       		.uleb128 0x1
+ 1092 00d3 31       		.uleb128 0x31
+ 1093 00d4 13       		.uleb128 0x13
+ 1094 00d5 00       		.byte	0
+ 1095 00d6 00       		.byte	0
+ 1096 00d7 11       		.uleb128 0x11
+ 1097 00d8 34       		.uleb128 0x34
+ 1098 00d9 00       		.byte	0
+ 1099 00da 03       		.uleb128 0x3
+ 1100 00db 0E       		.uleb128 0xe
+ 1101 00dc 3A       		.uleb128 0x3a
+ 1102 00dd 0B       		.uleb128 0xb
+ 1103 00de 3B       		.uleb128 0x3b
+ 1104 00df 0B       		.uleb128 0xb
+ 1105 00e0 49       		.uleb128 0x49
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 25
 
 
- 1028      66736574 
- 1029              	.LASF71:
- 1030 0730 64775374 		.ascii	"dwStatusChIdxPos\000"
- 1030      61747573 
- 1030      43684964 
- 1030      78506F73 
- 1030      00
- 1031              	.LASF70:
- 1032 0741 64774368 		.ascii	"dwChCtlPreemptablePos\000"
- 1032      43746C50 
- 1032      7265656D 
- 1032      70746162 
- 1032      6C65506F 
- 1033              	.LASF76:
- 1034 0757 70657269 		.ascii	"periTrGrSize\000"
- 1034      54724772 
- 1034      53697A65 
- 1034      00
- 1035              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1106 00e1 13       		.uleb128 0x13
+ 1107 00e2 3F       		.uleb128 0x3f
+ 1108 00e3 19       		.uleb128 0x19
+ 1109 00e4 3C       		.uleb128 0x3c
+ 1110 00e5 19       		.uleb128 0x19
+ 1111 00e6 00       		.byte	0
+ 1112 00e7 00       		.byte	0
+ 1113 00e8 12       		.uleb128 0x12
+ 1114 00e9 26       		.uleb128 0x26
+ 1115 00ea 00       		.byte	0
+ 1116 00eb 49       		.uleb128 0x49
+ 1117 00ec 13       		.uleb128 0x13
+ 1118 00ed 00       		.byte	0
+ 1119 00ee 00       		.byte	0
+ 1120 00ef 13       		.uleb128 0x13
+ 1121 00f0 34       		.uleb128 0x34
+ 1122 00f1 00       		.byte	0
+ 1123 00f2 03       		.uleb128 0x3
+ 1124 00f3 0E       		.uleb128 0xe
+ 1125 00f4 3A       		.uleb128 0x3a
+ 1126 00f5 0B       		.uleb128 0xb
+ 1127 00f6 3B       		.uleb128 0x3b
+ 1128 00f7 05       		.uleb128 0x5
+ 1129 00f8 49       		.uleb128 0x49
+ 1130 00f9 13       		.uleb128 0x13
+ 1131 00fa 3F       		.uleb128 0x3f
+ 1132 00fb 19       		.uleb128 0x19
+ 1133 00fc 3C       		.uleb128 0x3c
+ 1134 00fd 19       		.uleb128 0x19
+ 1135 00fe 00       		.byte	0
+ 1136 00ff 00       		.byte	0
+ 1137 0100 14       		.uleb128 0x14
+ 1138 0101 01       		.uleb128 0x1
+ 1139 0102 01       		.byte	0x1
+ 1140 0103 49       		.uleb128 0x49
+ 1141 0104 13       		.uleb128 0x13
+ 1142 0105 01       		.uleb128 0x1
+ 1143 0106 13       		.uleb128 0x13
+ 1144 0107 00       		.byte	0
+ 1145 0108 00       		.byte	0
+ 1146 0109 15       		.uleb128 0x15
+ 1147 010a 21       		.uleb128 0x21
+ 1148 010b 00       		.byte	0
+ 1149 010c 49       		.uleb128 0x49
+ 1150 010d 13       		.uleb128 0x13
+ 1151 010e 2F       		.uleb128 0x2f
+ 1152 010f 0B       		.uleb128 0xb
+ 1153 0110 00       		.byte	0
+ 1154 0111 00       		.byte	0
+ 1155 0112 16       		.uleb128 0x16
+ 1156 0113 2E       		.uleb128 0x2e
+ 1157 0114 00       		.byte	0
+ 1158 0115 3F       		.uleb128 0x3f
+ 1159 0116 19       		.uleb128 0x19
+ 1160 0117 3C       		.uleb128 0x3c
+ 1161 0118 19       		.uleb128 0x19
+ 1162 0119 6E       		.uleb128 0x6e
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 26
+
+
+ 1163 011a 0E       		.uleb128 0xe
+ 1164 011b 03       		.uleb128 0x3
+ 1165 011c 0E       		.uleb128 0xe
+ 1166 011d 3A       		.uleb128 0x3a
+ 1167 011e 0B       		.uleb128 0xb
+ 1168 011f 3B       		.uleb128 0x3b
+ 1169 0120 0B       		.uleb128 0xb
+ 1170 0121 00       		.byte	0
+ 1171 0122 00       		.byte	0
+ 1172 0123 00       		.byte	0
+ 1173              		.section	.debug_loc,"",%progbits
+ 1174              	.Ldebug_loc0:
+ 1175              	.LLST0:
+ 1176 0000 02000000 		.4byte	.LVL0
+ 1177 0004 06000000 		.4byte	.LVL1
+ 1178 0008 0200     		.2byte	0x2
+ 1179 000a 30       		.byte	0x30
+ 1180 000b 9F       		.byte	0x9f
+ 1181 000c 06000000 		.4byte	.LVL1
+ 1182 0010 13000000 		.4byte	.LVL2-1
+ 1183 0014 0100     		.2byte	0x1
+ 1184 0016 50       		.byte	0x50
+ 1185 0017 00000000 		.4byte	0
+ 1186 001b 00000000 		.4byte	0
+ 1187              		.section	.debug_aranges,"",%progbits
+ 1188 0000 1C000000 		.4byte	0x1c
+ 1189 0004 0200     		.2byte	0x2
+ 1190 0006 00000000 		.4byte	.Ldebug_info0
+ 1191 000a 04       		.byte	0x4
+ 1192 000b 00       		.byte	0
+ 1193 000c 0000     		.2byte	0
+ 1194 000e 0000     		.2byte	0
+ 1195 0010 00000000 		.4byte	.LFB165
+ 1196 0014 1C000000 		.4byte	.LFE165-.LFB165
+ 1197 0018 00000000 		.4byte	0
+ 1198 001c 00000000 		.4byte	0
+ 1199              		.section	.debug_ranges,"",%progbits
+ 1200              	.Ldebug_ranges0:
+ 1201 0000 00000000 		.4byte	.LFB165
+ 1202 0004 1C000000 		.4byte	.LFE165
+ 1203 0008 00000000 		.4byte	0
+ 1204 000c 00000000 		.4byte	0
+ 1205              		.section	.debug_line,"",%progbits
+ 1206              	.Ldebug_line0:
+ 1207 0000 05020000 		.section	.debug_str,"MS",%progbits,1
+ 1207      0200E001 
+ 1207      00000201 
+ 1207      FB0E0D00 
+ 1207      01010101 
+ 1208              	.LASF55:
+ 1209 0000 70726F74 		.ascii	"protBusMasterMask\000"
+ 1209      4275734D 
+ 1209      61737465 
+ 1209      724D6173 
+ 1209      6B00
+ 1210              	.LASF65:
+ 1211 0012 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 27
+
+
+ 1211      6843746C 
+ 1211      4D61696E 
+ 1211      57733346 
+ 1211      72657100 
+ 1212              	.LASF87:
+ 1213 0026 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 1213      50727443 
+ 1213      6667496E 
+ 1213      4F666673 
+ 1213      657400
+ 1214              	.LASF105:
+ 1215 0039 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 1215      6F636B53 
+ 1215      74617475 
+ 1215      734F6666 
+ 1215      73657400 
+ 1216              	.LASF31:
+ 1217 004d 63727970 		.ascii	"cryptoVersion\000"
+ 1217      746F5665 
+ 1217      7273696F 
+ 1217      6E00
+ 1218              	.LASF49:
+ 1219 005b 70657269 		.ascii	"periClockNr\000"
+ 1219      436C6F63 
+ 1219      6B4E7200 
+ 1220              	.LASF27:
+ 1221 0067 70617373 		.ascii	"passBase\000"
+ 1221      42617365 
+ 1221      00
+ 1222              	.LASF40:
+ 1223 0070 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 1223      73497063 
+ 1223      4972714E 
+ 1223      7200
+ 1224              	.LASF5:
+ 1225 007e 5F5F7569 		.ascii	"__uint8_t\000"
+ 1225      6E74385F 
+ 1225      7400
+ 1226              	.LASF84:
+ 1227 0088 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 1227      44697632 
+ 1227      345F3543 
+ 1227      746C4F66 
+ 1227      66736574 
+ 1228              	.LASF111:
+ 1229 009d 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
+ 1229      74635F62 
+ 1229      6C655F63 
+ 1229      6F6E6E5F 
+ 1229      68616E64 
+ 1230              	.LASF20:
+ 1231 00b6 63707573 		.ascii	"cpussBase\000"
+ 1231      73426173 
+ 1231      6500
+ 1232              	.LASF69:
+ 1233 00c0 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 1233      43746C50 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 28
+
+
+ 1233      72696F50 
+ 1233      6F7300
+ 1234              	.LASF13:
+ 1235 00cf 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1235      206C6F6E 
+ 1235      6720756E 
+ 1235      7369676E 
+ 1235      65642069 
+ 1236              	.LASF73:
+ 1237 00e6 70657269 		.ascii	"periTrCmdOffset\000"
+ 1237      5472436D 
+ 1237      644F6666 
+ 1237      73657400 
+ 1238              	.LASF127:
+ 1239 00f6 63795F62 		.ascii	"cy_ble_app_notify_callback_t\000"
+ 1239      6C655F61 
+ 1239      70705F6E 
+ 1239      6F746966 
+ 1239      795F6361 
+ 1240              	.LASF97:
+ 1241 0113 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 1241      73537973 
+ 1241      5469636B 
+ 1241      43746C4F 
+ 1241      66667365 
+ 1242              	.LASF58:
+ 1243 0129 666C6173 		.ascii	"flashPipeRequired\000"
+ 1243      68506970 
+ 1243      65526571 
+ 1243      75697265 
+ 1243      6400
+ 1244              	.LASF62:
+ 1245 013b 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 1245      6843746C 
+ 1245      4D61696E 
+ 1245      57733046 
+ 1245      72657100 
+ 1246              	.LASF17:
+ 1247 014f 696E7431 		.ascii	"int16_t\000"
+ 1247      365F7400 
+ 1248              	.LASF1:
+ 1249 0157 6C6F6E67 		.ascii	"long long int\000"
+ 1249      206C6F6E 
+ 1249      6720696E 
+ 1249      7400
+ 1250              	.LASF3:
+ 1251 0165 7369676E 		.ascii	"signed char\000"
+ 1251      65642063 
+ 1251      68617200 
+ 1252              	.LASF133:
+ 1253 0171 43795F42 		.ascii	"Cy_BLE_HostRegisteredCallback\000"
+ 1253      4C455F48 
+ 1253      6F737452 
+ 1253      65676973 
+ 1253      74657265 
+ 1254              	.LASF78:
+ 1255 018f 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 29
+
+
+ 1255      44697643 
+ 1255      6D645479 
+ 1255      70655365 
+ 1255      6C506F73 
+ 1256              	.LASF24:
+ 1257 01a4 70726F74 		.ascii	"protBase\000"
+ 1257      42617365 
+ 1257      00
+ 1258              	.LASF36:
+ 1259 01ad 69706356 		.ascii	"ipcVersion\000"
+ 1259      65727369 
+ 1259      6F6E00
+ 1260              	.LASF98:
+ 1261 01b8 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 1261      73436D30 
+ 1261      4E6D6943 
+ 1261      746C4F66 
+ 1261      66736574 
+ 1262              	.LASF115:
+ 1263 01cd 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 1263      4C455F41 
+ 1263      44565F53 
+ 1263      54415445 
+ 1263      5F53544F 
+ 1264              	.LASF25:
+ 1265 01ed 6873696F 		.ascii	"hsiomBase\000"
+ 1265      6D426173 
+ 1265      6500
+ 1266              	.LASF10:
+ 1267 01f7 6C6F6E67 		.ascii	"long int\000"
+ 1267      20696E74 
+ 1267      00
+ 1268              	.LASF91:
+ 1269 0200 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 1269      73436D34 
+ 1269      436C6F63 
+ 1269      6B43746C 
+ 1269      4F666673 
+ 1270              	.LASF56:
+ 1271 0217 63727970 		.ascii	"cryptoMemSize\000"
+ 1271      746F4D65 
+ 1271      6D53697A 
+ 1271      6500
+ 1272              	.LASF116:
+ 1273 0225 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
+ 1273      6E5F626C 
+ 1273      655F6164 
+ 1273      765F7374 
+ 1273      6174655F 
+ 1274              	.LASF22:
+ 1275 023b 70657269 		.ascii	"periBase\000"
+ 1275      42617365 
+ 1275      00
+ 1276              	.LASF54:
+ 1277 0244 73797350 		.ascii	"sysPmSimoPresent\000"
+ 1277      6D53696D 
+ 1277      6F507265 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 30
+
+
+ 1277      73656E74 
+ 1277      00
+ 1278              	.LASF44:
+ 1279 0255 63707573 		.ascii	"cpussFmIrq\000"
+ 1279      73466D49 
+ 1279      727100
+ 1280              	.LASF108:
+ 1281 0260 646F7562 		.ascii	"double\000"
+ 1281      6C6500
+ 1282              	.LASF83:
+ 1283 0267 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 1283      44697631 
+ 1283      365F3543 
+ 1283      746C4F66 
+ 1283      66736574 
+ 1284              	.LASF47:
+ 1285 027c 73727373 		.ascii	"srssNumPll\000"
+ 1285      4E756D50 
+ 1285      6C6C00
+ 1286              	.LASF136:
+ 1287 0287 443A5C44 		.ascii	"D:\\Documents\\Lab2Part3.cydsn\\EasyMoo.cydsn\000"
+ 1287      6F63756D 
+ 1287      656E7473 
+ 1287      5C4C6162 
+ 1287      32506172 
+ 1288              	.LASF81:
+ 1289 02b2 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 1289      44697638 
+ 1289      43746C4F 
+ 1289      66667365 
+ 1289      7400
+ 1290              	.LASF121:
+ 1291 02c4 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 1291      4C455F43 
+ 1291      4F4E4E5F 
+ 1291      53544154 
+ 1291      455F434C 
+ 1292              	.LASF88:
+ 1293 02ee 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 1293      50727443 
+ 1293      66674F75 
+ 1293      744F6666 
+ 1293      73657400 
+ 1294              	.LASF21:
+ 1295 0302 666C6173 		.ascii	"flashcBase\000"
+ 1295      68634261 
+ 1295      736500
+ 1296              	.LASF11:
+ 1297 030d 5F5F7569 		.ascii	"__uint32_t\000"
+ 1297      6E743332 
+ 1297      5F7400
+ 1298              	.LASF51:
+ 1299 0318 70617373 		.ascii	"passSarChannels\000"
+ 1299      53617243 
+ 1299      68616E6E 
+ 1299      656C7300 
+ 1300              	.LASF6:
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 31
+
+
+ 1301 0328 5F5F696E 		.ascii	"__int16_t\000"
+ 1301      7431365F 
+ 1301      7400
+ 1302              	.LASF94:
+ 1303 0332 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 1303      73436D34 
+ 1303      50777243 
+ 1303      746C4F66 
+ 1303      66736574 
+ 1304              	.LASF120:
+ 1305 0347 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
+ 1305      4C455F43 
+ 1305      4F4E4E5F 
+ 1305      53544154 
+ 1305      455F434C 
+ 1306              	.LASF89:
+ 1307 0371 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 1307      50727443 
+ 1307      66675369 
+ 1307      6F4F6666 
+ 1307      73657400 
+ 1308              	.LASF41:
+ 1309 0385 63707573 		.ascii	"cpussDwChNr\000"
+ 1309      73447743 
+ 1309      684E7200 
+ 1310              	.LASF0:
+ 1311 0391 756E7369 		.ascii	"unsigned int\000"
+ 1311      676E6564 
+ 1311      20696E74 
+ 1311      00
+ 1312              	.LASF119:
+ 1313 039e 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
+ 1313      4C455F43 
+ 1313      4F4E4E5F 
+ 1313      53544154 
+ 1313      455F434F 
+ 1314              	.LASF123:
+ 1315 03ba 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 1315      4C455F43 
+ 1315      4F4E4E5F 
+ 1315      53544154 
+ 1315      455F434C 
+ 1316              	.LASF18:
+ 1317 03e5 75696E74 		.ascii	"uint16_t\000"
+ 1317      31365F74 
+ 1317      00
+ 1318              	.LASF74:
+ 1319 03ee 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 1319      5472436D 
+ 1319      64477253 
+ 1319      656C4D73 
+ 1319      6B00
+ 1320              	.LASF63:
+ 1321 0400 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 1321      6843746C 
+ 1321      4D61696E 
+ 1321      57733146 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 32
+
+
+ 1321      72657100 
+ 1322              	.LASF12:
+ 1323 0414 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1323      20756E73 
+ 1323      69676E65 
+ 1323      6420696E 
+ 1323      7400
+ 1324              	.LASF39:
+ 1325 0426 63707573 		.ascii	"cpussIpcNr\000"
+ 1325      73497063 
+ 1325      4E7200
+ 1326              	.LASF26:
+ 1327 0431 6770696F 		.ascii	"gpioBase\000"
+ 1327      42617365 
+ 1327      00
+ 1328              	.LASF64:
+ 1329 043a 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 1329      6843746C 
+ 1329      4D61696E 
+ 1329      57733246 
+ 1329      72657100 
+ 1330              	.LASF75:
+ 1331 044e 70657269 		.ascii	"periTrGrOffset\000"
+ 1331      54724772 
+ 1331      4F666673 
+ 1331      657400
+ 1332              	.LASF102:
+ 1333 045d 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 1333      7352616D 
+ 1333      3143746C 
+ 1333      3000
+ 1334              	.LASF131:
+ 1335 046b 63795F62 		.ascii	"cy_ble_connState\000"
+ 1335      6C655F63 
+ 1335      6F6E6E53 
+ 1335      74617465 
+ 1335      00
+ 1336              	.LASF76:
+ 1337 047c 70657269 		.ascii	"periTrGrSize\000"
+ 1337      54724772 
+ 1337      53697A65 
+ 1337      00
+ 1338              	.LASF34:
+ 1339 0489 6770696F 		.ascii	"gpioVersion\000"
+ 1339      56657273 
+ 1339      696F6E00 
+ 1340              	.LASF106:
+ 1341 0495 63795F73 		.ascii	"cy_stc_device_t\000"
+ 1341      74635F64 
+ 1341      65766963 
+ 1341      655F7400 
+ 1342              	.LASF52:
+ 1343 04a5 65704D6F 		.ascii	"epMonitorNr\000"
+ 1343      6E69746F 
+ 1343      724E7200 
+ 1344              	.LASF99:
+ 1345 04b1 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 33
+
+
+ 1345      73436D34 
+ 1345      4E6D6943 
+ 1345      746C4F66 
+ 1345      66736574 
+ 1346              	.LASF95:
+ 1347 04c6 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 1347      73547269 
+ 1347      6D52616D 
+ 1347      43746C4F 
+ 1347      66667365 
+ 1348              	.LASF90:
+ 1349 04dc 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 1349      73436D30 
+ 1349      436C6F63 
+ 1349      6B43746C 
+ 1349      4F666673 
+ 1350              	.LASF110:
+ 1351 04f3 61747449 		.ascii	"attId\000"
+ 1351      6400
+ 1352              	.LASF30:
+ 1353 04f9 63707573 		.ascii	"cpussVersion\000"
+ 1353      73566572 
+ 1353      73696F6E 
+ 1353      00
+ 1354              	.LASF37:
+ 1355 0506 70657269 		.ascii	"periVersion\000"
+ 1355      56657273 
+ 1355      696F6E00 
+ 1356              	.LASF93:
+ 1357 0512 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 1357      73436D30 
+ 1357      53746174 
+ 1357      75734F66 
+ 1357      66736574 
+ 1358              	.LASF14:
+ 1359 0527 73697A65 		.ascii	"sizetype\000"
+ 1359      74797065 
+ 1359      00
+ 1360              	.LASF67:
+ 1361 0530 64774368 		.ascii	"dwChOffset\000"
+ 1361      4F666673 
+ 1361      657400
+ 1362              	.LASF42:
+ 1363 053b 63707573 		.ascii	"cpussFlashPaSize\000"
+ 1363      73466C61 
+ 1363      73685061 
+ 1363      53697A65 
+ 1363      00
+ 1364              	.LASF113:
+ 1365 054c 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
+ 1365      4C455F41 
+ 1365      44565F53 
+ 1365      54415445 
+ 1365      5F414456 
+ 1366              	.LASF80:
+ 1367 056b 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 1367      44697643 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 34
+
+
+ 1367      6D645061 
+ 1367      54797065 
+ 1367      53656C50 
+ 1368              	.LASF103:
+ 1369 0582 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 1369      7352616D 
+ 1369      3243746C 
+ 1369      3000
+ 1370              	.LASF71:
+ 1371 0590 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 1371      61747573 
+ 1371      43684964 
+ 1371      78506F73 
+ 1371      00
+ 1372              	.LASF53:
+ 1373 05a1 75646250 		.ascii	"udbPresent\000"
+ 1373      72657365 
+ 1373      6E7400
+ 1374              	.LASF125:
+ 1375 05ac 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
+ 1375      6E5F626C 
+ 1375      655F636F 
+ 1375      6E6E5F73 
+ 1375      74617465 
+ 1376              	.LASF33:
+ 1377 05c3 666C6173 		.ascii	"flashcVersion\000"
+ 1377      68635665 
+ 1377      7273696F 
+ 1377      6E00
+ 1378              	.LASF29:
+ 1379 05d1 63727970 		.ascii	"cryptoBase\000"
+ 1379      746F4261 
+ 1379      736500
+ 1380              	.LASF50:
+ 1381 05dc 736D6966 		.ascii	"smifDeviceNr\000"
+ 1381      44657669 
+ 1381      63654E72 
+ 1381      00
+ 1382              	.LASF59:
+ 1383 05e9 666C6173 		.ascii	"flashWriteDelay\000"
+ 1383      68577269 
+ 1383      74654465 
+ 1383      6C617900 
+ 1384              	.LASF124:
+ 1385 05f9 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
+ 1385      4C455F43 
+ 1385      4F4E4E5F 
+ 1385      53544154 
+ 1385      455F434C 
+ 1386              	.LASF107:
+ 1387 061d 666C6F61 		.ascii	"float\000"
+ 1387      7400
+ 1388              	.LASF72:
+ 1389 0623 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 1389      61747573 
+ 1389      43684964 
+ 1389      784D736B 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 35
+
+
+ 1389      00
+ 1390              	.LASF128:
+ 1391 0634 63795F64 		.ascii	"cy_device\000"
+ 1391      65766963 
+ 1391      6500
+ 1392              	.LASF100:
+ 1393 063e 63707573 		.ascii	"cpussRomCtl\000"
+ 1393      73526F6D 
+ 1393      43746C00 
+ 1394              	.LASF70:
+ 1395 064a 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 1395      43746C50 
+ 1395      7265656D 
+ 1395      70746162 
+ 1395      6C65506F 
+ 1396              	.LASF23:
+ 1397 0660 75646242 		.ascii	"udbBase\000"
+ 1397      61736500 
+ 1398              	.LASF122:
+ 1399 0668 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 1399      4C455F43 
+ 1399      4F4E4E5F 
+ 1399      53544154 
+ 1399      455F434C 
+ 1400              	.LASF126:
+ 1401 0692 5F426F6F 		.ascii	"_Bool\000"
+ 1401      6C00
+ 1402              	.LASF4:
+ 1403 0698 756E7369 		.ascii	"unsigned char\000"
+ 1403      676E6564 
+ 1403      20636861 
+ 1403      7200
+ 1404              	.LASF66:
+ 1405 06a6 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 1405      6843746C 
+ 1405      4D61696E 
+ 1405      57733446 
+ 1405      72657100 
+ 1406              	.LASF7:
+ 1407 06ba 73686F72 		.ascii	"short int\000"
+ 1407      7420696E 
+ 1407      7400
+ 1408              	.LASF77:
+ 1409 06c4 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 1409      44697643 
+ 1409      6D644469 
+ 1409      7653656C 
+ 1409      4D736B00 
+ 1410              	.LASF135:
+ 1411 06d8 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_b"
+ 1411      72617465 
+ 1411      645F536F 
+ 1411      75726365 
+ 1411      5C50536F 
+ 1412 0706 6C655F68 		.ascii	"le_hal_int.c\000"
+ 1412      616C5F69 
+ 1412      6E742E63 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 36
+
+
+ 1412      00
+ 1413              	.LASF48:
+ 1414 0713 73727373 		.ascii	"srssNumHfroot\000"
+ 1414      4E756D48 
+ 1414      66726F6F 
+ 1414      7400
+ 1415              	.LASF61:
+ 1416 0721 666C6173 		.ascii	"flashEraseDelay\000"
+ 1416      68457261 
+ 1416      73654465 
+ 1416      6C617900 
+ 1417              	.LASF19:
+ 1418 0731 75696E74 		.ascii	"uint32_t\000"
+ 1418      33325F74 
+ 1418      00
+ 1419              	.LASF134:
+ 1420 073a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1420      43313120 
+ 1420      352E342E 
+ 1420      31203230 
+ 1420      31363036 
+ 1421 076d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1421      20726576 
+ 1421      6973696F 
+ 1421      6E203233 
+ 1421      37373135 
+ 1422 07a0 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1422      67202D66 
+ 1422      66756E63 
+ 1422      74696F6E 
+ 1422      2D736563 
+ 1423              	.LASF2:
+ 1424 07cc 6C6F6E67 		.ascii	"long double\000"
+ 1424      20646F75 
+ 1424      626C6500 
+ 1425              	.LASF15:
+ 1426 07d8 63686172 		.ascii	"char\000"
+ 1426      00
+ 1427              	.LASF38:
+ 1428 07dd 70726F74 		.ascii	"protVersion\000"
+ 1428      56657273 
+ 1428      696F6E00 
+ 1429              	.LASF101:
+ 1430 07e9 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 1430      7352616D 
+ 1430      3043746C 
+ 1430      3000
+ 1431              	.LASF8:
+ 1432 07f7 5F5F7569 		.ascii	"__uint16_t\000"
+ 1432      6E743136 
+ 1432      5F7400
+ 1433              	.LASF132:
+ 1434 0802 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 1434      6C655F70 
+ 1434      656E6469 
+ 1434      6E67466C 
+ 1434      61736857 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 37
+
+
+ 1435              	.LASF82:
+ 1436 081b 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 1436      44697631 
+ 1436      3643746C 
+ 1436      4F666673 
+ 1436      657400
+ 1437              	.LASF129:
+ 1438 082e 63795F62 		.ascii	"cy_ble_advState\000"
+ 1438      6C655F61 
+ 1438      64765374 
+ 1438      61746500 
+ 1439              	.LASF35:
+ 1440 083e 6873696F 		.ascii	"hsiomVersion\000"
+ 1440      6D566572 
+ 1440      73696F6E 
+ 1440      00
+ 1441              	.LASF139:
+ 1442 084b 43795F42 		.ascii	"Cy_BLE_HAL_BlessInterruptHandler\000"
+ 1442      4C455F48 
+ 1442      414C5F42 
+ 1442      6C657373 
+ 1442      496E7465 
+ 1443              	.LASF9:
+ 1444 086c 73686F72 		.ascii	"short unsigned int\000"
+ 1444      7420756E 
+ 1444      7369676E 
+ 1444      65642069 
+ 1444      6E7400
+ 1445              	.LASF68:
+ 1446 087f 64774368 		.ascii	"dwChSize\000"
+ 1446      53697A65 
+ 1446      00
+ 1447              	.LASF137:
+ 1448 0888 43795F42 		.ascii	"Cy_BLE_BlessInterrupt\000"
+ 1448      4C455F42 
+ 1448      6C657373 
+ 1448      496E7465 
+ 1448      72727570 
+ 1449              	.LASF104:
+ 1450 089e 69706353 		.ascii	"ipcStructSize\000"
+ 1450      74727563 
+ 1450      7453697A 
+ 1450      6500
+ 1451              	.LASF43:
+ 1452 08ac 63707573 		.ascii	"cpussIpc0Irq\000"
+ 1452      73497063 
+ 1452      30497271 
+ 1452      00
+ 1453              	.LASF86:
+ 1454 08b9 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 1454      50727443 
+ 1454      66674F66 
+ 1454      66736574 
+ 1454      00
+ 1455              	.LASF117:
+ 1456 08ca 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 1456      4C455F43 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 38
+
+
+ 1456      4F4E4E5F 
+ 1456      53544154 
+ 1456      455F4449 
+ 1457              	.LASF130:
+ 1458 08e9 63795F62 		.ascii	"cy_ble_connHandle\000"
+ 1458      6C655F63 
+ 1458      6F6E6E48 
+ 1458      616E646C 
+ 1458      6500
+ 1459              	.LASF45:
+ 1460 08fb 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 1460      734E6F74 
+ 1460      436F6E6E 
+ 1460      65637465 
+ 1460      64497271 
+ 1461              	.LASF114:
+ 1462 0910 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 1462      4C455F41 
+ 1462      44565F53 
+ 1462      54415445 
+ 1462      5F414456 
+ 1463              	.LASF112:
+ 1464 092d 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
+ 1464      4C455F41 
+ 1464      44565F53 
+ 1464      54415445 
+ 1464      5F53544F 
+ 1465              	.LASF16:
+ 1466 0946 75696E74 		.ascii	"uint8_t\000"
+ 1466      385F7400 
+ 1467              	.LASF92:
+ 1468 094e 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 1468      73436D34 
+ 1468      53746174 
+ 1468      75734F66 
+ 1468      66736574 
+ 1469              	.LASF85:
+ 1470 0963 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 1470      50727449 
+ 1470      6E747243 
+ 1470      66674F66 
+ 1470      66736574 
+ 1471              	.LASF138:
+ 1472 0978 73656E64 		.ascii	"sendNotification\000"
+ 1472      4E6F7469 
+ 1472      66696361 
+ 1472      74696F6E 
+ 1472      00
+ 1473              	.LASF96:
+ 1474 0989 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 1474      73547269 
+ 1474      6D526F6D 
+ 1474      43746C4F 
+ 1474      66667365 
+ 1475              	.LASF109:
+ 1476 099f 62644861 		.ascii	"bdHandle\000"
+ 1476      6E646C65 
+ARM GAS  C:\Users\ASUS\AppData\Local\Temp\cc765BxE.s 			page 39
+
+
+ 1476      00
+ 1477              	.LASF46:
+ 1478 09a8 73727373 		.ascii	"srssNumClkpath\000"
+ 1478      4E756D43 
+ 1478      6C6B7061 
+ 1478      746800
+ 1479              	.LASF32:
+ 1480 09b7 64775665 		.ascii	"dwVersion\000"
+ 1480      7273696F 
+ 1480      6E00
+ 1481              	.LASF28:
+ 1482 09c1 69706342 		.ascii	"ipcBase\000"
+ 1482      61736500 
+ 1483              	.LASF79:
+ 1484 09c9 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 1484      44697643 
+ 1484      6D645061 
+ 1484      44697653 
+ 1484      656C506F 
+ 1485              	.LASF60:
+ 1486 09df 666C6173 		.ascii	"flashProgramDelay\000"
+ 1486      6850726F 
+ 1486      6772616D 
+ 1486      44656C61 
+ 1486      7900
+ 1487              	.LASF118:
+ 1488 09f1 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
+ 1488      4C455F43 
+ 1488      4F4E4E5F 
+ 1488      53544154 
+ 1488      455F434C 
+ 1489              	.LASF57:
+ 1490 0a22 666C6173 		.ascii	"flashRwwRequired\000"
+ 1490      68527777 
+ 1490      52657175 
+ 1490      69726564 
+ 1490      00
+ 1491              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
