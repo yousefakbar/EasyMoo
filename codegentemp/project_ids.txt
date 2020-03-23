@@ -1,6 +1,0 @@
-D:\Documents\EasyMoo.cydsn\EasyMoo.cyprj|5c0e4736-c944-42aa-96aa-ae17e19e3f84
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4ceb2104-5c31-4cb1-b3f4-3cdb9aae9cb5
-D:\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|e0ce240d-fe3b-4e52-a6d1-d26307c810d1
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8ad9a3f9-16bc-45c4-9d02-0d8e45e93616
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4259a5ea-ee31-4f05-9826-2683ec60fb8d
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|26c867cb-a8c2-4ff6-b7c0-b423c48bb92c
